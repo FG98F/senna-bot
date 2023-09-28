@@ -1,6 +1,7 @@
 
 import yts from 'yt-search'
 import fg from 'api-dylux'
+import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
 let limit = 320
 let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
   
@@ -25,9 +26,26 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 _Enviando..._` 
 conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null, rpig)
   
-  
-  try {
   let q = isVideo ? '360p' : '128kbps' 
+try {
+  let v = vid.url
+  let yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
+  let dl_url = await (isVideo ? yt.video[q].download() : yt.audio[q].download())
+  let title = await yt.title
+  let size = await (isVideo ? yt.video[q].fileSizeH : yt.audio[q].fileSizeH)
+if (size.split('MB')[0] >= limit) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`) 
+if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`)   
+	  conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `
+ ≡  *FG YTDL*
+  
+▢ *📌Título* : ${title}
+▢ *🎞️Calidad* : ${q}
+▢ *⚖️Peso* : ${size}
+`.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
+		m.react(done) 
+  } catch {
+  try {
+//  let q = isVideo ? '360p' : '128kbps' 
   let yt = await (isVideo ? fg.ytmp4 : fg.ytmp3)(vid.url, q)
   let { title, dl_url, quality, size, sizeB } = yt
   let isLimit = limit * 1024 < sizeB 
@@ -45,7 +63,7 @@ conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null, rpig)
 		 } catch (error) {
         m.reply(`❎ ${mssg.error}`)
     }
-
+}
 
 }
 handler.help = ['play']

@@ -8,8 +8,11 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
  let chat = global.db.data.chats[m.chat]
  let q = '128kbps'
  try {
- 	  const yt = await fg.ytmp3(args[0])
-  let { title, size, sizeB, dl_url } = yt
+ 	  let v = args[0]
+		const yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
+		const dl_url = await yt.audio[q].download()
+		const title = await yt.title
+		const size = await yt.audio[q].fileSizeH
 		conn.sendFile(m.chat, dl_url, title + '.mp3', `
  ≡  *FG YTDL*
   
@@ -19,11 +22,8 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 		m.react(done)
  	} catch {
   try {
-		let v = args[0]
-		const yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
-		const dl_url = await yt.audio[q].download()
-		const title = await yt.title
-		const size = await yt.audio[q].fileSizeH
+		let yt = await fg.ytmp3(args[0])
+        let { title, size, sizeB, dl_url } = yt
 		conn.sendFile(m.chat, dl_url, title + '.mp3', `
  ≡  *FG YTDL*
   
