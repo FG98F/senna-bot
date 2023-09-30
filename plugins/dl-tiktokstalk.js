@@ -2,7 +2,7 @@
 import fg from 'api-dylux'
 let handler = async (m, { conn, text, args }) => {
 	
-  if (!text) throw `✳️ ${mssg.noUsername('TikTok')}`
+  if (!text) throw `✳️ ${mssg.noUsername}`
   
   try {  	
   let res = await fg.ttStalk(args[0])
