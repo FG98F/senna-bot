@@ -70,13 +70,13 @@ $ npm start
 
 ## BOXMINE
 
-<a href="https://dash.boxmineworld.com/register?ref=Mb0BN5ny"><img src="https://k.top4top.io/p_2413wh2bh0.jpg" width="450" height="230" alt="BoxMine"/></a>
 
-Instale el bot con un solo click! para que este activo 24/7
+
+Instale el bot para que este activo 24/7
 
 ---------
 * Create una cuenta  [`aquí`](https://dash.boxmineworld.com/register?ref=Mb0BN5ny)
-* Tutorial [`Click Aquí`](https://youtu.be/xFqjKN1Qt80)
+* Tutorial [`Click Aquí`](https://youtu.be/Vzk_X45bDIw?si=1UNQWa2B9w-xyBSm)
 
 * Dashboard [`Click aquí`](https://dash.boxmineworld.com)
 * Panel [`Click aquí`](https://panel.boxmineworld.com/)
