@@ -7,12 +7,11 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
    m.react(rwait)
  let chat = global.db.data.chats[m.chat]
  let q = '128kbps'
+ 
  try {
- 	  let v = args[0]
-		const yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
-		const dl_url = await yt.audio[q].download()
-		const title = await yt.title
-		const size = await yt.audio[q].fileSizeH
+		const yt = await fg.yta(args[0])
+		let { title, dl_url, quality, size, sizeB } = yt
+		
 		conn.sendFile(m.chat, dl_url, title + '.mp3', `
  ≡  *FG YTDL*
   
@@ -25,7 +24,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 		let yt = await fg.ytmp3(args[0])
         let { title, size, sizeB, dl_url } = yt
 		conn.sendFile(m.chat, dl_url, title + '.mp3', `
- ≡  *FG YTDL*
+ ≡  *FG YTDL 2*
   
 ▢ *📌${mssg.title}* : ${title}
 ▢ *⚖️${mssg.size}* : ${size}

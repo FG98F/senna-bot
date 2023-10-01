@@ -10,19 +10,17 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	
 	 let q = args[1] || '360p'
  try {
- 	  let v = args[0]
-		const yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
-		const dl_url = await yt.video[q].download()
-		const title = await yt.title
-		const size = await yt.video[q].fileSizeH 
-		
-       if (size.split('MB')[0] >= limit) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️${mssg.size()}*: ${size}\n▢ *🎞️${mssg.quality()}*: ${q}\n\n▢ _${mssg.limitdl()}_ *+${limit} MB*`) 
-	   if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️${mssg.size()}*: ${size}\n▢ *🎞️${mssg.quality()}*: ${q}\n\n▢ _${mssg.limitdl()}_ *+${limit} MB*`)   
-	  conn.sendFile(m.chat, dl_url, title + '.mp4', `
+		const yt = await fg.ytv(args[0], q)
+		let { title, dl_url, quality, size, sizeB } = yt
+        let isLimit = limit * 1024 < sizeB 
+
+     m.reply(` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : global.wait }  `)
+     
+	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
  ≡  *FG YTDL*
   
 *📌${mssg.title}:* ${title}
-*🎞️${mssg.quality}:* ${q}
+*🎞️${mssg.quality}:* ${quality}
 *⚖️${mssg.size}:* ${size}
 `.trim(), m, false, { asDocument: chat.useDocument })
 		m.react(done) 
@@ -33,9 +31,9 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
     let { title, size, sizeB, dl_url, quality } = yt
   
   let isLimit = limit * 1024 < sizeB 
-  m.reply(` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${q}\n\n▢ _${mssg.limitdl}_ *+${limit} MB**` : global.wait }  `)
+  m.reply(` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : global.wait }  `)
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp3', `
- ≡  *FG YTDL*
+ ≡  *FG YTDL 2*
   
 ▢ *📌${mssg.title}* : ${title}
 *🎞️${mssg.quality}:* ${quality}

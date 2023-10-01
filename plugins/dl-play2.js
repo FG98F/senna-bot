@@ -28,18 +28,17 @@ conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null, rpig)
   
   let q = isVideo ? '360p' : '128kbps' 
 try {
-  let v = vid.url
-  let yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
-  let dl_url = await (isVideo ? yt.video[q].download() : yt.audio[q].download())
-  let title = await yt.title
-  let size = await (isVideo ? yt.video[q].fileSizeH : yt.audio[q].fileSizeH)
-if (size.split('MB')[0] >= limit) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`) 
-if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`)   
-	  conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `
+  let yt = await await (isVideo ? fg.ytv : fg.yta)(vid.url, q)
+  let { title, dl_url, quality, size, sizeB } = yt
+  let isLimit = limit * 1024 < sizeB 
+
+     m.reply(` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : global.wait }  `)
+     
+	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `
  ≡  *FG YTDL*
   
 ▢ *📌Título* : ${title}
-▢ *🎞️Calidad* : ${q}
+▢ *🎞️Calidad* : ${quality}
 ▢ *⚖️Peso* : ${size}
 `.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
 		m.react(done) 
@@ -50,9 +49,9 @@ if (size.includes('GB')) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : $
   let { title, dl_url, quality, size, sizeB } = yt
   let isLimit = limit * 1024 < sizeB 
 
-     m.reply(` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${q}\n\n▢ _${mssg.limitdl}_ *+${limit} MB**` : global.wait }  `)
+     m.reply(` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${q}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : global.wait }  `)
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /2$/.test(command)), `
- ≡  *FG YTDL*
+ ≡  *FG YTDL 2*
   
 *📌${mssg.title}* : ${title}
 *🎞️${mssg.quality}* : ${quality}
