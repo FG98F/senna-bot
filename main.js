@@ -144,7 +144,7 @@ async function clearTmp() {
   //---
   return filename.map(file => {
     const stats = statSync(file)
-    if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 1)) return unlinkSync(file) // 3 minuto
+    if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 3)) return unlinkSync(file) // 3 minuto
     return false
   })
 }
@@ -152,7 +152,7 @@ async function clearTmp() {
 setInterval(async () => {
 	await clearTmp()
 	console.log(chalk.cyan(`✅  Auto clear  | Se limpio la carpeta tmp`))
-}, 60000) //3 muntos
+}, 180000) //3 muntos
 
 async function connectionUpdate(update) {
   const { connection, lastDisconnect, isNewLogin } = update
