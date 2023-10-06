@@ -28,7 +28,7 @@ conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null, rpig)
   
   let q = isVideo ? '360p' : '128kbps' 
 try {
-  let yt = await await (isVideo ? fg.ytv : fg.yta)(vid.url, q)
+  let yt = await (isVideo ? fg.ytv : fg.yta)(vid.url, q)
   let { title, dl_url, quality, size, sizeB } = yt
   let isLimit = limit * 1024 < sizeB 
 
