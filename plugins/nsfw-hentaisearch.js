@@ -18,6 +18,8 @@ ${i+1}. *_${v.title}_*
   }
   conn.sendFile(m.chat, randomThumbnail, 'error.jpg', teks, m);
 };
+handler.help = ['hentaisearch']
+handler.tags = ['nsfw']
 handler.command = /^(hentaisearch|searchhentai)$/i;
 export default handler;
 async function searchHentai(search) {
