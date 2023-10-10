@@ -22,21 +22,12 @@ switch (type) {
        m.react(xmoji)    
   break
 
-case 'blowjob':
 case 'trap':
   let res = await fetch(`https://api.waifu.pics/nsfw/${command}`)
     if (!res.ok) throw await res.text()
     let json = await res.json()
     if (!json.url) throw '❎ Error'
     conn.sendFile(m.chat, json.url, 'img.jpg', `✅ ${mssg.random} *${command}*`, m)
-    m.react(xmoji) 
-break
-
-case 'yuri':
-case 'cum':
-case 'xneko':
-    let as = await conn.getFile(global.API('fgmods', `/api/nsfw-nime/${command}`, { }, 'apikey'))
-    conn.sendFile(m.chat, as.data, 'img.jpg', `✅ ${mssg.random} *${command}*`, m)
     m.react(xmoji) 
 break
 
@@ -51,9 +42,9 @@ default:
  }
 
 }
-handler.help = ['xwaifu', 'xneko', 'blowjob', 'trap', 'yuri', 'cum', 'hentai']
+handler.help = ['xwaifu', 'trap', 'hentai']
 handler.tags = ['ansfw']
-handler.command = /^(xwaifu|xneko|blowjob|trap|yuri|cum|hentai)$/i
+handler.command = /^(xwaifu|trap|hentai)$/i
 handler.diamond = true
 handler.register = true
 handler.group = true
