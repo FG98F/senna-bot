@@ -1,8 +1,9 @@
 let handler = async (m, { conn }) => {
 m.reply(global.sanciones)}
 handler.help = ['sanciones']
-handler.tags = ['grupo']
+handler.tags = ['Futabu Club']
 handler.command = /^(sanciones|sanctions|sancionesgrupo|sanctionsgroup)$/i
+handler.grouo = true
 export default handler
 
 global.sanciones = `----------Futabu Club----------
