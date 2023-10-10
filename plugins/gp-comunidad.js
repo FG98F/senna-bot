@@ -1,8 +1,9 @@
 let handler = async (m, { conn }) => {
 m.reply(global.comunidad)}
 handler.help = ['comunidad']
-handler.tags = ['grupo']
+handler.tags = ['Futabu Club']
 handler.command = /^(comunidad|grupocomunidad|grupoavisos)$/i
+handler.group = true
 export default handler
 
 global.comunidad = `*GRUPO DE LA COMUNIDAD*
