@@ -10,6 +10,8 @@ const cap = `@${m.sender.split('@')[0]} se la metió a @${who.split('@')[0]}! >.
 
 conn.sendMessage(m.chat, {video: sexo.data, gifPlayback: true, caption: cap, mentions: [m.sender, who]}, {quoted: m});
 };
+handler.help = ['fuck']
+handler.tags = ['nsfw']
 handler.command = /^(fuck)$/i;
 handler.group = true;
 export default handler;
