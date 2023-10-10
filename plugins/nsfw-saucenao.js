@@ -95,6 +95,6 @@ console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗
 console.log(e)}
 }
 handler.help = ['source']
-handler.tags = ['nsfw']
+handler.tags = ['tools']
 handler.command = /^sauce|source|salsa|zelda$/i
 export default handler
