@@ -1,8 +1,9 @@
 let handler = async (m, { conn }) => {
 m.reply(global.apoyo)}
 handler.help = ['apoyo']
-handler.tags = ['grupo']
+handler.tags = ['Futabu Club']
 handler.command = /^(apoyo|mejorar|apoyobot|mejorarbot)$/i
+handler.group = true
 export default handler
 
 global.apoyo = `*_Aca tienes los 2 bancos para transferir dinero para la mejora del bot!_*
