@@ -7,6 +7,9 @@ import { xpRange } from '../lib/levelling.js'
 let tags = {
   'Futabu Club': 'Futabu Club',
   'main': 'ACERCA DE',
+  'nsfw': 'NSFW +18',
+  'ansfw': 'NSFW ANIME', 
+  'tools': 'TOOLS',
   'bebot': 'SUB BOTS',
   'game': 'JUEGOS',
   'econ': 'NIVEL & ECONOMIA',
@@ -20,11 +23,8 @@ let tags = {
   'nime': 'ANIME',
   'rnime': 'ANIME REACCION',
   'dl': 'DESCARGAS',
-  'tools': 'TOOLS',
   'fun': 'FUN',
   'cmd': 'DATABASE',
-  'nsfw': 'NSFW +18',
-  'ansfw': 'NSFW ANIME', 
   'owner': 'OWNER', 
   'advanced': 'AVANZADO',
 }
