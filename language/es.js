@@ -186,7 +186,7 @@ const translations = {
     delwarn: 'Unwarn',
     warns: 'Warns',
     warn: 'Advertencia',
-    warnRec: 'Reciviste una Advertencia de un Admin',
+    warnRec: 'Recibiste una Advertencia de un Admin',
     numError: 'Numero Incorrecto',
     promote: 'Usuario Promovido',
     demote: 'Usuario Degradado',
