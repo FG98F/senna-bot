@@ -7,7 +7,7 @@ let handler = async function (m, { conn, text, usedPrefix }) {
      
 }
 handler.help = ['rules']
-handler.tags = ['group']
+handler.tags = ['Futabu Club']
 handler.command = ['rules', 'reglas'] 
 
 export default handler

@@ -3,12 +3,12 @@ import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
 global.owner = [
-  ['59172945992', 'FG98', true],
-  ['5491168352204']
+  ['5492604050270', '5493772406612', true],
+  ['593968585383']
 ] //Numeros de owner 
 
-global.mods = [''] 
-global.prems = ['50489079501', '573143917092']
+global.mods = ['5492604050270', '5493772406612'] 
+global.prems = ['5492604050270', '593968585383']
 global.APIs = { // API Prefix
   // name: 'https://website' 
   nrtm: 'https://fg-nrtm.ddns.net',
@@ -20,11 +20,11 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'Senna┃ᴮᴼᵀ' 
-global.author = '@fg98' 
+global.packname = 'A̳s̳a̳k̳u̳r̳a̳ ̳B̳O̳T̳💎' 
+global.author = 'ᴀꜱᴀᴋᴜʀᴀ-ᴍᴀᴏ ʙᴏᴛ' 
 
 //--info FG
-global.botName = 'Senna'
+global.botName = 'Asakura Mao'
 global.fgig = 'https://www.instagram.com/fg98_ff' 
 global.fgsc = 'https://github.com/FG98F/dylux-fg' 
 global.fgyt = 'https://youtube.com/fg98f'
@@ -44,7 +44,7 @@ global.error = '❌'
 global.xmoji = '🔥' 
 
 global.multiplier = 69 
-global.maxwarn = '2' // máxima advertencias
+global.maxwarn = '15' // máxima advertencias
 
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {

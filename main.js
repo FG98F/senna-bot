@@ -43,7 +43,7 @@ global.timestamp = {
 const __dirname = global.__dirname(import.meta.url)
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
-global.prefix = new RegExp('^[' + (opts['prefix'] || '‎z/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.,\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
+global.prefix = new RegExp('^[' + (opts['prefix'] || '‎/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.,\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
 // global.opts['db'] = process.env['db']
 
@@ -152,7 +152,7 @@ async function clearTmp() {
 setInterval(async () => {
 	await clearTmp()
 	console.log(chalk.cyan(`✅  Auto clear  | Se limpio la carpeta tmp`))
-}, 180000) //3 muntos
+}, 180000) //3 minutos
 
 async function connectionUpdate(update) {
   const { connection, lastDisconnect, isNewLogin } = update

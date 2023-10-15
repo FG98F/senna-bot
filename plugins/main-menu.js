@@ -5,7 +5,11 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 //import { plugins } from '../lib/plugins.js'
 let tags = {
+  'Futabu Club': 'Futabu Club',
   'main': 'ACERCA DE',
+  'nsfw': 'NSFW +18',
+  'ansfw': 'NSFW ANIME', 
+  'tools': 'TOOLS',
   'bebot': 'SUB BOTS',
   'game': 'JUEGOS',
   'econ': 'NIVEL & ECONOMIA',
@@ -19,24 +23,19 @@ let tags = {
   'nime': 'ANIME',
   'rnime': 'ANIME REACCION',
   'dl': 'DESCARGAS',
-  'tools': 'TOOLS',
   'fun': 'FUN',
   'cmd': 'DATABASE',
-  'nsfw': 'NSFW +18',
-  'ansfw': 'NSFW ANIME', 
   'owner': 'OWNER', 
   'advanced': 'AVANZADO',
 }
 const defaultMenu = {
   before: `
-◈ ━━━━━ *Senna  ┃ ᴮᴼᵀ* ━━━━━ ◈
+◈ ━━━━━ *AsakuraMao  ┃ ᴮᴼᵀ* ━━━━━ ◈
  
 👋🏻 Hola! *%name*
 👥 Usuarios : %totalreg
 🟢 Tiempo activo : %muptime
 %sbot
-▢ Descarga *FGWhatsApp*
-• https://fgmods.xyz
 ────────────
 %readmore
   ≡ *LISTA DE MENUS*

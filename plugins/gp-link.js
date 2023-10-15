@@ -10,6 +10,7 @@ handler.help = ['link']
 handler.tags = ['group']
 handler.command = ['linkgroup', 'link'] 
 handler.group = true
+handler.admin = true
 handler.botAdmin = true
 
 export default handler
