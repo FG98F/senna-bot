@@ -32,8 +32,8 @@ global.fgpyp = 'https://paypal.me/fg98f'
 global.fglog = 'https://i.ibb.co/1zdz2j3/logo.jpgs' 
 
 //--- Grupos WA
-global.bgp = 'https://chat.whatsapp.com/BESBo5xjvIZE4YVvth6Yzr'
-global.bgp2 = 'https://chat.whatsapp.com/I7bvd8XCAOUHjgkHteqFC7'
+global.bgp = 'https://chat.whatsapp.com/FZe8CPoahnaLXzjLrFF1jg'
+global.bgp2 = 'https://chat.whatsapp.com/FZe8CPoahnaLXzjLrFF1jg'
 global.bgp3 = 'https://chat.whatsapp.com/F0JTTyZ3hsoL7OlU8TEpuH' //--GP NSFW
 
 global.wait = '⌛ _Cargando..._\n*▬▬▬▭*'
