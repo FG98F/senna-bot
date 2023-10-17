@@ -3,12 +3,12 @@ import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
 global.owner = [
-  ['59172945992', 'FG98', true],
+  ['5491155605279', 'FG98', true],
   ['5491168352204']
 ] //Numeros de owner 
 
 global.mods = [''] 
-global.prems = ['50489079501', '573143917092']
+global.prems = ['5491155605279', '5491155605279']
 global.APIs = { // API Prefix
   // name: 'https://website' 
   nrtm: 'https://fg-nrtm.ddns.net',
@@ -20,7 +20,7 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'Senna┃ᴮᴼᵀ' 
+global.packname = '⏤͟͟͞͞⻤𝐁𝐎𝐓 ᭄𝐖𝐇𝐎𝜟𝐌𝐈☆ۣۜۜ͜͡☯️' 
 global.author = '@fg98' 
 
 //--info FG
