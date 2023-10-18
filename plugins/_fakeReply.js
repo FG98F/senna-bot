@@ -17,6 +17,21 @@ export async function before(m, { conn }) {
       }
     }
   };
+  
+  // Respuesta con enlace de Canal de WhatsApp
+  global.rcanal = {
+    contextInfo: {
+      externalAdReply: {
+        mediaUrl: fgcanal,
+        mediaType: 'VIDEO',
+        description: 'canal del grupo',
+        title: packname,
+        body: 'Canal de FG98',
+        thumbnailUrl: pp,
+        sourceUrl: fgcanal
+      }
+    }
+  }
 
   // Respuesta con enlace de PayPal
   global.rpyp = {

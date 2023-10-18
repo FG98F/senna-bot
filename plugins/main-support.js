@@ -5,6 +5,9 @@ m.reply(`
 ≡  *${botName}ᴮᴼᵀ ┃ SUPPORT*
 
 ◈ ━━━━━━━━━━━━━━━━━━━━ ◈
+▢ Canal
+${fgcanal}
+
 ▢ Grupo *1*
 ${bgp}
 

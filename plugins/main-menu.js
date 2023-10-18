@@ -155,7 +155,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       ['⏍ Info', `${_p}botinfo`],
       ['⌬ Grupos', `${_p}gpdylux`]
     ], m, rpl)*/
-    conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m, null, rpl)
+    conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m, null, rcanal)
   
     m.react('📚') 
     
