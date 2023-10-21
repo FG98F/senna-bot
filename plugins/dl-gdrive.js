@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) =
 	let res = await fg.GDriveDl(args[0])
 
 	let limit = isPrems || isOwner ? prem : free
-    let isLimit = limit * 1024 < fileSizeB
+    let isLimit = limit * 1024 < res.fileSizeB
 	 await m.reply(`
 ≡ *Google Drive DL*
 
