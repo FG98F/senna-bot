@@ -201,7 +201,7 @@ const translations = {
     preNan: 'Ingresa el prefijo de un numero válido',
     gpNanPre: 'El grupo no tiene miembros con el prefijo',
     userPref: 'Usuarios con el prefijo',
-    profile: 'Profile',
+    profile: 'Perfil',
     number: 'Número',
     age: 'Edad',
     gender: 'Género',
