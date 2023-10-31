@@ -31,7 +31,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
     let { title, size, sizeB, dl_url, quality } = yt
   
   let isLimit = limit * 1024 < sizeB 
-  m.reply(` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : global.wait }  `)
+  m.reply(` ${isLimit ? `≡  *FG YTDL 2*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : global.wait }  `)
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp3', `
  ≡  *FG YTDL 2*
   
