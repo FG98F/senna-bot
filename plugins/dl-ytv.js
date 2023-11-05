@@ -1,4 +1,4 @@
-
+ 
 import fg from 'api-dylux'
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
 let limit = 320
@@ -9,12 +9,13 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	 m.react(rwait) 
 	
 	 let q = args[1] || '360p'
+	 let loadingMsg = ["⌛10%", "⏳30%", "⌛50%", "⏳80%", "⌛100%"]
  try {
 		const yt = await fg.ytv(args[0], q)
 		let { title, dl_url, quality, size, sizeB } = yt
         let isLimit = limit * 1024 < sizeB 
 
-     m.reply(` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : global.wait }  `)
+     await conn.loading(m.chat, 'Cargando', ` ${isLimit ? `≡  *FG YTDL *\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completa' }`, loadingMsg, m)
      
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
  ≡  *FG YTDL*
@@ -31,8 +32,10 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
     let { title, size, sizeB, dl_url, quality } = yt
   
   let isLimit = limit * 1024 < sizeB 
-  m.reply(` ${isLimit ? `≡  *FG YTDL 2*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : global.wait }  `)
-	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp3', `
+ 
+  await conn.loading(m.chat, 'Cargando', ` ${isLimit ? `≡  *FG YTDL 2*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completa' }`, loadingMsg, m)
+	  
+if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp3', `
  ≡  *FG YTDL 2*
   
 ▢ *📌${mssg.title}* : ${title}
