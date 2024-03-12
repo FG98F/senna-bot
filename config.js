@@ -1,12 +1,13 @@
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'url' 
 
 global.owner = [
   ['59172945992', 'FG98', true],
   ['5491168352204']
 ] //Numeros de owner 
 
+global.botNumber['']
 global.mods = [''] 
 global.prems = ['50489079501', '573143917092']
 global.APIs = { // API Prefix
@@ -16,7 +17,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.fgmods.xyz': 'DRLg5kY7' //--- 100 de límite diario --- Regístrese en https://api.fgmods.xyz/
+  'https://api.fgmods.xyz': 'fg-SennA' //--- dEBWvxCY 100 de límite diario --- Regístrese en https://api.fgmods.xyz/
 }
 
 // Sticker WM

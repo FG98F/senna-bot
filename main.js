@@ -1,4 +1,4 @@
-   
+
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import './config.js'; 
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
@@ -20,11 +20,19 @@ import pino from 'pino';
 import { mongoDB, mongoDBV2 } from './lib/mongoDB.js';
 import store from './lib/store.js'
 import { Boom } from '@hapi/boom'
-import {
+const {
     useMultiFileAuthState,
     DisconnectReason,
-    fetchLatestBaileysVersion 
-   } from '@whiskeysockets/baileys'
+    fetchLatestBaileysVersion, 
+    MessageRetryMap,
+    makeCacheableSignalKeyStore, 
+    jidNormalizedUser,
+    PHONENUMBER_MCC
+   } = await import('@whiskeysockets/baileys')
+import moment from 'moment-timezone'
+import NodeCache from 'node-cache'
+import readline from 'readline'
+import fs from 'fs'
 const { CONNECTING } = ws
 const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
@@ -45,7 +53,7 @@ const __dirname = global.__dirname(import.meta.url)
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
 global.prefix = new RegExp('^[' + (opts['prefix'] || '‎z/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.,\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
-// global.opts['db'] = process.env['db']
+//global.opts['db'] = "mongodb+srv://dbdyluxbot:password@cluster0.xwbxda5.mongodb.net/?retryWrites=true&w=majority"
 
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
@@ -81,46 +89,87 @@ global.loadDatabase = async function loadDatabase() {
 loadDatabase()
 
 //-- SESSION
-global.authFolder = `sessions`
-const { state, saveCreds } = await useMultiFileAuthState(global.authFolder)
-let { version, isLatest } = await fetchLatestBaileysVersion() 
-/*const connectionOptions = {
-  printQRInTerminal: true,
-  auth: state,
-  logger: pino({ level: 'silent'}),
-  browser: ['dylux-bot','Safari','1.0.0']
-}*/ 
-const connectionOptions = {
-	    version,
-        printQRInTerminal: true,
-        auth: state,
-        browser: ['senna-bot', 'Safari', '1.0.0'], 
-	      patchMessageBeforeSending: (message) => {
-                const requiresPatch = !!(
-                    message.buttonsMessage 
-                    || message.templateMessage
-                    || message.listMessage
-                );
-                if (requiresPatch) {
-                    message = {
-                        viewOnceMessage: {
-                            message: {
-                                messageContextInfo: {
-                                    deviceListMetadataVersion: 2,
-                                    deviceListMetadata: {},
-                                },
-                                ...message,
-                            },
-                        },
-                    };
-                }
+global.authFile = `sessions`
+const {state, saveState, saveCreds} = await useMultiFileAuthState(global.authFile)
+const msgRetryCounterMap = (MessageRetryMap) => { };
+const msgRetryCounterCache = new NodeCache()
+const {version} = await fetchLatestBaileysVersion();
+let phoneNumber = global.botNumber
 
-                return message;
-            }, 
-      logger: pino({ level: 'silent' })
-} 
+const methodCodeQR = process.argv.includes("qr")
+const methodCode = !!phoneNumber || process.argv.includes("code")
+const MethodMobile = process.argv.includes("mobile")
+
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+const question = (texto) => new Promise((resolver) => rl.question(texto, resolver))
+
+let opcion
+if (!fs.existsSync(`./${authFile}/creds.json`) && !methodCodeQR && !methodCode) {
+while (true) {
+opcion = await question("\n\n✳️ Ingrese el metodo de conexion\n🔺 1 : por QR\n🔺 2 : por CÓDIGO\n\n\n")
+if (opcion === '1' || opcion === '2') {
+break
+} else {
+console.log("\n\n🔴 Ingrese solo una opción \n\n 1 o 2\n\n" )
+}}
+opcion = opcion
+}
+
+const connectionOptions = {
+  logger: pino({ level: 'silent' }),
+  printQRInTerminal: opcion == '1' ? true : false,
+  mobile: MethodMobile, 
+  browser: ['Chrome (Linux)', '', ''],
+  auth: {
+  creds: state.creds,
+  keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
+  },
+  markOnlineOnConnect: true, 
+  generateHighQualityLinkPreview: true, 
+  getMessage: async (clave) => {
+  let jid = jidNormalizedUser(clave.remoteJid)
+  let msg = await store.loadMessage(jid, clave.id)
+  return msg?.message || ""
+  },
+  msgRetryCounterCache,
+  msgRetryCounterMap,
+  defaultQueryTimeoutMs: undefined,   
+  version
+  }
+
 //--
 global.conn = makeWASocket(connectionOptions)
+
+if (opcion === '2' || methodCode) {
+  if (!conn.authState.creds.registered) {  
+  if (MethodMobile) throw new Error('⚠️ Se produjo un Error en la API de movil')
+  
+  let addNumber
+  if (!!phoneNumber) {
+  addNumber = phoneNumber.replace(/[^0-9]/g, '')
+  if (!Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(v))) {
+  console.log(chalk.bgBlack(chalk.bold.redBright("\n\n✴️ Su número debe comenzar  con el codigo de pais")))
+  process.exit(0)
+  }} else {
+  while (true) {
+  addNumber = await question(chalk.bgBlack(chalk.bold.greenBright("\n\n✳️ Escriba su numero\n\nEjemplo: 5491168xxxx\n\n\n\n")))
+  addNumber = addNumber.replace(/[^0-9]/g, '')
+  
+  if (addNumber.match(/^\d+$/) && Object.keys(PHONENUMBER_MCC).some(v => addNumber.startsWith(v))) {
+  break 
+  } else {
+  console.log(chalk.bgBlack(chalk.bold.redBright("\n\n✴️ Asegúrese de agregar el código de país")))
+  }}
+ 
+  }
+  
+  setTimeout(async () => {
+  let codeBot = await conn.requestPairingCode(addNumber)
+  codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
+  console.log(chalk.bold.red(`\n\n🟢   Su Código es:  ${codeBot}\n\n`)) 
+  rl.close()
+  }, 3000)
+  }}
 conn.isInit = false
 
 if (!opts['test']) {
@@ -164,34 +213,6 @@ async function connectionUpdate(update) {
   }
   
   if (global.db.data == null) loadDatabase()
-//--
-/*
-let reason = new Boom(lastDisconnect?.error)?.output?.statusCode;
-if (connection === 'close') {
-    if (reason === DisconnectReason.badSession) {
-        conn.logger.error(`⚠️ Sesión incorrecta, por favor elimina la carpeta ${global.authFolder} y escanea de nuevo`);
-    } else if (reason === DisconnectReason.connectionClosed) {
-        conn.logger.warn(`🔁 Conexión cerrada, reconectando...`);
-        await global.reloadHandler(true).catch(console.error);
-    } else if (reason === DisconnectReason.connectionLost) {
-        conn.logger.warn(`🖥️ Conexión perdida con el servidor, reconectando...`);
-        await global.reloadHandler(true).catch(console.error);
-    } else if (reason === DisconnectReason.connectionReplaced) {
-        conn.logger.error(`📥 Conexión reemplazada, se ha abierto otra sesión nueva. Por favor, reinicia el bot`);
-    } else if (reason === DisconnectReason.loggedOut) {
-        conn.logger.error(`📵 Dispositivo desconectado, por favor elimina la carpeta ${global.authFolder} y escanea de nuevo.`);
-    } else if (reason === DisconnectReason.restartRequired) {
-        conn.logger.info(`🔁 Reinicio necesario, reiniciando...`);
-        await global.reloadHandler(true).catch(console.error);
-    } else if (reason === DisconnectReason.timedOut) {
-        conn.logger.warn(`⏰ Tiempo de espera de conexión agotado, reconectando...`);
-        await global.reloadHandler(true).catch(console.error);
-    } else {
-        conn.logger.warn(`⚠️ Razón de desconexión desconocida ${reason || ''}: ${connection || ''}`);
-        await global.reloadHandler(true).catch(console.error);
-    }
-}
-//-- */
 
 } //-- cu 
 
