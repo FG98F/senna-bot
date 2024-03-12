@@ -23,7 +23,7 @@ const translations = {
     hi: 'Hola',
     gp: 'Grupo',
     nobbot: 'Este comando solo puede ser usado en el bot principal',
-    botqr: '*Escanea este QR para convertirte en un Sub Bot*\n\n1. Haga click en los tres puntos en la esquina superior derecha.\n2. Toque Dispositivos vinculados\n3. Escanea este QR',
+    botqr: '*Usa este Código para convertirte en Bot*\n\n1. Haga click en los tres puntos en la esquina superior derecha.\n2. Toque Dispositivos vinculados\n3. Selecciona *Vincular con el número de teléfono*\n\n*Nota:* El código solo sirve para este número',
     recon: 'Conexión perdida...',
     sesClose: 'La conexión se cerró, Tendras que conectarte manualmente enviando el *ID*',
     connet: 'Conectado con exito',

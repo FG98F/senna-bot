@@ -23,7 +23,7 @@ const translations = {
     hi: 'Halo',
     gp: 'Grup',
     nobbot: 'Perintah ini hanya dapat digunakan di bot utamal',
-    botqr: '*Pindai kode QR ini untuk menjadi Sub Bot*\n\n1. Klik tiga titik di kanan atas.\n2. Ketuk Tautan Terhubung\n3. Pindai kode QR ini',
+    botqr: '*Gunakan Kode Ini untuk Menjadi Bot*\n\n1. Ketuk tiga titik di sudut kanan atas.\n2. Ketuk Perangkat yang Terhubung\n3. Pilih *Hubungkan dengan Nomor Telepon*\n\n*Catatan:* Kode ini hanya berlaku untuk nomor ini',
     recon: 'Koneksi terputus...',
     sesClose: 'Koneksi ditutup, Anda harus terhubung secara manual dengan mengirimkan *ID*',
     connet: 'Terhubung berhasil',
