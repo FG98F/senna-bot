@@ -35,8 +35,11 @@ const defaultMenu = {
 👥 Usuarios : %totalreg
 🟢 Tiempo activo : %muptime
 %sbot
-▢ Descarga *FGWhatsApp*
+▢ ADD
+• https://instagram.com/fg98_ff
+
 • https://fgmods.xyz
+
 ────────────
 %readmore
   ≡ *LISTA DE MENUS*
