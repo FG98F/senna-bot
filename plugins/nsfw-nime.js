@@ -41,7 +41,7 @@ case 'xneko':
 break
 
 case 'hentai':
-    let he = pickRandom(['yuri', 'cum', 'xneko', 'blowjob', 'ass', 'pussy'])
+    let he = pickRandom(['yuri', 'cum', 'xneko', 'blowjob', 'ass', 'pussy', 'hentai-mp4'])
     let les = await conn.getFile(global.API('fgmods', `/api/nsfw-nime/${he}`, { }, 'apikey'))
     conn.sendFile(m.chat, les.data, 'img.jpg', `✅ ${mssg.random} *${command}*`, m)
    m.react(xmoji) 
