@@ -1,14 +1,25 @@
-import { webp2png } from '../lib/webp2mp4.js'
 
+import { spawn } from 'child_process'
+import { format } from 'util'
 let handler = async (m, { conn, usedPrefix, command }) => {
-    const notStickerMessage = `✳️ ${mssg.replyStick}`
-    if (!m.quoted) throw notStickerMessage
-    const q = m.quoted || m
-    let mime = q.mediaType || ''
-    if (!/sticker/.test(mime)) throw notStickerMessage
-    let media = await q.download()
-    let out = await webp2png(media).catch(_ => null) || Buffer.alloc(0)
-    await conn.sendFile(m.chat, out, 'img.png', `*✅ ${mssg.result}*`, m)
+ 
+  if (!global.support.convert && !global.support.magick && !global.support.gm) return handler.disabled = true  
+    if (!m.quoted) throw `✳️ ${mssg.replyStick}`
+    let q = m.quoted
+    if (/sticker/.test(q.mediaType)) {
+        let sticker = await q.download()
+        if (!sticker) throw sticker
+        let bufs = []
+        const [_spawnprocess, ..._spawnargs] = [...(global.support.gm ? ['gm'] : global.support.magick ? ['magick'] : []), 'convert', 'webp:-', 'png:-']
+        let im = spawn(_spawnprocess, _spawnargs)
+        im.on('error', e => m.reply(format(e)))
+        im.stdout.on('data', chunk => bufs.push(chunk))
+        im.stdin.write(sticker)
+        im.stdin.end()
+        im.on('exit', () => {
+            conn.sendFile(m.chat, Buffer.concat(bufs), 'img.png', `*✅ ${mssg.result}*`, m)
+        })
+    } else throw `✳️ ${mssg.replyStick}`
 }
 handler.help = ['toimg <sticker>']
 handler.tags = ['sticker']
