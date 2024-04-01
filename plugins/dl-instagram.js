@@ -1,4 +1,4 @@
- 
+
 import fetch from 'node-fetch'
 import fg from 'api-dylux'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     m.react(rwait)
 
    let res = await fetch(global.API('fgmods', '/api/downloader/igdl', { url: args[0] }, 'apikey'))
-   let resdl = res.json()
+   let resdl = await res.json()
     for (let data of resdl.result) {
     conn.sendFile(m.chat, data.url, 'igdl.mp4', `✅ ${mssg.result}`, m)
     m.react(done)
@@ -17,4 +17,4 @@ handler.tags = ['dl']
 handler.command = ['ig', 'igdl', 'instagram', 'igimg', 'igvid'] 
 handler.diamond = true
 
-export default handler 
+export default handler
