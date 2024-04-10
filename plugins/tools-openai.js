@@ -1,13 +1,13 @@
 
-import cheerio from 'cheerio';
 import fetch from 'node-fetch';
 let handler = async (m, { conn, text }) => {
 	
 if (!text) throw `✳️ ${mssg.notext}`;
 m.react('💬')
 
+ let syst = `Eres Senna Bot, un gran modelo de lenguaje entrenado por OpenAI. Siga cuidadosamente las instrucciones del usuario. Responde usando Markdown.`
 	try {
-		let gpt = await fetch(global.API('fgmods', '/api/info/openai2', { text }, 'apikey'));
+		let gpt = await fetch(global.API('fgmods', '/api/info/openai', { prompt: syst, text }, 'apikey'));
         let res = await gpt.json()
         await m.reply(res.result)
 	} catch {
