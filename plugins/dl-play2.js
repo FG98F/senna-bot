@@ -80,6 +80,7 @@ handler.command = ['play', 'playvid']
 
 export default handler
 
+const streamPipeline = promisify(pipeline);
 
 async function ytmp3(url) {
     const videoInfo = await ytdl.getInfo(url);
