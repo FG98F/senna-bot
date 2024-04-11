@@ -55,7 +55,7 @@ try {
   try {
 //  let q = isVideo ? '360p' : '128kbps' 
   let yt = await (isVideo ? fg.ytmp4 : ytmp3)(vid.url, q)
-  let { title, dl_url, quality, size} = yt
+  let { title, dl_url, quality, size, sizeB} = yt
   let isLimit = limit * 1024 < sizeB 
 
      await conn.loadingMsg(m.chat, '📥 Descargando', ` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completada' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
@@ -102,6 +102,7 @@ async function ytmp3(url) {
         quality: '128kbps',
         thumb: thumbnail,
         size: '0mb', 
+        sizeB: '0', 
         dl_url: audioFilePath
     };
 }
