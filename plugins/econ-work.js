@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
   m.reply(`
 ‣ ${res.fgwork} *${hasil} 🪙*
-`)
+`, null, rcanal)
   user.lastwork = new Date * 1
 }
 handler.help = ['work']
