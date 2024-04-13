@@ -9,7 +9,7 @@ m.react('💬')
 	try {
 		let gpt = await fetch(global.API('fgmods', '/api/info/openai', { prompt: syst, text }, 'apikey'));
         let res = await gpt.json()
-        await m.reply(res.result)
+        await m.reply(res.result, null, rcanal)
 	} catch {
 		m.reply(`❎ Error: intenta más tarde`);
 	}
