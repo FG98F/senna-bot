@@ -1,5 +1,5 @@
 import { watchFile, unwatchFile } from 'fs'
-import chalk from 'chalk'
+import chalk from 'chalk' 
 import { fileURLToPath } from 'url' 
 
 global.owner = [
@@ -16,7 +16,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.fgmods.xyz': 'DRLg5kY7' //--- 100 de límite diario --- Regístrese en https://api.fgmods.xyz/
+  'https://api.fgmods.xyz': 'sett' //--- dEBWvxCY 100 de límite diario --- Regístrese en https://api.fgmods.xyz/
 }
 
 // Sticker WM
@@ -32,6 +32,7 @@ global.fgpyp = 'https://paypal.me/fg98f'
 global.fglog = 'https://i.ibb.co/1zdz2j3/logo.jpgs' 
 
 //--- Grupos WA
+global.id_canal = '120363177092661333@newsletter' //-ID de canal de WhatsApp
 global.fgcanal = 'https://whatsapp.com/channel/0029VaCeuZd6mYPQiWqxXj1F'
 global.bgp = 'https://chat.whatsapp.com/BESBo5xjvIZE4YVvth6Yzr'
 global.bgp2 = 'https://chat.whatsapp.com/I7bvd8XCAOUHjgkHteqFC7'
