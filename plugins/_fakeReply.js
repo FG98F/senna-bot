@@ -46,6 +46,18 @@ export async function before(m, { conn }) {
       }
     }
   }
+  
+    // Forwarded
+  global.fwc = {
+    contextInfo: {
+    	isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: id_canal,
+      serverMessageId: 100,
+      newsletterName: nam,
+    }
+    }
+  }
 
   // Respuesta con enlace de PayPal
   global.rpyp = {
