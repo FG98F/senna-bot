@@ -9,7 +9,7 @@ let handler = async (m, {conn, text }) => {
 ▢ *${res.artist}*
 
 ▢ ${res.lyrics}`;
-    conn.sendFile(m.chat, res.thumb, 'img.png', mes, m);
+    conn.sendFile(m.chat, res.image, 'img.png', mes, m);
 } catch (e) {
 	m.react(error)
 } 
