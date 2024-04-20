@@ -139,6 +139,8 @@ export async function handler(chatUpdate) {
                     chat.viewonce = false
                 if (!('captcha' in chat))
                     chat.captcha = false
+                if (!('antiBotClone' in chat))
+                    chat.antiBotClone = false
                 if (!('nsfw' in chat))
                     chat.nsfw = false
                 if (!isNumber(chat.expired))
@@ -159,6 +161,7 @@ export async function handler(chatUpdate) {
                     viewonce: false,
                     useDocument: true,
                     captcha: false,
+                    antiBotClone: false,
                     nsfw: false, 
                     expired: 0,
                     rules: '',
@@ -186,8 +189,8 @@ export async function handler(chatUpdate) {
         if (opts['nyimak'])  return
         if (!m.fromMe && opts['self'])  return
         if (settings.solopv && m.chat.endsWith('g.us')) return  
-        //if (settings.sologp && !m.chat.endsWith('g.us')) return
-        if (settings.sologp && !m.chat.endsWith('g.us') && !/jadibot|bebot|getcode|serbot|bots|stop|support|donate|off|on|s|tiktok|code|newcode|join/gim.test(m.text)) return 
+        if (settings.sologp && !m.chat.endsWith('g.us')) return
+        //if (settings.sologp && !m.chat.endsWith('g.us') && !/jadibot|bebot|getcode|serbot|bots|stop|support|donate|off|on|s|tiktok|code|newcode|join/gim.test(m.text)) return 
         if (opts['swonly'] && m.chat !== 'status@broadcast')  return
         if (typeof m.text !== 'string')
             m.text = ''
@@ -516,7 +519,7 @@ export async function participantsUpdate({ id, participants, action }) {
                                 groupicon: ppgp,
                                 membercount: groupMetadata.participants.length,
                                 profile: pp,
-                                background: 'https://i.ibb.co/74Y8XpS/akali.jpg'
+                                background: 'https://i.ibb.co/fkFmQC2/eve.jpg'
                             }, 'apikey')
 
                             let lea = API('fgmods', '/api/goodbye2', {
@@ -525,7 +528,7 @@ export async function participantsUpdate({ id, participants, action }) {
                                 groupicon: ppgp,
                                 membercount: groupMetadata.participants.length,
                                 profile: pp,
-                                background: 'https://i.ibb.co/Lkg2TnN/gwe.jpg'
+                                background: 'https://i.ibb.co/jh9367t/akali.jpg'
                             }, 'apikey')
 
                             this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
