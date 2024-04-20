@@ -86,6 +86,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.captcha = isEnable
       break
+      case 'antibotclone':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiBotClone = isEnable
+      break
       
       case 'nsfw':
       case '+18':
@@ -164,6 +173,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ▢ chatbot 
 └─────────────
 ┌─⊷ *OWNER*
+▢ antibotclone
 ▢ public
 ▢ solopv
 ▢ sologp
