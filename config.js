@@ -25,7 +25,7 @@ global.author = '@fg98'
 
 //--info FG
 global.botName = 'Senna'
-global.fgig = 'https://www.instagram.com/fg98_ff' 
+global.fgig = 'https://instagram.com/fg98_ff' 
 global.fgsc = 'https://github.com/FG98F/dylux-fg' 
 global.fgyt = 'https://youtube.com/fg98f'
 global.fgpyp = 'https://paypal.me/fg98f'
