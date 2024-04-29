@@ -1,6 +1,6 @@
-
+ 
 import fetch from "node-fetch"
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, args, usedPrefix, command }) => {
     
         let username = [
     'c.sol_',
@@ -21,13 +21,15 @@ let handler = async (m, { conn, args }) => {
   try { 
   	let res = await fetch(global.API('fgmods', '/api/img/asupan-tt', { username: query }, 'apikey'))
      let video = await res.json()
-     conn.sendFile(m.chat, video.result, 'vid.mp4', `✅ ${mssg.result}`, m) 
+     //conn.sendFile(m.chat, video.result, 'vid.mp4', `✅ ${mssg.result}`, m) 
+     conn.sendButton2(m.chat,`✅ ${mssg.result}`, mssg.ig, video.result, [['SIGUIENTE', `${usedPrefix + command}`]], null, null, m) 
      m.react(dmoji)
      
   	 } catch (error) {
      let img = await conn.getFile(global.API('fgmods', '/api/img/asupan-la', { }, 'apikey'))
     let asupan = img.data
-    conn.sendFile(m.chat, asupan, 'vid.mp4', `✅ ${mssg.result}`, m)
+    //conn.sendFile(m.chat, asupan, 'vid.mp4', `✅ ${mssg.result}`, m)
+    conn.sendButton2(m.chat,`✅ ${mssg.result}`, mssg.ig, asupan, [['SIGUIENTE', `${usedPrefix + command}`]], null, null, m)
     m.react('🤓')
   }
 
