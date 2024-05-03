@@ -34,7 +34,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
  
   await conn.loadingMsg(m.chat, '📥 Descargando', ` ${isLimit ? `≡  *FG YTDL 2*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completada' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
 	  
-if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp3', `
+if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
  ≡  *FG YTDL 2*
   
 ▢ *📌${mssg.title}* : ${title}
