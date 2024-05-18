@@ -1,6 +1,7 @@
 
 import yts from 'yt-search'
 let handler = async (m, {conn, text }) => {
+m.react('📽️');	
   if (!text) throw `✳️ ${mssg.search('YouTube')}`
   let results = await yts(text)
 	let tes = results.videos
