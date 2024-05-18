@@ -1,50 +1,46 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+handler = async (m, { conn, args, usedPrefix, command }) => {
   conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
         interactiveMessage: {
           header: {
-            title:  '*قـائـمـة الـاوامــر*' 
+            title: '*قـائـمـة الـاوامــر*',
+            image: {
+              url: 'https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg',
+              caption: 'Imagen de ejemplo'
+            }
           },
           body: {
-            text:  '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة' 
+            text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
           },
           nativeFlowMessage: {
             buttons: [
               {
-                name:  'single_select',
+                name: 'single_select',
                 buttonParamsJson: JSON.stringify({
-                  title:  'اضغط هنا' ,
+                  title: 'اضغط هنا',
                   sections: [
                     {
-                      title:  '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕' ,
-                      highlight_label:  '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊' ,
+                      title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
+                      highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
                       rows: [
                         {
-                          header:  'معلومات البوت' ,
-                          title:  '.المطور' ,
-                          description: ''  ,
-                          id:  '/info' ,
-                          image: {
-                            url: ' https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg'
-                            caption:  Image caption 
-                          }
+                          header: 'معلومات البوت',
+                          title: '.المطور',
+                          description: '',
+                          id: '/info'
                         },
                         {
-                          header:  'قسم الاوامر' ,
-                          title:  '.الاوامر' ,
-                          description: ''  ,
-                          id:  '/menu' ,
-                          image: {
-                            url:  'https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg' 
-                            caption:  Image caption 2 
-                          }
+                          header: 'قسم الاوامر',
+                          title: '.الاوامر',
+                          description: '',
+                          id: '/menu'
                         }
                       ]
                     }
                   ]
                 }),
-                messageParamsJson:  '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕', 
+                messageParamsJson: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕'
               }
             ]
           }
@@ -54,8 +50,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }, {})
 }
 
-handler.help = [ 'info' ]
-handler.tags = [ 'main' ]
-handler.command = [ 'المهام' ]
-
+handler.help = ['info']
+handler.tags = ['main']
+handler.command = ['المهام']
 export default handler
