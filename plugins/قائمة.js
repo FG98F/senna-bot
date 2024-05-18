@@ -4,9 +4,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       message: {
         interactiveMessage: {
           header: {
-            title: '*قـائـمـة الـاوامــر*',
+            title: '*قـائـمـة الاوامــر*',
             image: {
-              url: 'https://github.com/Master15921/senna-bot/blob/main/src/fg_logo.jpg',
+              url: './src/fg_logo.jpg',
               caption: 'Imagen de ejemplo'
             }
           },
