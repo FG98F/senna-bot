@@ -56,7 +56,6 @@ let infobt = `
   • t.me/MR_X61
 ▢ واتساب : 
   • https://wa.me/967733772709`
-  َ
   
   
 
