@@ -45,18 +45,19 @@ let infobt = `
 ≡ *معلومات البوت💻*
   
 *ESTADO*
-▢ ${mssg.gp}s: *${groupsIn.length}*
-▢ دردشات: *${chats.length - groupsIn.length}*
+▢ عدد الجروبات: *${groupsIn.length}*
+▢ عدد الدردشات: *${chats.length - groupsIn.length}*
 ▢ اجمالي الدردشات: *${chats.length}*
 
 *≡ المطور👑*
   *𝑴𝒓 𝑯𝒂𝒎𝒛𝒂*
-▢ Instagram :
+▢ إنستغرام :
   • ${fgig}
-▢ Telegram : 
+▢ تيليجرام : 
   • t.me/MR_X61
-▢ WhatsApp : 
+▢ واتساب : 
   • https://wa.me/967733772709`
+  
   
 
 /*conn.sendButton(m.chat, infobt, mssg.ig, null, [
