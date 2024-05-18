@@ -10,8 +10,8 @@ let handler = async (m, { conn }) => {
           m.reply(`🟢 *${mssg.ping}* : ${latensi.toFixed(4)} _ms_`);
             });
 }
-handler.help = ['ping']
+handler.help = ['سرعه']
 handler.tags = ['main']
-handler.command = ['ping', 'speed']
+handler.command = ['سرعه', 'ping']
 
 export default handler
