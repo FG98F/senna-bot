@@ -22,16 +22,16 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
   let play = `
 	≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
 ┌──────────────
-▢ 📌 *${mssg.title}:* ${vid.title}
-▢ 📆 *${mssg.aploud}:* ${vid.ago}
-▢ ⌚ *${mssg.duration}:* ${vid.timestamp}
-▢ 👀 *${mssg.views}:* ${vid.views.toLocaleString()}
+▢ 📌 *العنوان:* ${vid.title}
+▢ 📆 *$تم التحميل:* ${vid.ago}
+▢ ⌚ *$المدة:* ${vid.timestamp}
+▢ 👀 *$المشاهدات:* ${vid.views.toLocaleString()}
 └──────────────
 
 _Enviando..._` 
 conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null, rcanal)
   
-  let q = isVideo ? '360p' : '128kbps' 
+  let q = isVideo ? '480p' : '128kbps' 
 try {
 	
  // let api = await fetch(global.API('fgmods', `/api/downloader/${isVideo ? "ytv" : "yta"}`, { url: vid.url, quality: q}, 'apikey'))
@@ -62,9 +62,9 @@ try {
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /2$/.test(command)), `
  ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   
-*📌${mssg.title}* : ${title}
-*🎞️${mssg.quality}* : ${quality}
-*⚖️${mssg.size}* : ${size}
+*📌$العنوان* : ${title}
+*🎞️$الدقة* : ${quality}
+*⚖️$الحجم* : ${size}
 `.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
 		m.react(done) 
 		
@@ -74,9 +74,9 @@ try {
 }
 
 }
-handler.help = ['play']
+handler.help = ['شغل']
 handler.tags = ['dl']
-handler.command = ['play', 'playvid']
+handler.command = ['play', 'playvid','شغل']
 handler.disabled = true
 
 export default handler
