@@ -22,6 +22,6 @@ try {
 handler.help = ['انستا <رابط الفيديو>']
 handler.tags = ['dl']
 handler.command = ['ig', 'igdl', 'instagram', 'igimg', 'igvid', 'انستا', 'إنستا', 'إنستجرام']
-handler.diamond = true
+handler.diamond = false
 
 export default handler
