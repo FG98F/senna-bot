@@ -29,23 +29,19 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-◈ ━━━━━ *Senna  ┃ ᴮᴼᵀ* ━━━━━ ◈
+◈ ━━━━━ *𝑴𝒊𝒓𝒛𝒂  ┃ ᴮᴼᵀ* ━━━━━ ◈
  
-👋🏻 Hola! *%name*
-👥 Usuarios : %totalreg
-🟢 Tiempo activo : %muptime
+👋🏻 مرحباً! *%name*
+👥 عدد المستخدمين : %totalreg
+🟢 وقت النشاط : %muptime
 %sbot
-▢ ADD
-• https://instagram.com/fg98_ff
-
-• https://fgmods.xyz
+▢ insta :
+• https://instagram.com/rnj_.6
 
 ────────────
 %readmore
-  ≡ *LISTA DE MENUS*
+  ≡ *قائمة الأوامر*
 
-Ⓟ = Premium
-ⓓ = Diamantes
 `.trimStart(),
   header: '┌─⊷ *%category*',
   body: '▢ %cmd %isdiamond %isPremium',
@@ -169,7 +165,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 }
 //handler.help = ['help']
 //handler.tags = ['main']
-handler.command = ['menu', 'help', 'menú'] 
+handler.command = ['الاوامر', 'اوامر', 'menu'] 
 handler.register = false
 
 export default handler
