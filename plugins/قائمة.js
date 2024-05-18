@@ -1,4 +1,4 @@
-handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args, usedPrefix, command }) => {
   conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
@@ -52,5 +52,5 @@ handler = async (m, { conn, args, usedPrefix, command }) => {
 
 handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['المهام']
+handler.command = ['قائمة']
 export default handler
