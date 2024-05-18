@@ -17,7 +17,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                     title: 'دوس هنا ',
                     sections: [
                       {
-                        title: 'أقسام البوت',
+                        title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
                         highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
                         rows: [
                           {
