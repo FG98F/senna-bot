@@ -17,12 +17,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                     title: 'دوس هنا ',
                     sections: [
                       {
-                        title: 'قوائم البوت',
-                        highlight_label: 'اختار',
+                        title: 'أقسام البوت',
+                        highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
                         rows: [
                           {
-                            header: 'المعلومات',
-                            title: '.معلوماتي',
+                            header: 'معلومات البوت',
+                            title: '.المطور',
                             description: '',
                             id: '/info'
                           },
