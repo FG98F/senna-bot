@@ -1,4 +1,5 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
+ let pp =  ./src/fg_logo.jpg 
   conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
@@ -49,8 +50,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }
   }, {})
 }
-
-let pp =  ./src/fg_logo.jpg 
+ 
 
 handler.help = ['info']
 handler.tags = ['main']
