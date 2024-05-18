@@ -28,7 +28,7 @@ const defaultMenu = {
 👥 عدد المستخدمين : %totalreg
 🟢 وقت النشاط : %muptime
 %sbot
-▢ insta :
+▢ إنستغرام :
 • https://instagram.com/rnj_.6
 
 ────────────
@@ -158,7 +158,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 }
 //handler.help = ['help']
 //handler.tags = ['main']
-handler.command = ['الاوامر', 'اوامر', 'menu'] 
+handler.command = ['الاوامر', 'اوامر', 'menu', 'أوامر', 'قائمة', 'المهام'] 
 handler.register = false
 
 export default handler
