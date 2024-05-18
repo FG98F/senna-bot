@@ -19,9 +19,9 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
  ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   
-*📌${mssg.title}:* ${العنوان}
-*🎞️${mssg.quality}:* ${الدقة}
-*⚖️${mssg.size}:* ${الحجم}
+*📌${mssg.title}:* ${title}
+*🎞️${mssg.quality}:* ${quality}
+*⚖️${mssg.size}:* ${size}
 `.trim(), m, false, { asDocument: chat.useDocument })
 		m.react(done) 
  	} catch {
@@ -37,9 +37,9 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
  ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   
-▢ *📌${mssg.title}* : ${العنوان}
-*🎞️${mssg.quality}:* ${الدقة}
-▢ *⚖️${mssg.size}* : ${الحجم}
+▢ *📌${mssg.title}* : ${title}
+*🎞️${mssg.quality}:* ${quality}
+▢ *⚖️${mssg.size}* : ${size}
 `.trim(), m, false, { asDocument: chat.useDocument })
 		m.react(done)
 		
