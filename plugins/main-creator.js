@@ -7,6 +7,6 @@ function handler(m) {
 
 handler.help = ['المطور']
 handler.tags = ['main']
-handler.command = ['owner', 'creator', 'المطور'] 
+handler.command = ['owner', 'creator', 'المطور', 'مطور'] 
 
 export default handler
