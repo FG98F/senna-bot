@@ -145,7 +145,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       conn.sendButton2(m.chat, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp, [
       ['ꨄ︎ Apoyar', `${_p}donate`],
       ['⏍ معلومات البوت', `${_p}botinfo`],
-      ['⌬ قناة البوت', `${_p}{fgcanal}`]
+      ['⌬ قناة البوت', `${_p}fgcanal`]
     ], m, rpl)
     conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m, null, rcanal)
   
