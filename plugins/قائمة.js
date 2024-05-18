@@ -26,7 +26,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                           description: ''  ,
                           id:  '/info' ,
                           image: {
-                            url:  https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg' ,
+                            url: ' https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg ,
                             caption:  Image caption 
                           }
                         },
@@ -36,7 +36,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                           description: ''  ,
                           id:  '/menu' ,
                           image: {
-                            url:  https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg' ,
+                            url:  'https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg' 
                             caption:  Image caption 2 
                           }
                         }
