@@ -10,7 +10,7 @@ import fetch from 'node-fetch'
 let limit = 320
 let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
   
-    if (!text) throw `✳️ ${mssg.example} *${usedPrefix + command}* Lil Peep hate my life`
+    if (!text) throw `✳️ مثال *${usedPrefix + command}* الشيء الذي تريد تشغيله`
   let chat = global.db.data.chats[m.chat]
   let res = await yts(text)
   //let vid = res.all.find(video => video.seconds < 3600)
@@ -23,9 +23,9 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 	≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
 ┌──────────────
 ▢ 📌 *العنوان:* ${vid.title}
-▢ 📆 *$تم التحميل:* ${vid.ago}
-▢ ⌚ *$المدة:* ${vid.timestamp}
-▢ 👀 *$المشاهدات:* ${vid.views.toLocaleString()}
+▢ 📆 *تم التحميل:* ${vid.ago}
+▢ ⌚ *المدة:* ${vid.timestamp}
+▢ 👀 *المشاهدات:* ${vid.views.toLocaleString()}
 └──────────────
 
 _Enviando..._` 
@@ -41,7 +41,7 @@ try {
   let { title, dl_url, quality, size, sizeB } = yt
   let isLimit = limit * 1024 < sizeB 
 
-     await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ اكتمل التنزيل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
+     await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️الحجم*: ${size}\n▢ *🎞️الدقة*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ اكتمل التنزيل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
      
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `
  ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
@@ -58,13 +58,13 @@ try {
   let { title, dl_url, quality, size, sizeB} = yt
   let isLimit = limit * 1024 < sizeB 
 
-     await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ اكتمل التنزيل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
+     await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️الحجم*: ${size}\n▢ *🎞️الدقة*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ اكتمل التنزيل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /2$/.test(command)), `
  ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   
-*📌$العنوان* : ${title}
-*🎞️$الدقة* : ${quality}
-*⚖️$الحجم* : ${size}
+*📌العنوان* : ${title}
+*🎞️الدقة* : ${quality}
+*⚖️الحجم* : ${size}
 `.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
 		m.react(done) 
 		
