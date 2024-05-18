@@ -1,9 +1,4 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
- let pp =  ./src/fg_logo.jpg 
-   conn.sendFile(m.chat, pp,  fg_logo.jpg , text.trim(), m, null, rcanal)
-  
-    m.react( 📚 ) 
-    
     conn.relayMessage(m.chat, {
       viewOnceMessage: {
         message: {
