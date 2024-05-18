@@ -19,7 +19,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                     {
                       title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
                       highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
-                      image_url: 'https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg', // Agrega la ruta de la imagen aquí
+                      image_url: './src/fg_logo.jpg ', // Agrega la ruta de la imagen aquí
                       rows: [
                         {
                           header: 'معلومات البوت',
