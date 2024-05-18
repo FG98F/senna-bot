@@ -4,7 +4,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       message: {
         interactiveMessage: {
           header: {
-            title: '*قـائـمـة الـاوامــر*'
+            title: '*قـائـمـة الـاوامــر*',
+            thumbnail: { // Add the thumbnail image
+              url: 'https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg',
+              width: 300,
+              height: 300
+            }
           },
           body: {
             text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
@@ -19,25 +24,24 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                     {
                       title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
                       highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
-                      image_url: './src/fg_logo.jpg ', // Agrega la ruta de la imagen aquí
                       rows: [
                         {
                           header: 'معلومات البوت',
                           title: '.المطور',
-                          description: '' ,
-                          id: '.'
+                          description: '',
+                          id: '/info'
                         },
                         {
                           header: 'قسم الاوامر',
                           title: '.الاوامر',
-                          description: '' ,
-                          id: '.'
+                          description: '',
+                          id: '/menu'
                         }
                       ]
                     }
                   ]
                 }),
-                messageParamsJson: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
+                messageParamsJson: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕'
               }
             ]
           }
@@ -47,7 +51,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }, {})
 }
 
-handler.help = [ 'info' ]
-handler.tags = [ 'main' ]
-handler.command = [ 'المهام' ]
+handler.help = ['info']
+handler.tags = ['main']
+handler.command = ['المهام']
 export default handler
