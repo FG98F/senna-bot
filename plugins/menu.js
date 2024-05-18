@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async (message) => {
-    if (message.body === '!menu') {
+    if (message.body === '!المهام') {
         let buttons = [
             {
                 body: 'معلومات البوت'
@@ -31,3 +31,9 @@ client.on('message', async (message) => {
 });
 
 client.initialize();
+
+handler.help = [  'info' ]
+handler.tags = [  'main'  ]
+handler.command = [  'المهام'  ]
+
+export default handler
