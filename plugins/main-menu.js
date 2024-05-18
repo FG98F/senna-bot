@@ -10,7 +10,7 @@ let tags = {
   'game': 'JUEGOS',
   'econ': 'NIVEL & ECONOMIA',
   'rg': 'REGISTRO',
-  'sticker': 'STICKER',
+  'sticker': 'قسم الملصقات',
   'img': 'IMAGEN',
   'maker': 'MAKER',
   'prem': 'PREMIUM',
