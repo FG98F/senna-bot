@@ -19,9 +19,9 @@ try {
     }
     
 }
-handler.help = ['instagram <link ig>']
+handler.help = ['انستا <رابط الفيديو>']
 handler.tags = ['dl']
-handler.command = ['ig', 'igdl', 'instagram', 'igimg', 'igvid']
+handler.command = ['ig', 'igdl', 'instagram', 'igimg', 'igvid', 'انستا', 'إنستا', 'إنستجرام']
 handler.diamond = true
 
 export default handler
