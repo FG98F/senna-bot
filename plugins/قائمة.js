@@ -1,5 +1,4 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
- let pp =  ./src/fg_logo.jpg 
+let handler = async (m, { conn, args, usedPrefix, command }) => { 
   conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
@@ -20,7 +19,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({
                   title: 'اضغط هنا',
-                  sections: [
+                  sections: ['./src/fg_logo.jpg'
                     {
                       title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
                       highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
