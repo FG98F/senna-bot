@@ -14,7 +14,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 {
                   name: 'single_select',
                   buttonParamsJson: JSON.stringify({
-                    title: 'دوس هنا ',
+                    title: 'اضغط هنا ',
                     sections: [
                       {
                         title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
@@ -36,7 +36,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                       }
                     ]
                   }),
-                  messageParamsJson: ''
+                  messageParamsJson: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕'
                 }
               ]
             }
