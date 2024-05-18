@@ -12,17 +12,17 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   let play = `
 	≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
 ┌──────────────
-▢ 📌 *${mssg.title}:* ${vid.title}
-▢ 📆 *${mssg.aploud}:* ${vid.ago}
-▢ ⌚ *${mssg.duration}:* ${vid.timestamp}
-▢ 👀 *${mssg.views}:* ${vid.views.toLocaleString()}
+▢ 📌 *العنوان:* ${vid.title}
+▢ 📆 *تم التحميل:* ${vid.ago}
+▢ ⌚ *المدة:* ${vid.timestamp}
+▢ 👀 *المشاهدات:* ${vid.views.toLocaleString()}
 └──────────────`
  await conn.sendButton2(m.chat, play, mssg.ig, thumbnail, [
     ['🎶 صوت', `${usedPrefix}fgmp3 ${url}`],
     ['🎥 فيديو', `${usedPrefix}fgmp4 ${url}`]
   ], null, [['قناة البوت', `${fgcanal}`]], m)
 }
-handler.help = ['play']
+handler.help = ['شغل']
 handler.tags = ['dl']
 handler.command = ['play', 'playvid', 'شغل']
 handler.disabled = false
