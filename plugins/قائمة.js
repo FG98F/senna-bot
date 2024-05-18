@@ -1,44 +1,43 @@
-```javascript
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
         interactiveMessage: {
           header: {
-            title: *قـائـمـة الـاوامــر*
+            title: '*قـائـمـة الـاوامــر*'
           },
           body: {
-            text: 🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة
+            text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
           },
           nativeFlowMessage: {
             buttons: [
               {
-                name: single_select,
+                name: 'single_select',
                 buttonParamsJson: JSON.stringify({
-                  title: اضغط هنا,
+                  title: 'اضغط هنا',
                   sections: [
                     {
-                      title: 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕,
-                      highlight_label: 𝙼𝚛 𝙷𝚊𝚖𝚣𝚊,
+                      title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
+                      highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
                       image_url: './src/fg_logo.jpg', // Agrega la ruta de la imagen aquí
                       rows: [
                         {
-                          header: معلومات البوت,
-                          title: .المطور,
+                          header: 'معلومات البوت',
+                          title: '.المطور',
                           description:  ,
-                          id: /info
+                          id: '.'
                         },
                         {
-                          header: قسم الاوامر,
-                          title: .الاوامر,
+                          header: 'قسم الاوامر',
+                          title: '.الاوامر',
                           description:  ,
-                          id: /menu
+                          id: '.'
                         }
                       ]
                     }
                   ]
                 }),
-                messageParamsJson: 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕
+                messageParamsJson: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
               }
             ]
           }
@@ -52,4 +51,3 @@ handler.help = [ info ]
 handler.tags = [ main ]
 handler.command = [ المهام ]
 export default handler
-```
