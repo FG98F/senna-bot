@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
             title: '*قـائـمـة الاوامــر*',
             image: {
               url: './src/fg_logo.jpg',
-              caption: 'Imagen de ejemplo'
+              caption: './src/fg_logo.jpg'
             }
           },
           body: {
@@ -19,7 +19,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 name: 'single_select',
                 buttonParamsJson: JSON.stringify({
                   title: 'اضغط هنا',
-                  sections: ['./src/fg_logo.jpg'
+                  sections: [
                     {
                       title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
                       highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
