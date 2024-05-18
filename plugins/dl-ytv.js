@@ -19,9 +19,9 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
  ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   
-*📌${mssg.title}:* ${title}
-*🎞️${mssg.quality}:* ${quality}
-*⚖️${mssg.size}:* ${size}
+*📌العنوان:* ${title}
+*🎞️الدقة:* ${quality}
+*⚖️الحجم:* ${size}
 `.trim(), m, false, { asDocument: chat.useDocument })
 		m.react(done) 
  	} catch {
@@ -32,14 +32,14 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
   
   let isLimit = limit * 1024 < sizeB 
  
-  await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ تم التحميل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
+  await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️الحجم*: ${size}\n▢ *🎞️الدقة*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ تم التحميل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
 	  
 if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp4', `
  ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   
-▢ *📌${mssg.title}* : ${title}
-*🎞️${mssg.quality}:* ${quality}
-▢ *⚖️${mssg.size}* : ${size}
+▢ *📌العنوان* : ${title}
+*🎞️الدقة:* ${quality}
+▢ *⚖️الحجم* : ${size}
 `.trim(), m, false, { asDocument: chat.useDocument })
 		m.react(done)
 		
