@@ -5,27 +5,20 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 //import { plugins } from '../lib/plugins.js'
 let tags = {
-  'main': 'ACERCA DE',
-  'bebot': 'SUB BOTS',
-  'game': 'JUEGOS',
-  'econ': 'NIVEL & ECONOMIA',
-  'rg': 'REGISTRO',
-  'sticker': 'قسم الملصقات',
-  'img': 'IMAGEN',
-  'maker': 'MAKER',
-  'prem': 'PREMIUM',
-  'group': 'GRUPO',
-  'nable': 'EN/DISABLE OPCIONES', 
-  'nime': 'ANIME',
-  'rnime': 'ANIME REACCION',
-  'dl': 'DESCARGAS',
-  'tools': 'TOOLS',
-  'fun': 'FUN',
-  'cmd': 'DATABASE',
-  'nsfw': 'NSFW +18',
-  'ansfw': 'NSFW ANIME', 
-  'owner': 'OWNER', 
-  'advanced': 'AVANZADO',
+  'main': 'معلومات البوت💻',
+  'game': 'قسم الألعاب🎮',
+  'econ': 'قسم البنك🏦',
+  'rg': 'قسم التسجيل📋',
+  'sticker': 'قسم الملصقات🧩',
+  'img': 'قسم الصور🌌',
+  'maker': 'توليد الصور📮',
+  'group': 'قسم الجروب👥', 
+  'nime': 'قسم الإنمي🪅',
+  'rnime': 'منشن انمي🎯',
+  'dl': 'قسم التنزيلات📲',
+  'tools': 'قسم الادوات🛠️',
+  'fun': 'قسم الترفيه🪄', 
+  'owner': 'قسم المطور👑', 
 }
 const defaultMenu = {
   before: `
