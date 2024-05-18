@@ -55,7 +55,7 @@ if(!isLimit) await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype:
 
 }
 handler.help = ['mediafire <url>']
-handler.tags = ['dl', 'prem']
+handler.tags = ['dl']
 handler.command = ['mediafire', 'mfire'] 
 handler.diamond = true
 handler.premium = false
