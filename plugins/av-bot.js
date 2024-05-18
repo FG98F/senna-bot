@@ -12,7 +12,7 @@ conn.sendButton(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, n
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 } 
 
-handler.customPrefix = /^(bot|senna)$/i
+handler.customPrefix = /^(memu)$/i
 handler.command = [ 'memu' , 'قائمة' ]
 
 export default handler
