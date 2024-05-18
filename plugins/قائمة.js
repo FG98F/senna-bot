@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           header: {
             title: '*قـائـمـة الـاوامــر*',
             image: {
-              url: 'https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg',
+              url: 'https://github.com/Master15921/senna-bot/blob/main/src/fg_logo.jpg',
               caption: 'Imagen de ejemplo'
             }
           },
