@@ -10,12 +10,12 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 	//const url = 'https://www.youtube.com/watch?v=' + videoId
 	m.react('🎧') 
   let play = `
-	≡ *FG MUSIC*
+	≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
 ┌──────────────
-▢ 📌 *${mssg.title}:* ${vid.title}
-▢ 📆 *${mssg.aploud}:* ${vid.ago}
-▢ ⌚ *${mssg.duration}:* ${vid.timestamp}
-▢ 👀 *${mssg.views}:* ${vid.views.toLocaleString()}
+▢ 📌 *${mssg.العنوان}:* ${vid.title}
+▢ 📆 *${mssg.تم التحميل}:* ${vid.ago}
+▢ ⌚ *${mssg.المدة}:* ${vid.timestamp}
+▢ 👀 *${mssg.المشاهدات}:* ${vid.views.toLocaleString()}
 └──────────────`
  await conn.sendButton2(m.chat, play, mssg.ig, thumbnail, [
     ['🎶 MP3', `${usedPrefix}fgmp3 ${url}`],
@@ -24,7 +24,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 }
 handler.help = ['play']
 handler.tags = ['dl']
-handler.command = ['play', 'playvid']
+handler.command = ['play', 'playvid', 'شغل']
 handler.disabled = false
 
 export default handler
