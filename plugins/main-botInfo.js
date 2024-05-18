@@ -56,7 +56,7 @@ let infobt = `
 ▢ Telegram : 
   • t.me/MR_X61
 ▢ WhatsApp : 
-  • https://wa.me/967733772709 
+  • https://wa.me/967733772709`
   
 
 /*conn.sendButton(m.chat, infobt, mssg.ig, null, [
@@ -66,8 +66,8 @@ let infobt = `
  m.reply(infobt)
 
 }
-handler.help = ['info']
+handler.help = ['معلومات']
 handler.tags = ['main']
-handler.command = ['info', 'infobot', 'botinfo']
+handler.command = ['info', 'infobot', 'botinfo', 'معلومات']
 
 export default handler
