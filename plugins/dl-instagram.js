@@ -10,7 +10,7 @@ try {
     let data = await res.json()
 
     for (let item of data.result) {
-        conn.sendFile(m.chat, item.url, 'igdl.jpg', `✅ ${mssg.result}`, m)
+        conn.sendFile(m.chat, item.url, 'igdl.jpg', `✅ تم التحميل`, m)
     }
   
   
