@@ -20,7 +20,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
   m.react('🎧') 
   
   let play = `
-	≡ *FG MUSIC*
+	≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
 ┌──────────────
 ▢ 📌 *${mssg.title}:* ${vid.title}
 ▢ 📆 *${mssg.aploud}:* ${vid.ago}
@@ -41,14 +41,14 @@ try {
   let { title, dl_url, quality, size, sizeB } = yt
   let isLimit = limit * 1024 < sizeB 
 
-     await conn.loadingMsg(m.chat, '📥 Descargando', ` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completada' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
+     await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ اكتمل التنزيل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
      
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `
- ≡  *FG YTDL*
+ ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   
-▢ *📌Título* : ${title}
-▢ *🎞️Calidad* : ${quality}
-▢ *⚖️Peso* : ${size}
+▢ *📌العنوان* : ${title}
+▢ *🎞️الجودة* : ${quality}
+▢ *⚖️الحجم* : ${size}
 `.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
 		m.react(done) 
   } catch {
@@ -58,9 +58,9 @@ try {
   let { title, dl_url, quality, size, sizeB} = yt
   let isLimit = limit * 1024 < sizeB 
 
-     await conn.loadingMsg(m.chat, '📥 Descargando', ` ${isLimit ? `≡  *FG YTDL*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ Descarga Completada' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
+     await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ اكتمل التنزيل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
 	  if(!isLimit) conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /2$/.test(command)), `
- ≡  *FG YTDL 2*
+ ≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   
 *📌${mssg.title}* : ${title}
 *🎞️${mssg.quality}* : ${quality}
