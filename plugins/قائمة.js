@@ -49,14 +49,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }
   }, {})
 }
-  
-let pp =  ./src/fg_logo.jpg 
-  /*conn.sendButton(m.chat, m2, mssg.ig, pp, [
-      [ ⏍ Info , `${usedPrefix}botinfo`],
-      [ ⌬ Grupos , `${usedPrefix}gpdylux`]
-    ],m, rpyt)*/
-    conn.sendFile(m.chat, pp,  fg_logo.jpg , m2, m, null, rpl)
 
+let pp =  ./src/fg_logo.jpg 
 
 handler.help = ['info']
 handler.tags = ['main']
