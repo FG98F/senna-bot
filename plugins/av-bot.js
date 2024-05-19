@@ -13,7 +13,7 @@ conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', pt
 } 
 
 handler.customPrefix = /^(bot|senna)$/i
-handler.command = new RegExp
+handler.command = ['list'] RegExp
 
 export default handler
 
