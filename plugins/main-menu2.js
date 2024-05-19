@@ -20,8 +20,8 @@ let m2 = `
 
 }
 
-//handler.help = ['menu2']
-//handler.tags = ['main']
+handler.help = ['menu2']
+handler.tags = ['main']
 handler.command = ['menu2','اوامر'] 
 
 export default handler
