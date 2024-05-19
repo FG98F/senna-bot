@@ -1,6 +1,7 @@
 
 let handler = async function (m, { conn, text, usedPrefix }) {
-  
+ const defaultMenu = {
+  before: 
 let m2 = `
 ◈ ━━━━ *𝑴𝒊𝒓𝒛𝒂  ┃ ᴮᴼᵀ* ━━━━ ◈ *${usedPrefix}*
 ┌─⊷ *𝑴𝒊𝒓𝒛𝒂* 
