@@ -2,16 +2,14 @@
 let handler = async (m, { conn}) => {
 
 let name = conn.getName(m.sender)
-let av = `./src/fg_logo.jpg`  
-let pp = `./src/fg_logo.jpg` 
-      
-      conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
+let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`
+
+  conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
       ['⦙☰ Menu', '/menu'],
       ['⦙☰ Menu 2', '/menu2'],
       [`⌬ ${mssg.gp}s`, '/support']
-    ], m, rpyt ) 
-      conn.sendFile(m.chat, av, , 'menu.jpg', null, m, rpl, true, { type:  'audioMessage' , ptt: true })
-    m.react( 📃 )
+    ], m) 
+conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 } 
 
 handler.customPrefix = /^(bot|senna)$/i
