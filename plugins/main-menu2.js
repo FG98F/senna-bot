@@ -13,9 +13,9 @@ let m2 = `
 └──────────────
 `
     let pp = './src/fg_logo.jpg' 
-    conn.sendButton2(m.chat, m2, mssg.ig, pp, [
-      ['⏍ Info', `${usedPrefix}botinfo`],
-      ['⌬ Grupos', `${usedPrefix}gpdylux`]
+    conn.sendButton2(m.chat, m2, تابعني على إنستجرام.ig, pp, [
+      ['⏍ معلومات البوت', `${usedPrefix}botinfo`],
+      ['⌬ جروب الدعم', `${usedPrefix}support`]
     ],m, rpyt)
     conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
    
