@@ -16,10 +16,9 @@ let m2 = `
       ['⦙☰ قائمة الاوامر', `${usedPrefix}اوامر`],
       ['⌬ جروب الدعم', `${usedPrefix}الدعم`]
     ],m, rpyt)
-
+    m.react( 📃 )
 }
 
-  m.react( 📃 )
 
 handler.help = ['help']
 handler.tags = ['main']
