@@ -10,7 +10,7 @@ let m2 = `
 └──────────────
 `
     let pp = './src/fg_logo.jpg' 
-      conn.sendButton2(m.chat, m2, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, pp, [
+      conn.sendButton2(m.chat, m2, `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp [
       ['⦙☰ قائمة الاوامر', `${usedPrefix}اوامر`],
       ['⌬ جروب الدعم', `${usedPrefix}الدعم`]
     ],m, rpyt )
@@ -23,3 +23,8 @@ handler.tags = ['main']
 handler.command = ['menu','اوامر'] 
 
 export default handler
+
+
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
