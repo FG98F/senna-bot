@@ -12,7 +12,7 @@ let m2 = `
 └──────────────
 `
     let pp = './src/fg_logo.jpg' 
-      conn.sendButton2(m.chat, m2, `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp, [
+      conn.sendButton2(m.chat, m2, `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp, text.trim(), null, rcanal [
       ['⦙☰ قائمة الاوامر', `${usedPrefix}اوامر`],
       ['⌬ جروب الدعم', `${usedPrefix}الدعم`]
     ],m, rpyt)
