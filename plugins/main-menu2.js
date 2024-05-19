@@ -17,8 +17,9 @@ let m2 = `
       ['⌬ جروب الدعم', `${usedPrefix}الدعم`]
     ],m, rpyt)
 
-   m.react( 📃 )
 }
+
+  m.react( 📃 )
 
 handler.help = ['help']
 handler.tags = ['main']
