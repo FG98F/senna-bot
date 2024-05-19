@@ -1,4 +1,4 @@
-let pp =  ./src/fg_logo.jpg 
+
 let handler = async (m, { conn}) => {
 
 let name = conn.getName(m.sender)
