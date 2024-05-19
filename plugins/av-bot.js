@@ -15,7 +15,3 @@ handler.customPrefix = /^(bot|senna)$/i
 handler.command = ['list']
 
 export default handler
-
-function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
-}
