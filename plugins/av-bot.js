@@ -2,8 +2,7 @@
 let handler = async (m, { conn}) => {
 
 let name = conn.getName(m.sender)
-let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`
-      let pp = './src/fg_logo.jpg'  
+let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`  
       
       conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, pp, [
       ['⦙☰ Menu', '/menu'],
@@ -12,6 +11,7 @@ let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`
     ], m) 
     conn.sendFile(m.chat, av, pp, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    m.react('📃')
+   let pp =  ./src/fg_logo.jpg 
 } 
 
 handler.customPrefix = /^(bot|senna)$/i
