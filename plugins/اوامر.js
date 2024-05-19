@@ -22,6 +22,6 @@ let m2 = `
 
 handler.help = ['menu3']
 handler.tags = ['main']
-handler.command = ['قائمة','اوامر'] 
+handler.command = ['menu3'] 
 
 export default handler
