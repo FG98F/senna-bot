@@ -9,7 +9,7 @@ let av = `./src/fg_logo.jpg`
       ['⦙☰ Menu 2', '/menu2'],
       [`⌬ ${mssg.gp}s`, '/support']
     ], m) 
-    conn.sendFile(m.chat, av, 'fg_logo.jpg', null, m, true, { type: 'audioMessage', ptt: true })
+    conn.sendFile(m.chat, av, 'menu.jpg', null, m, true, { type: 'audioMessage', ptt: true })
    m.react('📃')
 } 
 
