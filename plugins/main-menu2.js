@@ -17,7 +17,6 @@ let m2 = `
       ['⌬ جروب الدعم', `${usedPrefix}support`]
     ],m, rpyt)
     conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
-   m.react( 📃 )
 }
 
 handler.help = ['menu2']
