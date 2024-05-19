@@ -5,38 +5,26 @@ m.reply(`
 ≡  *${botName}ᴮᴼᵀ ┃ SUPPORT*
 
 ◈ ━━━━━━━━━━━━━━━━━━━━ ◈
-▢ Canal
+▢ قناة البوت:
 ${fgcanal}
 
-▢ Grupo *1*
+▢ جروب *1*
 ${bgp}
 
-▢ Grupo *2*
+▢ جروب *2*
 ${bgp2}
 
-▢ Grupo *NSFW* 🔞
-${bgp3}
-
-▢ 𝐌𝐘 - 𝐌𝐚𝐲𝐥𝐮𝐱 | ᴮᴼᵀ⚡
-https://chat.whatsapp.com/CTILZXSriIE3M40anVyPT4
-
-▢ 📲💻ANDROID WORLD🎬🎮
-https://chat.whatsapp.com/Ly4I2LObSvW8VgOnJjofgA
-
 ◈ ━━━━━━━━━━━━━━━━━━━━ ◈
-▢ Todos los Grupos
- https://instabio.cc/fg98ff
-
-▢ *Telegram*
-• https://t.me/fgawgp
- ▢ *PayPal*
-• https://paypal.me/fg98f
-▢ *YouTube*
-• https://www.youtube.com/fg98f`)
+▢ *تيليجرام:*
+• https://t.me/MR_X61
+ ▢ *إنستغرام:*
+• https://instagram.com/rnj_.6
+▢ *واتساب:*
+• https://wa.me/qr/S4ONIQ4XJ2N4E1`)
 
 }
-handler.help = ['support']
+handler.help = ['الدعم']
 handler.tags = ['main']
-handler.command = ['grupos', 'groups', 'support'] 
+handler.command = ['grupos', 'groups', 'support', 'الدعم', 'دعم الجروب'] 
 
 export default handler
