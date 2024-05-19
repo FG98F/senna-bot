@@ -1,15 +1,15 @@
-
-let handler = async (m, av, { conn}) => {
+let pp =  ./src/fg_logo.jpg 
+let handler = async (m, { conn}) => {
 
 let name = conn.getName(m.sender)
 let av = `./src/fg_logo.jpg`  
       
-      conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, av, null, [
+      conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
       ['⦙☰ Menu', '/menu'],
       ['⦙☰ Menu 2', '/menu2'],
       [`⌬ ${mssg.gp}s`, '/support']
-    ], m, av, rpyt) 
-    conn.sendFile(m.chat, av, 'menu.jpg', null, m, rpl, true, { type: 'audioMessage', ptt: true })
+    ], m, rpyt) 
+    conn.sendFile(m.chat, av, pp, 'menu.jpg', null, m, rpl, true, { type: 'audioMessage', ptt: true })
    m.react('📃')
 } 
 
