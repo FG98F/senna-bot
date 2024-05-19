@@ -11,7 +11,6 @@ let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`
     ], m) 
     conn.sendFile(m.chat, av, pp, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    m.react('📃')
-   let pp =  ./src/fg_logo.jpg 
 } 
 
 handler.customPrefix = /^(bot|senna)$/i
