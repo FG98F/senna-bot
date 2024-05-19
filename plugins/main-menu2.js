@@ -1,5 +1,5 @@
 
-let handler = async function (m, { conn, text, usedPrefix }) {
+let handler = async (m, { conn, text, usedPrefix}) => {
   
 let m2 = `
 ◈ ━━━━ *𝑴𝒊𝒓𝒛𝒂  ┃ ᴮᴼᵀ* ━━━━━ ◈ *${usedPrefix}*
