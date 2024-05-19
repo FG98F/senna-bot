@@ -142,7 +142,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let pp = './src/fg_logo.jpg'
 
-      conn.sendButton2(m.chat, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${'تابعني على إنستجرام'.ig}`, pp, [
+      conn.sendButton2(m.chat, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg تابعني على إنستجرام.ig}`, pp, [
       ['ꨄ︎ Apoyar', `${_p}donate`],
       ['⏍ معلومات البوت', `${_p}botinfo`],
       ['⌬ الدعم', `${_p}support`]
