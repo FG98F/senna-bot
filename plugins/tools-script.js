@@ -12,8 +12,8 @@ m.reply(`
     
 }
 
-handler.help = ['']
-handler.tags = ['']
-handler.command = ['', '', ''] 
+handler.help = []
+handler.tags = []
+handler.command = [] 
 
 export default handler
