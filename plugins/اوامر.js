@@ -20,7 +20,7 @@ let m2 = `
    m.react( 📃 )
 }
 
-handler.help = ['قائمة']
+handler.help = ['menu3']
 handler.tags = ['main']
 handler.command = ['قائمة','اوامر'] 
 
