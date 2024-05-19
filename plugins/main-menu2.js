@@ -16,7 +16,6 @@ let m2 = `
       ['⦙☰ قائمة الاوامر', `${usedPrefix}menu`],
       ['⌬ جروب الدعم', `${usedPrefix}support`]
     ],m, rpyt)
-    conn.sendFile(m.chat, pp, 'menu.jpg', m2, null, rpl)
 
 }
 
