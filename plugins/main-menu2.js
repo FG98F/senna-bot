@@ -3,7 +3,7 @@ let handler = async function (m, { conn, text, usedPrefix }) {
   
 let m2 = `
 ◈ ━━━━ *𝑴𝒊𝒓𝒛𝒂  ┃ ᴮᴼᵀ* ━━━━━ ◈ *${usedPrefix}*
- 👋🏻 مرحباً! ${mssg.hi} *${name}*
+ 👋🏻 مرحباً! `'${mssg.hi} *${name}*'`
  👥 عدد المستخدمين : %totalreg
  🟢 وقت النشاط : %muptime%sbot
 ▢ 
