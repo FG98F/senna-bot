@@ -10,7 +10,7 @@ let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`
       ['⦙☰ Menu 2', '/menu2'],
       [`⌬ ${mssg.gp}s`, '/support']
     ], m) 
-    conn.sendFile(m.chat, pp, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+    conn.sendFile(m.chat, av, 'audio.mp3', pp, null, m, true, { type: 'audioMessage', ptt: true })
    m.react('📃')
 } 
 
