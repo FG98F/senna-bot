@@ -9,8 +9,8 @@ let pp =  `./src/fg_logo.jpg`
       ['⦙☰ Menu 2', '/menu2'],
       [`⌬ ${mssg.gp}s`, '/support']
     ], m, rpyt ) 
-    conn.sendFile(m.chat, av, , 'menu.jpg' , null, m, rpl, true, { type:  'audioMessage' , ptt: true })
-   m.react( 📃 )
+      conn.sendFile(m.chat, av, , 'menu.jpg' , null, m, rpl, true, { type:  'audioMessage' , ptt: true })
+    m.react( 📃 )
 } 
 
 handler.customPrefix = /^(bot|senna)$/i
