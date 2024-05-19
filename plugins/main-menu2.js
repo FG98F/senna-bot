@@ -13,8 +13,8 @@ let m2 = `
 `
     let pp = './src/fg_logo.jpg' 
       conn.sendButton2(m.chat, m2, mssg.ig, pp, [
-      ['⦙☰ قائمة الاوامر', `${usedPrefix}menu`],
-      ['⌬ جروب الدعم', `${usedPrefix}support`]
+      ['⦙☰ قائمة الاوامر', `${usedPrefix}اوامر`],
+      ['⌬ جروب الدعم', `${usedPrefix}الدعم`]
     ],m, rpyt)
 
 }
