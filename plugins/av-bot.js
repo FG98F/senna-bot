@@ -9,7 +9,7 @@ let pp =  `./src/fg_logo.jpg `
       ['⦙☰ Menu 2', '/menu2'],
       [`⌬ ${mssg.gp}s`, '/support']
     ], m, rpyt) 
-    conn.sendFile(m.chat, av, '${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig', null, m, rpl, true, { type: 'audioMessage', ptt: true })
+    conn.sendFile(m.chat, av, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig', null, m, rpl, true, { type: 'audioMessage', ptt: true })
    m.react('📃')
 } 
 
