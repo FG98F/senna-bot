@@ -23,4 +23,3 @@ handler.tags = ['main']
 handler.command = ['menu','اوامر'] 
 
 export default handler
-
