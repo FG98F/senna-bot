@@ -1,25 +1,23 @@
+const { Client, MessageMedia } = require('whatsapp-web.js');
+const client = new Client();
 
+client.on('ready', () => {
+    console.log('البوت جاهز للعمل!');
+});
 
-let handler = async function (m, { conn, text, usedPrefix }) {
-  
-let m2 = `
-◈ ━━━━ *𝑴𝒊𝒓𝒛𝒂  ┃ ᴮᴼᵀ* ━━━━━ ◈ *${usedPrefix}*
- 👋🏻 مرحباً! : %name
- 👥 عدد المستخدمين : %totalreg
- 🟢 وقت النشاط : %muptime%sbot
-▢ 
-└──────────────
-`
-     let pp =  ./src/fg_logo.jpg  
-      conn.sendButton2(m.chat, m2, mssg.ig, pp, [
-      [ '⏍ قائمة الاوامر' , `${usedPrefix}botinfo`],
-      [ '⌬ جروب الدعم' , `${usedPrefix}support`]
-    ],m, rpyt) 
- 
-}
+client.on('message', message => {
+    if(message.body === '!menu') {
+        let menu = "🤖 *قائمة الأوامر*\n\n";
+        menu += "1️⃣ *الأمر الأول* - الوصف\n";
+        menu += "2️⃣ *الأمر الثاني* - الوصف\n";
+        menu += "3️⃣ *الأمر الثالث* - الوصف\n";
+        menu += "4️⃣ *الأمر الرابع* - الوصف\n";
+        menu += "5️⃣ *الأمر الخامس* - الوصف\n";
+        menu += "\nأرسل رقم الأمر للتفاعل.";
 
-handler.help = [ 'help' ]
-handler.tags = [ 'main' ]
-handler.command = [ 'menu' , 'اوامر' ] 
+        message.reply(menu);
+    }
+    // يمكنك إضافة المزيد من الأوامر هنا
+});
 
-export default handler
+client.initialize();
