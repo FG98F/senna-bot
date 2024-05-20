@@ -12,14 +12,14 @@ let m2 = `
 `
      let pp =  ./src/fg_logo.jpg  
       conn.sendButton2(m.chat, m2, mssg.ig, pp, [
-      [ '⦙☰ قائمة الاوامر' , `${usedPrefix}اوامر`],
-      [ '⌬ جروب الدعم' , `${usedPrefix}support`]
+      ['⦙☰ قائمة الاوامر' , `${usedPrefix}اوامر`],
+      ['⌬ جروب الدعم' , `${usedPrefix}support`]
     ],m, rpyt) 
  
 }
 
-handler.help = [ help ]
-handler.tags = [ main ]
-handler.command = [ menu , اوامر ] 
+handler.help = [ 'help' ]
+handler.tags = [ 'main' ]
+handler.command = [ 'menu' , 'اوامر' ] 
 
 export default handler
