@@ -14,8 +14,7 @@ let m2 = `
       ['⦙☰ قائمة الاوامر', `${usedPrefix}اوامر`],
       ['⌬ جروب الدعم', `${usedPrefix}الدعم`]
     ],m, rpyt )
-
-  
+ 
 }
 
 handler.help = ['help']
