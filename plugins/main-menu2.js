@@ -10,7 +10,7 @@ let m2 = `
 └──────────────
 `
      let pp = './src/fg_logo.jpg' 
-      conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, pp [
+      conn.sendButton2(m.chat, m2, mssg.ig, null, pp [
       ['⦙☰ Menu', '/menu'],
       ['⦙☰ Menu 2', '/menu2'],
       [`⌬ ${mssg.gp}s`, '/support']
