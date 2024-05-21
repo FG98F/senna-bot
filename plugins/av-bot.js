@@ -5,10 +5,11 @@ let handler = async (m, { conn }) => {
     ['⦙☰ Menu 2', '/menu2' ],
     [`⌬ ${mssg.gp}s`, '/support' ]
   ], m)
-} // هذا هو وصف الصورة الذي سيحتوي على القائمة
+  // هذا هو وصف الصورة الذي سيحتوي على القائمة
 
   // إرسال الصورة مع الوصف الذي يحتوي على القائمة
   conn.sendFile(m.chat,  './src/fg_logo.jpg' ,  'fg_logo.jpg' , imageCaption, m)
+}
 
 handler.customPrefix = /^(bot|senna)$/i
 handler.command = new RegExp
