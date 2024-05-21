@@ -7,9 +7,9 @@ let handler = async (m, { conn }) => {
     image: { url:  './src/fg_logo.jpg'  },
     caption: imageCaption,
     buttons: [
-      { buttonId:  '/menu' , buttonText: { displayText:  '⦙☰ Menu'  }, type: 1 },
-      { buttonId:  '/menu2' , buttonText: { displayText:  '⦙☰ Menu 2'  }, type: 1 },
-      { buttonId:  '/support' , buttonText: { displayText:  '⌬ Support'  }, type: 1 }
+      { buttonId:  /menu , buttonText: { displayText:  ☰ Menu  }, type: 1 },
+      { buttonId:  /menu2 , buttonText: { displayText:  ⦙☰ Menu 2  }, type: 1 },
+      { buttonId:  /support , buttonText: { displayText:  ⌬ Support  }, type: 1 }
     ]
   }
   await conn.sendMessage(m.chat, message, { quoted: m })
