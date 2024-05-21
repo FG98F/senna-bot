@@ -28,13 +28,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                           header: "معلومات البوت",
                           title: ".المطور",
                           description: "",
-                          id: "/info"
+                          id: "/الدعم"
                         },
                         {
                           header: "قسم الاوامر",
                           title: ".الاوامر",
                           description: "",
-                          id: "/menu"
+                          id: "/اوامر"
                         }
                       ]
                     }
@@ -48,6 +48,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       }
     }
   }, {})
+  await conn.sendList(m.chat, '  ≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*🔎', `\n 📀 النتيجة:\n *${text}*`, `اضغط هنا`, './src/fg_logo.jpg', listSections, m);
 }
 
 handler.help = ["info"]
