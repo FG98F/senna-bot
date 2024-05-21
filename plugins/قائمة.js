@@ -4,43 +4,43 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       message: {
         interactiveMessage: {
           header: {
-            title: '*قـائـمـة الاوامــر*',
+            title: "*قـائـمـة الاوامــر*",
             image: {
-              url: './src/fg_logo.jpg',
-              caption: './src/fg_logo.jpg'
+              url: "./src/fg_logo.jpg",
+              caption: "🛡️ قائمة الأوامر"
             }
           },
           body: {
-            text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
+            text: "🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة"
           },
           nativeFlowMessage: {
             buttons: [
               {
-                name: 'single_select',
+                name: "single_select",
                 buttonParamsJson: JSON.stringify({
-                  title: 'اضغط هنا',
+                  title: "اضغط هنا",
                   sections: [
                     {
-                      title: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕',
-                      highlight_label: '𝙼𝚛 𝙷𝚊𝚖𝚣𝚊',
+                      title: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕",
+                      highlight_label: "𝙼𝚛 𝙷𝚊𝚖𝚣𝚊",
                       rows: [
                         {
-                          header: 'معلومات البوت',
-                          title: '.المطور',
-                          description: '',
-                          id: '/info'
+                          header: "معلومات البوت",
+                          title: ".المطور",
+                          description: "",
+                          id: "/info"
                         },
                         {
-                          header: 'قسم الاوامر',
-                          title: '.الاوامر',
-                          description: '',
-                          id: '/menu'
+                          header: "قسم الاوامر",
+                          title: ".الاوامر",
+                          description: "",
+                          id: "/menu"
                         }
                       ]
                     }
                   ]
                 }),
-                messageParamsJson: '𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕'
+                messageParamsJson: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
               }
             ]
           }
@@ -50,8 +50,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }, {})
 }
 
-handler.help = ['info']
-handler.tags = ['main']
-handler.command = ['لسته']
+handler.help = ["info"]
+handler.tags = ["main"]
+handler.command = ["لسته"]
 
 export default handler
