@@ -1,14 +1,16 @@
 let handler = async (m, { conn }) => {
   let name = conn.getName(m.sender)
-  let av = `./src/fg_logo.jpg`
+  let imageCaption = `${mssg.hi} *${name}* \n\n${mssg.bohelp}` // هذا هو وصف الصورة الذي سيحتوي على القائمة
 
-  // إضافة إرسال الصورة هنا قبل إرسال القائمة
-  conn.sendFile(m.chat, av, 'fg_logo.jpg', null, m, true, { type: 'audioMessage', ptt: true })
+  // إرسال الصورة مع الوصف الذي يحتوي على القائمة
+  conn.sendFile(m.chat,  ./src/fg_logo.jpg ,  fg_logo.jpg , imageCaption, m)
 
+  // يمكنك إضافة الأزرار هنا إذا كنت ترغب في ذلك
+  
   conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
-    ['⦙☰ Menu', '/menu'],
-    ['⦙☰ Menu 2', '/menu2'],
-    [`⌬ ${mssg.gp}s`, '/support']
+    ['⦙☰ Menu' , '/menu' ],
+    ['⦙☰ Menu 2' , '/menu2' ],
+    [`⌬ ${mssg.gp}s`, '/support' ]
   ], m)
 }
 
