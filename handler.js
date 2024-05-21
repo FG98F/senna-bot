@@ -84,7 +84,7 @@ export async function handler(chatUpdate) {
                 if (!('genero' in user))
                     user.genero = 'Indeciso'
                 if (!('language' in user))
-                    user.language = 'es'
+                    user.language = 'ar'
                 if (!('prem' in user))
                     user.prem = false
                 if (!user.premiumTime) 
