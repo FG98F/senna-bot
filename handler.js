@@ -109,7 +109,7 @@ export async function handler(chatUpdate) {
                     autolevelup: false,
                     chatbot: false,
                     genero: 'Indeciso',
-                    language: 'es',
+                    language: 'ar',
                     prem: false,
                     premiumTime: 0,
                 }
