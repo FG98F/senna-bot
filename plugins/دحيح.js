@@ -38,5 +38,5 @@ let handler = async (_0x4f9075, {
 };
 handler.help = ["googlegenai"];
 handler.tags = [ AI ];
-handler.command = ["الوكارد", "googlegenai", "gemini",  'جيميناي , "دحيح"];
+handler.command = ["الوكارد", "googlegenai", "gemini",  جيميناي , "دحيح"];
 export default handler;
