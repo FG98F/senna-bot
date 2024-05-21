@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
   ], m)
 
   // إضافة إرسال الصورة هنا
-  conn.sendFile(m.chat, av,  audio.mp3 , null, m, true, { type:  audioMessage , ptt: true })
+  conn.sendFile(m.chat, av,  fg_logo.jpg , null, m, true, { type:  audioMessage , ptt: true })
 }
 
 handler.customPrefix = /^(bot|senna)$/i
