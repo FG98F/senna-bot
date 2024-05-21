@@ -1,7 +1,6 @@
 let handler = async (m, { conn }) => {
   let name = conn.getName(m.sender)
-  let pp = './src/fg_logo.jpg'
-  let imageCaption = conn.sendButton2(m.chat, pp, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
+  let imageCaption = conn.sendButton2(m.chat,'./src/fg_logo.jpg', 'fg_logo.jpg', `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
     ['⦙☰ Menu' , '/menu' ],
     ['⦙☰ Menu 2' , '/menu2' ],
     [`⌬ ${mssg.gp}s`, '/support' ]
