@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           header: {
             title: "*قـائـمـة الاوامــر*",
             image: {
-              url:  "./src/fg_logo.jpg" ,
+              url:  "https://i.ibb.co/dG6rm49/fg-logo.png" ,
               caption: "🛡️ قائمة الأوامر"
             }
           },
