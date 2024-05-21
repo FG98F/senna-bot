@@ -1,7 +1,7 @@
 const fs = require( fs );
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  const imageBuffer = fs.readFileSync( ./src/fg_logo.jpg );
+  const imageBuffer = fs.readFileSync( './src/fg_logo.jpg' );
   conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
@@ -9,26 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           header: {
             title: "*قـائـمـة الاوامــر*",
             image: {
-              url:  data:image/jpeg;base64,  + imageBuffer.toString( base64 ),
-              caption: "🛡️ قائمة الأوامر"
-            }
-          },
-          // ... resto del código
-        }
-      }
-    }
-  }, {})
-}
-
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-  conn.relayMessage(m.chat, {
-    viewOnceMessage: {
-      message: {
-        interactiveMessage: {
-          header: {
-            title: "*قـائـمـة الاوامــر*",
-            image: {
-              url: "./src/fg_logo.jpg",
+              url:  "data:image/jpeg;base64",  + "imageBuffer.toString( base64 )",
               caption: "🛡️ قائمة الأوامر"
             }
           },
