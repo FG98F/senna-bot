@@ -1,4 +1,4 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => { 
+let handler = async (m, { conn, args, usedPrefix, command }) => {
   conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           header: {
             title: "*قـائـمـة الاوامــر*",
             image: {
-              url: './src/fg_logo.jpg',
+              url: "https://telegra.ph/file/f678a9cc2fa846b4d0110.jpg",
               caption: "🛡️ قائمة الأوامر"
             }
           },
