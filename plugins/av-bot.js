@@ -4,9 +4,9 @@ let handler = async (m, { conn }) => {
   let av = `./src/fg_logo.jpg`
 
   conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
-    ['⦙☰ Menu',  /menu ],
-    ['⦙☰ Menu 2',  /menu2 ],
-    [`⌬ ${mssg.gp}s`,  /support ]
+    ['⦙☰ Menu', '/menu' ],
+    ['⦙☰ Menu 2', '/menu2' ],
+    [`⌬ ${mssg.gp}s`, '/support' ]
   ], m)
 
   // إضافة إرسال الصورة هنا
