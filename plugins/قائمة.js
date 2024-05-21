@@ -1,5 +1,4 @@
 const fs = require( fs );
-
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   const imageBuffer = fs.readFileSync( './src/fg_logo.jpg' );
   conn.relayMessage(m.chat, {
