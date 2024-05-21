@@ -3,7 +3,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   await conn.sendFile(m.chat, "./src/fg_logo.jpg", "fg_logo.jpg", "conn.relayMessage", m)
 
   // إرسال القائمة
-  conn.relayMessage(m.chat, {
+  await conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
         interactiveMessage: {
