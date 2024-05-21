@@ -1,6 +1,18 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  // إرسال الصورة أولاً
-  await conn.sendFile(m.chat, "https://i.ibb.co/dG6rm49/fg-logo.png", "logo.png", "🛡️ قائمة الأوامر", m)
+  // إرسال الصورة والقائمة معًا
+  await conn.sendMessage(m.chat, {
+    image: { url: "https://i.ibb.co/dG6rm49/fg-logo.png" },
+    caption: "🛡️ قائمة الأوامر",
+    footer: "🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة",
+    buttons: [
+      {
+        buttonId: "single_select",
+        buttonText: { displayText: "اضغط هنا" },
+        type: 1
+      }
+    ],
+    headerType: 4
+  })
 
   // إرسال القائمة
   conn.relayMessage(m.chat, {
