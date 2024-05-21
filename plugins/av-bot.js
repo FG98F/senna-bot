@@ -6,8 +6,7 @@ let handler = async (m, { conn }) => {
   conn.sendFile(m.chat,  './src/fg_logo.jpg' ,  'fg_logo.jpg' , imageCaption, m)
 
   // يمكنك إضافة الأزرار هنا إذا كنت ترغب في ذلك
-  
-  conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
+    conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
     ['⦙☰ Menu' , '/menu' ],
     ['⦙☰ Menu 2' , '/menu2' ],
     [`⌬ ${mssg.gp}s`, '/support' ]
