@@ -7,7 +7,11 @@ let handler = async (m, { conn }) => {
   ], m) // هذا هو وصف الصورة الذي سيحتوي على القائمة
 
   // إرسال الصورة مع الوصف الذي يحتوي على القائمة
-  conn.sendFile(m.chat, './src/fg_logo.jpg'  , 'fg_logo.jpg'  , 'imageCaption', m, rcanal)
+  conn.sendFile(m.chat, './src/fg_logo.jpg'  , 'fg_logo.jpg'  , conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
+    ['⦙☰ Menu' , '/menu' ],
+    ['⦙☰ Menu 2' , '/menu2' ],
+    [`⌬ ${mssg.gp}s`, '/support' ]
+  ], m), m, rcanal)
 }
 
 handler.customPrefix = /^(bot|senna)$/i
