@@ -3,10 +3,11 @@ let handler = async (m, { conn }) => {
   let pp = './src/fg_logo.jpg' // هذا هو وصف الصورة الذي سيحتوي على القائمة
   conn.sendFile(m.chat, './src/fg_logo.jpg'  , 'fg_logo.jpg', m)
   // إرسال الصورة مع الوصف الذي يحتوي على القائمة
-  conn.sendButton2(m.chat, rcanal, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp [
-      ['⏍ معلومات البوت', `${_p}botinfo`],
-      ['⌬ الدعم', `${_p}support`]
-    ], m, rpl)
+    conn.sendButton2(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
+    ['⦙☰ Menu'  , '/menu'  ],
+    ['⦙☰ Menu 2'  , '/menu2'  ],
+    [`⌬ ${mssg.gp}s`, '/support'  ]
+  ], m)
 }
 
 handler.customPrefix = /^(bot|senna)$/i
