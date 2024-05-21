@@ -1,46 +1,39 @@
-//import db from '../lib/database.js'
 import { promises } from 'fs'
 import { join } from 'path'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 //import { plugins } from '../lib/plugins.js'
 let tags = {
-  'main': 'معلومات البوت💻',
-  'game': 'قسم الألعاب🎮',
-  'econ': 'قسم البنك🏦',
-  'rg': 'قسم التسجيل📋',
-  'sticker': 'قسم الملصقات🧩',
-  'img': 'قسم الصور🌌',
-  'maker': 'توليد الصور📮',
-  'group': 'قسم الجروب👥', 
-  'nime': 'قسم الإنمي🪅',
-  'rnime': 'منشن انمي🎯',
-  'dl': 'قسم التنزيلات📲',
-  'tools': 'قسم الادوات🛠️',
-  'fun': 'قسم الترفيه🪄', 
-  'owner': 'قسم المطور👑', 
+  'morocco':'  ‎أوامر للمغاربة',
+  'applications':'‎ أوامر التطبيقات‎',
+  'drawing':'‎ توليد الصور‎ أوامر' ,
+  'ai':'‎ الذكاء الاصطناعي‎ أوامر',
+  'infobot':'‎ معلومات البوت‎',
+  'downloader':'‎ أوامر التحميلات',
+  'anime':'‎ أوامر عن  الأنيم',
+  'islam':'‎ الدين هو الاسلام‎',
+  'owner':'‎ اوامر صاحب البوت',
+  'search':'‎ أوامر البحث',
+  'audio-changer':'‎ تعديل الصوتيات‎',
+  'sticker':'‎ أوامر الملصقات',
+  'image-edit':'‎ تعديل الصور',
+  'pdf':'‎ pdf ومشتقاته‎',
+  'uploader':'‎‎ رفع الملفات‎',
 }
 const defaultMenu = {
-  before: `
-◈ ━━━━ *𝑴𝒊𝒓𝒛𝒂  ┃ ᴮᴼᵀ* ━━━━ ◈
- 
-👋🏻 مرحباً! *%name*
-👥 عدد المستخدمين : %totalreg
-🟢 وقت النشاط : %muptime
-%sbot
-▢ إنستغرام :
-• https://instagram.com/rnj_.6
+  before: `السلام عليكم 👋. 
 
-────────────
+┏━━ salam  *%name*
+👥 *Total user:* %totalreg 
+⏰ *Uptime:* %muptime  
+┗━━━━━━━━━━⬣
 %readmore
-  ≡ *قائمة الأوامر*
-
+  ≡ *B O B I Z A | M E N U*
 `.trimStart(),
-  header: '┌─⊷ *%category*',
-  body: '▢ %cmd %isdiamond %isPremium',
-  footer: '└───────────\n',
-  after: `
-`,
+  header: '┏━━⊜ *_%category_* ',
+  body: '┃⋄ %cmd %isdiamond %isPremium',
+  footer: '┗━━━━━━━━⬣\n',
+  after: '*إستخدامك للبوت بشكل صحيح يعني أنك تزيد من إحتمالية أن يبقى البوت شغالا لمدة أطول . لذا إن واجهتك أي مشكلة لا تخجل من سؤال صاحب البوت .رقمه سوف تجده في الأسفل + شارك فيديوهات صاحب البوت تشجيعا له ان كان هذا البوت قد نال إعجابك*\n+212605784394',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
@@ -49,7 +42,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
-    let locale = 'es'
+    let locale = 'ar'
     // d.getTimeZoneOffset()
     // Offset -420 is 18.00
     // Offset    0 is  0.00
@@ -103,7 +96,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == conn.user.jid ? '' : `⭐ Powered by 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕 https://wa.me/${conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == conn.user.jid ? '' : `Powered by https://wa.me/${conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
       before,
       ...Object.keys(tags).map(tag => {
@@ -111,7 +104,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
             return menu.help.map(help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
-                .replace(/%isdiamond/g, menu.diamond ? '(ⓓ)' : '')
+                .replace(/%isdiamond/g, menu.diamond ? '(Ⓛ)' : '')
                 .replace(/%isPremium/g, menu.premium ? '(Ⓟ)' : '')
                 .trim()
             }).join('\n')
@@ -126,7 +119,6 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       '%': '%',
       p: _p, uptime, muptime,
       me: conn.getName(conn.user.jid),
-      sbot: (conn.user.jid == global.conn.user.jid ? '' : `\n▢ ✨ *Sub-Bot de:*\nwa.me/${global.conn.user.jid.split`@`[0]}`), 
       npmname: _package.name,
       npmdesc: _package.description,
       version: _package.version,
@@ -139,27 +131,36 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    
-    let pp = './src/fg_logo.jpg'
 
-      conn.sendButton(m.chat, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp, [
+ conn.sendMessage(m.chat, {
+text: text,
+contextInfo: {
+externalAdReply: {
+title: 'BOBIZA BOT ♥',
+body: "أول بوت واتساب في العالم العربي 💖",
+thumbnailUrl: 'https://telegra.ph/file/2829c7653514416d207e2.jpg',
+sourceUrl: 'https://instagram.com/noureddine_ouafy',
+mediaType: 1,
+renderLargerThumbnail: true
+}}}, { quoted: m})
+
+    /*conn.sendFile(m.chat, 'menu.png', text.trim(), m, null, )
+    /*conn.sendButton(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98_ff', pp, [
       ['ꨄ︎ Apoyar', `${_p}donate`],
-      ['⏍ معلومات البوت', `${_p}botinfo`],
-      ['⌬ الدعم', `${_p}support`]
-    ], m, rpl)
-    conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m, null, rcanal)
-  
-    m.react('📚') 
-    
+      ['⏍ Info', `${_p}botinfo`],
+      ['⌬ Grupos', `${_p}gpdylux`]
+    ],m, rpl)*/
+
   } catch (e) {
-    conn.reply(m.chat, '❎ Lo sentimos, el menú tiene un error', m)
+    conn.reply(m.chat, '❎ هناك خطأ في لائحة الاوامر', m)
     throw e
   }
 }
-//handler.help = ['help']
-//handler.tags = ['main']
-handler.command = ['اوامر', 'أوامر', 'المهام'] 
+handler.help = ['menu']
+handler.tags = ['infobot']
+handler.command = ['menu','b','list'] 
 handler.register = false
+
 
 export default handler
 
