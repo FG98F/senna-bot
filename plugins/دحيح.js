@@ -36,7 +36,7 @@ let handler = async (_0x4f9075, {
     throw "حدث خطأ فيـAPI";
   }
 };
-handler.help = ["googlegenai"];
-handler.tags = [ AI ];
-handler.command = ["الوكارد", "googlegenai", "gemini",  جيميناي , "دحيح"];
+handler.help = ["بوت"];
+handler.tags = [ 'بوت' ];
+handler.command = ['الوكارد', 'googlegenai', 'gemini', 'جيميناي' , 'دحيح'];
 export default handler;
