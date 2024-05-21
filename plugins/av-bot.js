@@ -3,7 +3,7 @@ let handler = async (m, { conn }) => {
   let imageCaption = `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n` // هذا هو وصف الصورة الذي سيحتوي على القائمة
   conn.sendFile(m.chat, './src/fg_logo.jpg'  , 'fg_logo.jpg', imageCaption, m)
   // إرسال الصورة مع الوصف الذي يحتوي على القائمة
-let imageCaption2 = conn.sendButton2(m.chat, mssg.ig, null, imageCaption [
+let imageCaption = conn.sendButton2(m.chat, mssg.ig, null, imageCaption [
     ['⦙☰ Menu'  , '/menu'  ],
     ['⦙☰ Menu 2'  , '/menu2'  ],
     [`⌬ ${mssg.gp}s`, '/support'  ]
