@@ -1,6 +1,4 @@
-const fs = require( fs );
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-  const imageBuffer = fs.readFileSync( './src/fg_logo.jpg' );
+let handler = async (m, { conn, args, usedPrefix, command }) => { 
   conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
@@ -8,7 +6,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           header: {
             title: "*قـائـمـة الاوامــر*",
             image: {
-              url:  "data:image/jpeg;base64",  + "imageBuffer.toString( base64 )",
+              url:  "./src/fg_logo.jpg" ,
               caption: "🛡️ قائمة الأوامر"
             }
           },
@@ -30,13 +28,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                           header: "معلومات البوت",
                           title: ".المطور",
                           description: "",
-                          id: "/الدعم"
+                          id: "/info"
                         },
                         {
                           header: "قسم الاوامر",
                           title: ".الاوامر",
                           description: "",
-                          id: "/اوامر"
+                          id: "/menu"
                         }
                       ]
                     }
@@ -51,7 +49,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }
   }, {})
 }
+
 handler.help = ["info"]
 handler.tags = ["main"]
 handler.command = ["لسته"]
+
 export default handler
