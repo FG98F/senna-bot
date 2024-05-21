@@ -142,10 +142,10 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let pp = './src/fg_logo.jpg'
 
-      conn.sendButton2(m.chat, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp, rcanal [
+      conn.sendButton2(m.chat, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp, [
       ['⏍ معلومات البوت', `${_p}botinfo`],
       ['⌬ الدعم', `${_p}support`]
-    ], m, rpl)
+    ], m, rpl, rcanal)
     conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m, null, rcanal)
   
     m.react('📚') 
