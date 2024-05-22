@@ -39,7 +39,7 @@ const defaultMenu = {
   header: "╭━━⊱ 「 *%category* 」⊱━━╮",
  body: "  │✫ -  %cmd %isdiamond %isPremium",
  footer: "╰━━━━━━━━━━━━━━━╯",
-  after: "\n%me"`
+  after: `
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
