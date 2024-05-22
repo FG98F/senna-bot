@@ -19,7 +19,7 @@ if (!args[0]) throw `✳️ ${mssg.noLink('Facebook')}\n\n📌 ${mssg.example} :
 };
 handler.help = ['فيسبوك'].map(v => v + ' <رابط الفيديو>');
 handler.tags = ['dl'];
-handler.command = /^((facebook|fb)(downloder|فيسبوك)?)$/i;
+handler.command = /^((facebook|fb|فيسبوك)(downloder|dl)?)$/i;
 handler.diamond = false;
 
 export default handler;
