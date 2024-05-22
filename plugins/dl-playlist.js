@@ -1,7 +1,7 @@
 
 import yts from 'yt-search';
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
-    if (!text) throw `✳️ ${mssg.example} *${usedPrefix + command}* Lil Peep hate my life`;
+    if (!text) throw `✳️ ${mssg.example} *${usedPrefix + command}* اسم الشيء الذي تريد سماعه`;
     m.react('📀');
     
     let result = await yts(text);
@@ -33,9 +33,9 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     await conn.sendList(m.chat, '  ≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*🔎', `\n 📀 النتيجة:\n *${text}*`, `اضغط هنا`, ytres[0].image, listSections, m);
 };
 
-handler.help = ['play2']
+handler.help = ['شغل2']
 handler.tags = ['dl']
-handler.command = ['play2', 'playvid2', 'playlist', 'playlista'] 
+handler.command = ['play2', 'playvid2', 'playlist', 'playlista', 'شغل2'] 
 handler.disabled = false
 
 export default handler
