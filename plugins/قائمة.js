@@ -41,6 +41,9 @@ let button = await conn.relayMessage(m.chat, {
                 messageParamsJson: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
               }
             ]
+          },
+          mediaMessage: {
+            upload: photo
           }
         }
       }
