@@ -55,7 +55,7 @@ let handler = async (m, {
 
     const listMessage = {
         text: `${m.chat}  يرجى تحديد نوع الوسائط الخاص بك...`,
-        footer: wm,
+        footer: ,
         title: " 📥 تنزيل الفيديو من يوتيوب",
         buttonText: "اضغط هنا !",
         sections
