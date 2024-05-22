@@ -36,9 +36,9 @@ const defaultMenu = {
   ≡ *قائمة الأوامر*
 
 `.trimStart(),
-  header: '┌─⊷ *%category*',
-  body: '▢ %cmd %isdiamond %isPremium',
-  footer: '└───────────\n',
+  header: "╭━━⊱ 「 *%category* 」⊱━━╮",
+ body: "  │✫ -  %cmd %isdiamond %isPremium",
+ footer: "╰━━━━━━━━━━━━━━━╯",
   after: `
 `,
 }
