@@ -32,7 +32,7 @@ const defaultMenu = {
 ⛥ *Prefix:* [ *%_p* ]
 ⛥ *Uptime:* %muptime
 ⛥ *Database:*  %totalreg
-╯━━━━━━━━━━━━━━━╰
+  ╯━━━━━━━━━━━━━━━╰
 
 ────────────
 %readmore
