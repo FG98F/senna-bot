@@ -14,7 +14,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
       return conn.reply(m.chat, '*لا يمكن الحصول على تفاصيل التطبيق*', m);
     }
 
-    let response = `💌 *اسم التطبيق:* ${data.name}\n📦 *الحزمة:* ${data.package}\n🕒 *آخر تحديث:* ${data.lastup}\n📥 *الحجم:* ${data.size}\n\n'> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍɪʀᴢᴀ ᴍᴜꜱɪᴄ'\n`;
+    let response = `💌 *اسم التطبيق:* ${data.name}\n📦 *الحزمة:* ${data.package}\n🕒 *آخر تحديث:* ${data.lastup}\n📥 *الحجم:* ${data.size}\n\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍɪʀᴢᴀ ᴍᴜꜱɪᴄ\n`;
 
     if (data.size.includes('GB') || parseFloat(data.size.replace(' MB', '')) > 999) {
       return conn.reply(m.chat, '🚩 *الملف ثقيل جدًا*', m);
@@ -45,6 +45,6 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
 
 handler.tags = ['applications'];
 handler.help = ['apk'];
-handler.command = /^(apk|apkdl|dapk2|aptoide|aptoidedl)$/i;
+handler.command = /^(apk|apkdl|dapk2|aptoide|aptoidedl|تطبيق)$/i;
 
 export default handler;
