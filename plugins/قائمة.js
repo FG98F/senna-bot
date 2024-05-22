@@ -43,13 +43,12 @@ let button = await conn.relayMessage(m.chat, {
             ]
           },
           mediaMessage: {
-            upload: photo
+            upload: 'photo'
           }
         }
       }
     }
   }, {})
-}
 
 handler.help = ["info"]
 handler.tags = ["main"]
