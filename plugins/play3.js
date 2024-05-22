@@ -8,7 +8,7 @@ import os from 'os';
 const streamPipeline = promisify(pipeline);
 
 var handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `لـ تحميل الأغاني الجميلة والعريقة اليك هاذا الأمر \n\n مثـال:\n ${usedPrefix}${command} kandrick lamar euphoria`;
+  if (!text) throw `لـ تحميل الأغاني الجميلة والعريقة اليك هاذا الأمر \n\n مثـال:\n ${usedPrefix}${command} اسم الشيء المراد سماعه`;
   await m.react(rwait);
 
   let search = await yts(text);
