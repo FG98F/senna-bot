@@ -24,14 +24,14 @@ const defaultMenu = {
   before: `
 ْ    *│✫ - 『  𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕  』 - ✫│* ْ\n
 
-╭━━⊱『 *I N F O*』⊱━━╮
-⛥ *Mode:* %mode
-⛥ *Platform:* %platform
-⛥ *Type:* NodeJs
-⛥ *Baileys:* Multi Device
-⛥ *Prefix:* [ *%_p* ]
-⛥ *Uptime:* %muptime
-⛥ *Database:*  %totalreg
+  ╭━━⊱『 *I N F O*』⊱━━╮
+  ⛥ *Mode:* %mode
+  ⛥ *Platform:* %platform
+  ⛥ *Type:* NodeJs
+  ⛥ *Baileys:* Multi Device
+  ⛥ *Prefix:* [ *%_p* ]
+  ⛥ *Uptime:* %muptime
+  ⛥ *Database:*  %totalreg
 ╯━━━━━━━━━━━━━━━╰
 
 ────────────
