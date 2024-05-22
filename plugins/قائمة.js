@@ -1,7 +1,7 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   // إرسال الصورة أولاً
-  await conn.sendFile(m.chat, "./src/fg_logo.jpg", "fg_logo.jpg", m) 
-  await conn.relayMessage(m.chat, {
+  await conn.sendFile(m.chat, "./src/fg_logo.jpg", "fg_logo.jpg", button, m) 
+let button = await conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
         interactiveMessage: {
