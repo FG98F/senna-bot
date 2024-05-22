@@ -17,8 +17,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   let { title, thumbnail, timestamp, views, ago, url } = vid;
   let wm = ' ثم التحميل بنجاح';
 
-  let captvid = `
-       ≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
+  let captvid = `≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   ❏ العنوان: ${title}
   ❐ المدة: ${timestamp}
   ❑ المشاهدات: ${views}
