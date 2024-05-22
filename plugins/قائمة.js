@@ -1,6 +1,6 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  // إرسال الصورة والقائمة معًا
-  let photo = await conn.sendFile(m.chat, "./src/fg_logo.jpg", "fg_logo.jpg", null, m) 
+  // إرسال الصورة أولاً
+  let photo = await conn.sendFile(m.chat, "./src/fg_logo.jpg", "fg_logo.jpg", null, m)
   let button = await conn.relayMessage(m.chat, {
     viewOnceMessage: {
       message: {
@@ -38,20 +38,20 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                     }
                   ]
                 }),
-                messageParamsJson: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
+                messageParamsJson: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕",
+                mediaMessage: {
+                  upload: photo
+                }
               }
             ]
-          },
-          mediaMessage: {
-            upload: photo
           }
         }
       }
     }
   }, {})
 }
+
 handler.help = ["info"]
 handler.tags = ["main"]
 handler.command = ["لسته"]
-
 export default handler
