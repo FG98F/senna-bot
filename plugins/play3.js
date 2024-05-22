@@ -18,6 +18,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   let wm = ' ثم التحميل بنجاح';
 
   let captvid = `
+       ≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*
   ❏ العنوان: ${title}
   ❐ المدة: ${timestamp}
   ❑ المشاهدات: ${views}
@@ -73,7 +74,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   });
 };
 
-handler.help = ['صوت'].map((v) => v + ' <query>');
+handler.help = ['صوت'].map((v) => v + ' <اكتب الرابط>');
 handler.tags = ['downloader'];
 handler.command = /^صوت|song$/i;
 handler.diamond = false
