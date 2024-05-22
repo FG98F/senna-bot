@@ -1,77 +1,76 @@
-
-import ytdl from 'ytdl-core'
-import fs from 'fs'
-import { pipeline } from 'stream'
-import { promisify } from 'util'
-import os from 'os'
-import fg from 'api-dylux'
-import fetch from 'node-fetch'
-let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
-  if (!args || !args[0]) throw `✳️ ${mssg.example} :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`
-  if (!args[0].match(/youtu/gi)) throw `❎ ${mssg.noLink('YouTube')}`
-   m.react(rwait)
- let chat = global.db.data.chats[m.chat]
- let q = '128kbps'
- 
- try {
- 
-		//let res = await fetch(global.API('fgmods', '/api/downloader/yta', { url: args[0], quality: q}, 'apikey'))
-		//let yt = await res.json()
-		const yt = await fg.yta(args[0]) 
-		let { title, dl_url, quality, size, sizeB } = yt
-		
-		conn.sendFile(m.chat, dl_url, title + '.mp3', `
- ≡  *FG YTDL*
-  
-▢ *📌${mssg.title}* : ${title}
-▢ *⚖️${mssg.size}* : ${size}
-`.trim(), m, false, { mimetype: 'audio/mpeg', asDocument: chat.useDocument })
-		m.react(done)
- 	} catch {
-  try {
-  	
-	const { title, dl_url } = await ytmp3(args[0]);
-  
-		conn.sendFile(m.chat, dl_url, title + '.mp3', `
- ≡  *FG YTDL 2*
-  
-▢ *📌${mssg.title}* : ${title}
-`.trim(), m, false, { mimetype: 'audio/mpeg', asDocument: chat.useDocument })
-		m.react(done)
-        } catch {
-			await m.reply(`❎ ${mssg.error}`)
-} 
-}
-
-}
-handler.help = ['ytmp3 <url>']
-handler.tags = ['dl']
-handler.command = ['ytmp3', 'fgmp3'] 
-handler.diamond = false
-
-export default handler
+import ytdl from 'ytdl-core';
+import yts from 'yt-search';
+import fs from 'fs';
+import { pipeline } from 'stream';
+import { promisify } from 'util';
+import os from 'os';
 
 const streamPipeline = promisify(pipeline);
 
-async function ytmp3(url) {
-    const videoInfo = await ytdl.getInfo(url);
-    const { videoDetails } = videoInfo;
-    const { title, thumbnails, lengthSeconds, viewCount, uploadDate } = videoDetails;
-    const thumbnail = thumbnails[0].url;
-    
-    const audioStream = ytdl(url, { filter: 'audioonly', quality: 'highestaudio' });
-    const tmpDir = os.tmpdir();
-    const audioFilePath = `${tmpDir}/${title}.mp3`;
+var handler = async (m, { conn, command, text, usedPrefix }) => {
+  if (!text) throw `مثال : \n ${usedPrefix}${command} midle of night`;
 
-    await streamPipeline(audioStream, fs.createWriteStream(audioFilePath));
+  let search = await yts(text);
+  let vid = search.videos[Math.floor(Math.random() * search.videos.length)];
+  if (!search) throw 'Video Not Found, Try Another Title';
+  let { title, thumbnail, timestamp, views, ago, url } = vid;
+  let wm = ' 💝 BOBIZA BOT💝';
 
-    return {
-        title,
-        views: viewCount,
-        publish: uploadDate,
-        duration: lengthSeconds,
-        quality: '128kbps',
-        thumb: thumbnail,
-        dl_url: audioFilePath
-    };
-}
+  let captvid = `💝 Bobiza bot جاري التحميل ♥`;
+
+  conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
+
+
+  const audioStream = ytdl(url, {
+    filter: 'audioonly',
+    quality: 'highestaudio',
+  });
+
+  // Get the path to the system's temporary directory
+  const tmpDir = os.tmpdir();
+
+  // Create writable stream in the temporary directory
+  const writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`);
+
+  // Start the download
+  await streamPipeline(audioStream, writableStream);
+
+  let doc = {
+    audio: {
+      url: `${tmpDir}/${title}.mp3`
+    },
+    mimetype: 'audio/mp4',
+    fileName: `${title}`,
+    contextInfo: {
+      externalAdReply: {
+        showAdAttribution: true,
+        mediaType: 2,
+        mediaUrl: url,
+        title: title,
+        body: wm,
+        sourceUrl: url,
+        thumbnail: await (await conn.getFile(thumbnail)).data
+      }
+    }
+  };
+
+  await conn.sendMessage(m.chat, doc, { quoted: m });
+
+  // Delete the audio file
+  fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
+    if (err) {
+      console.error(`Failed to delete audio file: ${err}`);
+    } else {
+      console.log(`Deleted audio file: ${tmpDir}/${title}.mp3`);
+    }
+  });
+};
+
+handler.help = ['play'].map((v) => v + ' <query>');
+handler.tags = ['downloader'];
+handler.command = ['mp3', 'songs', 'ytmp3doc']
+
+handler.exp = 0;
+handler.diamond = false;
+
+export default handler;
