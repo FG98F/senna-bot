@@ -41,7 +41,7 @@ const defaultMenu = {
 `.trimStart(),
   header: "╭━━⊱ 「 *%category* 」⊱━━╮",
  body: "  │✫ -  %cmd %isdiamond %isPremium",
- footer: "╰━━━━━━━━━━━━━━━╯",
+ footer: "╯━━━━━━━━━━━━━━━╰",
   after: `
 `,
 }
