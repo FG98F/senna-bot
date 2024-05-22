@@ -18,12 +18,12 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   let wm = ' ثم التحميل بنجاح';
 
   let captvid = `
-  ❏ Title: ${title}
-  ❐ Duration: ${timestamp}
-  ❑ Views: ${views}
-  ❒ Upload: ${ago}
-  ❒ Link: ${url}
-> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴊɪᴛᴏssᴀ ᴍᴜsɪᴄ`;
+  ❏ العنوان: ${title}
+  ❐ المدة: ${timestamp}
+  ❑ المشاهدات: ${views}
+  ❒ تم التحميل: ${ago}
+  ❒ الرابط: ${url}
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍɪʀᴢᴀ ᴍᴜꜱɪᴄ`;
 
   conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
 
@@ -66,15 +66,15 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   // Delete the audio file
   fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
     if (err) {
-      console.error(`حدث خطأ أسفة: ${err}`);
+      console.error(`حدث خطأ أسف: ${err}`);
     } else {
       console.log(`ثم حدف الأغنية: ${tmpDir}/${title}.mp3`);
     }
   });
 };
 
-handler.help = ['play'].map((v) => v + ' <query>');
+handler.help = ['صوت'].map((v) => v + ' <query>');
 handler.tags = ['downloader'];
-handler.command = /^play|song$/i;
+handler.command = /^صوت|song$/i;
 handler.diamond = false
 export default handler;
