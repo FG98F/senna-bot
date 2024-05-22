@@ -1,80 +1,36 @@
-import ytdl from 'ytdl-core';
-import yts from 'yt-search';
-import fs from 'fs';
-import { pipeline } from 'stream';
-import { promisify } from 'util';
-import os from 'os';
+import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
 
-const streamPipeline = promisify(pipeline);
+let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
+  if (!args || !args[0]) throw `✳️ المثال :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`;
+  if (!args[0].match(/youtu/gi)) throw `❎ تحقق من أنه رابط يوتيوب.`;
 
-var handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `لـ تحميل الأغاني الجميلة والعريقة اليك هاذا الأمر \n\n مثـال:\n ${usedPrefix}${command} اسم الشيء المراد سماعه`;
-  await m.react(rwait);
+  m.react(rwait); 
 
-  let search = await yts(text);
-  let vid = search.videos[Math.floor(Math.random() * search.videos.length)];
-  if (!search) throw 'لم يتم إيجاد أي شئ بهاذا العنوان';
-  let { title, thumbnail, timestamp, views, ago, url } = vid;
-  let wm = ' ثم التحميل بنجاح';
+  try {
+    let q = '128kbps'; 
+    let v = args[0]; 
+    const yt = await youtubedl(v).catch(async () => await youtubedlv2(v)); 
+    const dl_url = await yt.audio[q].download(); 
+    const title = await yt.title; 
 
-  let captvid = `
-  ❏ العنوان: ${title}
-  ❐ المدة: ${timestamp}
-  ❑ المشاهدات: ${views}
-  ❒ تم التحميل: ${ago}
-  ❒ الرابط: ${url}
-> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍɪʀᴢᴀ ᴍᴜꜱɪᴄ`;
+    conn.sendFile(
+      m.chat,
+      dl_url,
+      title + '.mp3',
+      null, 
+      m,
+      false,
+      { mimetype: 'audio/mpeg' }
+    );
 
-  conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
-
-
-  const audioStream = ytdl(url, {
-    filter: 'audioonly',
-    quality: 'highestaudio',
-  });
-
-  // Get the path to the system's temporary directory
-  const tmpDir = os.tmpdir();
-
-  // Create writable stream in the temporary directory
-  const writableStream = fs.createWriteStream(`${title}.mp3`);
-
-  // Start the download
-  await streamPipeline(audioStream, writableStream);
-
-  let doc = {
-    audio: {
-      url: `${title}.mp3`
-    },
-    mimetype: 'audio/mp4',
-    fileName: `${title}`,
-    contextInfo: {
-      externalAdReply: {
-        showAdAttribution: false,
-        mediaType: '',
-        mediaUrl: '',
-        title: '',
-        body: '',
-        sourceUrl: '',
-        thumbnail: await (await conn.getFile(thumbnail)).data
-      }
-    }
-  };
-
-  await conn.sendMessage(m.chat, doc, { quoted: m });
-
-  // Delete the audio file
-  fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
-    if (err) {
-      console.error(`حدث خطأ أسف: ${err}`);
-    } else {
-      console.log(`ثم حدف الأغنية: ${tmpDir}/${title}.mp3`);
-    }
-  });
+    m.react(xmoji); 
+  } catch {
+    //await m.reply(`❎ خطأ: لا يمكن تحميل الصوت.`)
+  }
 };
 
-handler.help = ['صوت'].map((v) => v + ' <اكتب الرابط>');
-handler.tags = ['downloader'];
-handler.command = /^صوت|song$/i;
-handler.diamond = false
-export default handler;
+handler.help = ['ytmp3 <url>']
+handler.tags = ['downloader']
+handler.command = ['ytmp5', 'تحميل-صوت'] 
+
+export default handler
