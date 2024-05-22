@@ -23,13 +23,16 @@ let tags = {
 const defaultMenu = {
   before: `
 ْ    *│✫ - 『  𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕  』 - ✫│* ْ\n
- 
-👋🏻 مرحباً! *%name*
-👥 عدد المستخدمين : %totalreg
-🟢 وقت النشاط : %muptime
-%sbot
-▢ إنستغرام :
-• https://instagram.com/rnj_.6
+
+╭━━⊱『 *I N F O*』⊱━━╮
+⛥ *Mode:* %mode
+⛥ *Platform:* %platform
+⛥ *Type:* NodeJs
+⛥ *Baileys:* Multi Device
+⛥ *Prefix:* [ *%_p* ]
+⛥ *Uptime:* %muptime
+⛥ *Database:*  %totalreg
+╰━━━━━━━━━━━━━━━╯
 
 ────────────
 %readmore
