@@ -43,8 +43,8 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
   }
 };
 
-handler.tags = [ applications ];
-handler.help = [ apk ];
+handler.tags = [ 'applications' ];
+handler.help = [ 'apk' ];
 handler.command = /^(apk|apkdl|dapk2|تطبيق|aptoidedl)$/i;
 
 export default handler;
