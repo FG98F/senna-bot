@@ -39,13 +39,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   } finally {
     if (stiker) conn.sendFile(m.chat, stiker,  sticker.webp ,   , m, null, rpl)
     else throw `${mssg.stickError}`
-text.trim(), m, null, rcanal)
-  
-    m.react( 📚 )
   }
 }
 handler.help = [ 'ملصق' ]
-handler.tags = [ 'sticker' ]
+handler.tags = [ 'sticker']
 handler.command = [ 'ستيكر' ,  'ملصق' ] 
 
 export default handler
