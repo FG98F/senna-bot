@@ -8,7 +8,7 @@ if (!args[0]) throw `✳️ ${mssg.noLink('Facebook')}\n\n📌 ${mssg.example} :
   try {
     let result = await fg.fbdl(args[0]);
     let tex = `
-┌─⊷ *FBDL*
+┌─⊷ *𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕*
 ▢ *${mssg.title}:* ${result.title}
 └───────────`;
     conn.sendFile(m.chat, result.videoUrl, 'fb.mp4', tex, m);
@@ -17,9 +17,9 @@ if (!args[0]) throw `✳️ ${mssg.noLink('Facebook')}\n\n📌 ${mssg.example} :
     m.reply(mssg.error)
   }
 };
-handler.help = ['facebook'].map(v => v + ' <url>');
+handler.help = ['فيسبوك'].map(v => v + ' <رابط الفيديو>');
 handler.tags = ['dl'];
-handler.command = /^((facebook|fb)(downloder|dl)?)$/i;
-handler.diamond = true;
+handler.command = /^((facebook|fb)(downloder|فيسبوك)?)$/i;
+handler.diamond = false;
 
 export default handler;
