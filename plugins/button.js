@@ -47,7 +47,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
 }
 
-handler.help = ['info']
+handler.help = [ ]
 handler.tags = ['main']
 handler.command = ['القائمة']
 
