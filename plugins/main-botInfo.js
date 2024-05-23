@@ -59,7 +59,7 @@ let infobt = `
   
   
 
-/*conn.sendButton(m.chat, infobt, mssg.ig, null, [
+  conn.sendButton2(m.chat, infobt, mssg.ig, null, [
   ['ꨄ︎ Apoyar', `${usedPrefix}donate`],
    ['⌬ Grupos', `${usedPrefix}gpdylux`]
  ], m)*/
