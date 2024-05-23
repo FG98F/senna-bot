@@ -35,8 +35,8 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 		await conn.sendMessage(m.chat, { video: out, gifPlayback: /gif/i.test(m.text), gifAttribution: ~~(Math.random() * 2) }, { caption: '*DONE*', quoted: m });
 	} else throw `✳️ ${mssg.replyStick}`
 }
-handler.help = ['فيديو <ملصق>']
+handler.help = ['لفيديو <ملصق>']
 handler.tags = ['sticker']
-handler.command = ['tovideo', 'tovid', 'mp4', 'tomp4', 'togif','فيد']
+handler.command = ['tovideo', 'tovid', 'mp4', 'tomp4', 'togif','لفيديو']
 
 export default handler
