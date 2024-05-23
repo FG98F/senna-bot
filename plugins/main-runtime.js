@@ -12,9 +12,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let muptime = clockString(_muptime)
    m.reply(`🏮 *${mssg.uptime}*  \n\n${muptime}`) 
 }
-handler.help = ['runtime'] 
+handler.help = ['وقت التشغيل'] 
 handler.tags = ['main']
-handler.command = ['runtime', 'uptime']
+handler.command = ['runtime', 'uptime','وقت','وقت التشغيل']
 export default handler 
 
 function clockString(ms) {
