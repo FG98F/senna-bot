@@ -14,7 +14,7 @@ let handler = async (m, {conn}) => {
 }
 handler.help = ['مكافأة أسبوعية']
 handler.tags = ['econ']
-handler.command = ['weekly', 'semanal','مكافأة اسبوعية','مكافأة إسبوعية'] 
+handler.command = ['weekly', 'semanal','مكافأة اسبوعية','مكافأة أسبوعية'] 
 
 export default handler
 
