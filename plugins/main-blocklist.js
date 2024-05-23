@@ -14,8 +14,8 @@ let handler = async (m, { conn }) => {
 	})
 }
 
-handler.help = ['blocklist']
+handler.help = ['المحظورين']
 handler.tags = ['main']
-handler.command = ['blocklist', 'listblock'] 
+handler.command = ['blocklist', 'listblock','المحظورين'] 
 
 export default handler
