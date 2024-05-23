@@ -1,7 +1,7 @@
 import { search, download } from 'aptoide-scraper';
 
 const handler = async (m, { conn, usedPrefix, command, text }) => {
-  if (!text) return conn.reply(m.chat, '*تحميل التطبيقات محبوب الجماهير يقوم بتحميل التطبيقات*\n\n*مثــال:*\n .apk facebook lite', m);
+  if (!text) return conn.reply(m.chat, '*لتحميل التطبيقات استخدم الامر التالي:*\n\n*مثــال:*\n .تطبيق WhatsApp', m);
 
   try {
     let searchResults = await search(text);
@@ -43,8 +43,8 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
   }
 };
 
-handler.tags = ['applications'];
-handler.help = ['apk'];
+handler.tags = ['dl'];
+handler.help = ['تطبيق'];
 handler.command = /^(apk|apkdl|dapk2|aptoide|aptoidedl|تطبيق)$/i;
 
 export default handler;
