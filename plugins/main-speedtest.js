@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         m.react(done) 
     }
 }
-handler.help = [ ]
+handler.help = []
 handler.tags = ['main']
 handler.command = /^(speedtest|testspeed)$/i
 
