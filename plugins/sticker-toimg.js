@@ -21,8 +21,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         })
     } else throw `✳️ ${mssg.replyStick}`
 }
-handler.help = ['صورة <ملصق>']
+handler.help = ['لصورة <ملصق>']
 handler.tags = ['sticker']
-handler.command = ['toimg', 'jpg', 'aimg','صورة'] 
+handler.command = ['toimg', 'jpg', 'aimg','لصورة','لصوره'] 
 
 export default handler
