@@ -18,7 +18,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 ▢ 👀 *المشاهدات:* ${vid.views.toLocaleString()}
 └──────────────`
  await conn.sendButton2(m.chat, play, mssg.ig, thumbnail, [
-    ['🎶 صوت', `${usedPrefix}song ${url}`],
+    ['🎶 صوت', `${usedPrefix}songs ${url}`],
     ['🎥 فيديو', `${usedPrefix}fgmp4 ${url}`]
   ], null, [['قناة البوت', `${fgcanal}`]], m)
 }
