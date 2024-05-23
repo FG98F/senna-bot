@@ -11,7 +11,7 @@ let handler = async (m, {conn}) => {
 *${mssg.money}* : +${free.toLocaleString()} 🪙`)
   user.lastclaim = new Date * 1
 }
-handler.help = ['مكافأة']
+handler.help = ['مكافأة يومية']
 handler.tags = ['econ']
 handler.command = ['daily', 'claim','مكافأة','مكافأه','مكافأة يومية'] 
 
