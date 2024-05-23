@@ -1,24 +1,76 @@
-import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
-import fetch from 'node-fetch'
-let handler = async (m, { conn, args }) => {
-if (!args[0]) throw '*[❗𝐈𝐍𝐅𝐎❗] SEARCH YOUTUBE / YOUTUBE 𝙻𝙸𝙽𝙺*'
-await m.reply(`*_⏳Att chwia svp ᴀᴜᴅɪᴏ...⏳_*\n\n*◉  command #playdoc ᴏ #play.2 ᴏ #ytmp4doc ◉*`)
-try {
-let q = '128kbps'
-let v = args[0]
-const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v)).catch(async _ => await youtubedlv3(v))
-const dl_url = await yt.audio[q].download()
-const ttl = await yt.title
-const size = await yt.audio[q].fileSizeH
-await conn.sendFile(m.chat, dl_url, ttl + '.mp3', null, m, false, { mimetype: 'audio/mp4' })
-} catch {
-try {
-let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${lolkeysapi}&url=${args[0]}`)    
-let lolh = await lolhuman.json()
-let n = lolh.result.title || 'error'
-await conn.sendMessage(m.chat, { audio: { url: lolh.result.link }, fileName: `${n}.mp3`, mimetype: 'audio/mp4' }, { quoted: m })   
-} catch {
-await conn.reply(m.chat, '*[❗]AUDIO ERROR*', m)}
-}}
-handler.command = /^(dlmp3)$/i
-export default handler
+import ytdl from 'ytdl-core';
+import yts from 'yt-search';
+import fs from 'fs';
+import { pipeline } from 'stream';
+import { promisify } from 'util';
+import os from 'os';
+
+const streamPipeline = promisify(pipeline);
+
+var handler = async (m, { conn, command, text, usedPrefix }) => {
+  if (!text) throw `مثال : \n ${usedPrefix}${command} midle of night`;
+
+  let search = await yts(text);
+  let vid = search.videos[Math.floor(Math.random() * search.videos.length)];
+  if (!search) throw 'Video Not Found, Try Another Title';
+  let { title, thumbnail, timestamp, views, ago, url } = vid;
+  let wm = ' 💝 BOBIZA BOT💝';
+
+  let captvid = `💝 Bobiza bot جاري التحميل ♥`;
+
+  conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
+
+
+  const audioStream = ytdl(url, {
+    filter: 'audioonly',
+    quality: 'highestaudio',
+  });
+
+  // Get the path to the system's temporary directory
+  const tmpDir = os.tmpdir();
+
+  // Create writable stream in the temporary directory
+  const writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`);
+
+  // Start the download
+  await streamPipeline(audioStream, writableStream);
+
+  let doc = {
+    audio: {
+      url: `${tmpDir}/${title}.mp3`
+    },
+    mimetype: 'audio/mp4',
+    fileName: `${title}`,
+    contextInfo: {
+      externalAdReply: {
+        showAdAttribution: true,
+        mediaType: 2,
+        mediaUrl: url,
+        title: title,
+        body: wm,
+        sourceUrl: url,
+        thumbnail: await (await conn.getFile(thumbnail)).data
+      }
+    }
+  };
+
+  await conn.sendMessage(m.chat, doc, { quoted: m });
+
+  // Delete the audio file
+  fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
+    if (err) {
+      console.error(`Failed to delete audio file: ${err}`);
+    } else {
+      console.log(`Deleted audio file: ${tmpDir}/${title}.mp3`);
+    }
+  });
+};
+
+handler.help = ['play'].map((v) => v + ' <query>');
+handler.tags = ['downloader'];
+handler.command = ['mp3', 'songs', 'ytmp3doc']
+
+handler.exp = 0;
+handler.diamond = false;
+
+export default handler;
