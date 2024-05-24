@@ -18,7 +18,6 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
        m.react(rwait)
   let captvid = 'جاري التحميل'
     
-  conn.sendMessage(m.chat, { , footer: author }, { quoted: m });
    
   const audioStream = ytdl(url, {
     filter: 'audioonly',
