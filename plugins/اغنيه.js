@@ -16,7 +16,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
 
   let wm = '♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪'; // Your bot's watermark
 
-  m.reply('جاري التحميل...');
+  
 
   const audioStream = ytdl(url, { filter: 'audioonly', quality: 'highestaudio' });
   const tmpDir = os.tmpdir();
