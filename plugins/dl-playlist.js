@@ -18,7 +18,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
                     header: '🎶 صوت',
                     title: "",
                     description: `▢ ⌚ *${mssg.duration}:* ${v.timestamp}\n▢ 👀 *${mssg.views}:* ${v.views}\n▢ 📌 *${mssg.title}* : ${v.title}\n▢ 📆 *${mssg.aploud}:* ${v.ago}\n`, 
-                    id: `${usedPrefix}fgmp3 ${v.url}`
+                    id: `${usedPrefix}songs ${v.url}`
                 },
                 {
                     header: "🎥 فيديو",
