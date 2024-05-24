@@ -18,8 +18,8 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
        m.react(rwait)
   let captvid = 'جاري التحميل'
     
-  conn.sendMessage(m.chat, { image: { url: thumbnail } , footer: author }, { quoted: m });
-
+  await conn.loadingMsg(m.chat,  📥 جاري التحميل , ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` :  ✅ تم التحميل  }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
+     
   const audioStream = ytdl(url, {
     filter: 'audioonly',
     quality: 'highestaudio',
