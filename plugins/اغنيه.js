@@ -50,7 +50,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   };
   
   await conn.sendMessage(m.chat, doc, { quoted: m });
-  m.react(done);
+    m.react(done);
   
   fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
     if (err) {
@@ -68,4 +68,4 @@ handler.exp = 0;
 handler.diamond = false;
 
 export default handler;
-```
+
