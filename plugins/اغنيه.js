@@ -15,7 +15,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   let thumbnail = thumbnails[thumbnails.length - 1].url;
 
   let wm = '♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪'; // Your bot's watermark
-
+          m.react(rwait)
   
 
   const audioStream = ytdl(url, { filter: 'audioonly', quality: 'highestaudio' });
@@ -42,7 +42,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
     }
   };
   await conn.sendMessage(m.chat, doc, { quoted: m });
-
+       m.react(done)
   fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
     if (err) {
       console.error(`Failed to delete audio file: ${err}`);
