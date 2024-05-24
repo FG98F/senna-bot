@@ -16,10 +16,9 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   let { title, thumbnail, timestamp, views, ago, url } = vid;
   let wm = ' 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 '; //حط اسم بوتك
        m.react(rwait)
-  let captvid = `  جاري التحميل `;
+  let captvid = await conn.loadingMsg(m.chat,  📥 جاري التحميل , ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` :  ✅ تم التحميل  }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m) ;
 
   conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
-       m.react(done)
 
   const audioStream = ytdl(url, {
     filter: 'audioonly',
@@ -55,7 +54,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   };
 
   await conn.sendMessage(m.chat, doc, { quoted: m });
-
+        m.react(done)
   // Delete the audio file
   fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
     if (err) {
