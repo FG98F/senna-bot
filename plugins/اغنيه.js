@@ -64,8 +64,8 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   });
 };
 
-handler.help = ['play'].map((v) => v + ' <query>');
-handler.tags = ['downloader'];
+handler.help = [].map((v) => v + ' <query>');
+handler.tags = [];
 handler.command = ['mp3', 'songs', 'ytmp3doc','اغنيه']
 
 handler.exp = 0;
