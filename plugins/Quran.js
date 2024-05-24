@@ -75,7 +75,7 @@ if (m.isBaileys || !(m.chat in conn.qurannData)) return;
 };
 
 handler.help = ["قرآن"];
-handler.tags = ["den"];
+handler.tags = ["islam"];
 handler.command = /^قرآن$/i;
 
 export default handler;
