@@ -15,11 +15,11 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!search) throw 'Video Not Found, Try Another Title';
   let { title, thumbnail, timestamp, views, ago, url } = vid;
   let wm = ' 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 '; //حط اسم بوتك
-
+       m.react(rwait)
   let captvid = `  جاري التحميل `;
 
   conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
-
+       m.react(done)
 
   const audioStream = ytdl(url, {
     filter: 'audioonly',
