@@ -8,26 +8,19 @@ const streamPipeline = promisify(pipeline);
 
 var handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `مثال : \n ${usedPrefix}${command} midle of night`;
+  const url = text.trim();
 
-  const url = text.trim(); // Directly use the provided YouTube link
-
-  let vidInfo = await ytdl.getInfo(url); // Get video information directly from the link
+  let vidInfo = await ytdl.getInfo(url);
   let { videoDetails: { title, thumbnails, lengthSeconds } } = vidInfo;
-
-  let thumbnail = thumbnails[thumbnails.length - 1].url; // Get the last thumbnail for the video
+  let thumbnail = thumbnails[thumbnails.length - 1].url;
 
   let wm = '♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪'; // Your bot's watermark
 
   m.reply('جاري التحميل...');
 
-  const audioStream = ytdl(url, {
-    filter: 'audioonly',
-    quality: 'highestaudio',
-  });
-
+  const audioStream = ytdl(url, { filter: 'audioonly', quality: 'highestaudio' });
   const tmpDir = os.tmpdir();
   const writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`);
-
   await streamPipeline(audioStream, writableStream);
 
   let doc = {
@@ -48,7 +41,6 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
       }
     }
   };
-
   await conn.sendMessage(m.chat, doc, { quoted: m });
 
   fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
