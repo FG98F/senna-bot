@@ -1,5 +1,4 @@
 import ytdl from 'ytdl-core';
-import yts from 'yt-search';
 import fs from 'fs';
 import { pipeline } from 'stream';
 import { promisify } from 'util';
@@ -10,35 +9,33 @@ const streamPipeline = promisify(pipeline);
 var handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `مثال : \n ${usedPrefix}${command} midle of night`;
 
-  let search = await yts(text);
-  let vid = search.videos[Math.floor(Math.random() * search.videos.length)];
-  if (!search) throw 'Video Not Found, Try Another Title';
-  let { title, thumbnail, timestamp, views, ago, url } = vid;
-  let wm = ' ♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪ '; //حط اسم بوتك
-       m.react(rwait)
-  let captvid = 'جاري التحميل'
-    
-   
+  const url = text.trim(); // Directly use the provided YouTube link
+
+  let vidInfo = await ytdl.getInfo(url); // Get video information directly from the link
+  let { videoDetails: { title, thumbnails, lengthSeconds } } = vidInfo;
+
+  let thumbnail = thumbnails[thumbnails.length - 1].url; // Get the last thumbnail for the video
+
+  let wm = '♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪'; // Your bot's watermark
+
+  m.reply('جاري التحميل...');
+
   const audioStream = ytdl(url, {
     filter: 'audioonly',
     quality: 'highestaudio',
   });
 
-  // Get the path to the system's temporary directory
   const tmpDir = os.tmpdir();
-
-  // Create writable stream in the temporary directory
   const writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`);
 
-  // Start the download
   await streamPipeline(audioStream, writableStream);
 
   let doc = {
     audio: {
       url: `${tmpDir}/${title}.mp3`
     },
-    mimetype: 'audio/mp4',
-    fileName: `${title}`,
+    mimetype: 'audio/mp3',
+    fileName: title,
     contextInfo: {
       externalAdReply: {
         showAdAttribution: true,
@@ -53,8 +50,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   };
 
   await conn.sendMessage(m.chat, doc, { quoted: m });
-        m.react(done)
-  // Delete the audio file
+
   fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
     if (err) {
       console.error(`Failed to delete audio file: ${err}`);
@@ -64,12 +60,10 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   });
 };
 
-handler.help = [].map((v) => v + ' <query>');
+handler.help = ['<query>'];
 handler.tags = [];
-handler.command = ['mp3', 'songs', 'ytmp3doc','اغنيه']
-
+handler.command = ['mp3', 'songs', 'ytmp3doc', 'اغنيه'];
 handler.exp = 0;
 handler.diamond = false;
 
 export default handler;
-    
