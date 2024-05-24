@@ -16,7 +16,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   let { title, thumbnail, timestamp, views, ago, url } = vid;
   let wm = ' 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 '; //حط اسم بوتك
 
-;
+  let captvid = `  جاري التحميل `;
 
   conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
 
@@ -39,7 +39,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
     audio: {
       url: `${tmpDir}/${title}.mp3`
     },
-    mimetype: 'audio/mp4',
+    mimetype: 'audio',
     fileName: `${title}`,
     contextInfo: {
       externalAdReply: {
