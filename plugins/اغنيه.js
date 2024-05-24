@@ -1,4 +1,5 @@
 import ytdl from 'ytdl-core';
+import yts from 'yt-search';
 import fs from 'fs';
 import { pipeline } from 'stream';
 import { promisify } from 'util';
@@ -7,29 +8,31 @@ import os from 'os';
 const streamPipeline = promisify(pipeline);
 
 var handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `مثال : \n ${usedPrefix}${command} رابط الفيديو من يوتيوب`;
-  
-  const url = text; // يجب أن يكون هنا رابط الفيديو من يوتيوب مباشرة
-  
-  let info = await ytdl.getInfo(url);
-  let { videoDetails: { title, thumbnails } } = info;
-  let thumbnail = thumbnails[0].url;
-  
-  let wm = '♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪';
-  
-  m.react(rwait);
-  let captvid = 'جاري التحميل';
-  
+  if (!text) throw `مثال : \n ${usedPrefix}${command} midle of night`;
+
+  let search = await yts(text);
+  let vid = search.videos[Math.floor(Math.random() * search.videos.length)];
+  if (!search) throw 'Video Not Found, Try Another Title';
+  let { title, thumbnail, timestamp, views, ago, url } = vid;
+  let wm = ' ♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪ '; //حط اسم بوتك
+       m.react(rwait)
+  let captvid = 'جاري التحميل'
+    
+   
   const audioStream = ytdl(url, {
     filter: 'audioonly',
     quality: 'highestaudio',
   });
-  
+
+  // Get the path to the system's temporary directory
   const tmpDir = os.tmpdir();
+
+  // Create writable stream in the temporary directory
   const writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`);
-  
+
+  // Start the download
   await streamPipeline(audioStream, writableStream);
-  
+
   let doc = {
     audio: {
       url: `${tmpDir}/${title}.mp3`
@@ -48,10 +51,10 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
       }
     }
   };
-  
+
   await conn.sendMessage(m.chat, doc, { quoted: m });
-    m.react(done);
-  
+        m.react(done)
+  // Delete the audio file
   fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
     if (err) {
       console.error(`Failed to delete audio file: ${err}`);
@@ -61,11 +64,12 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   });
 };
 
-handler.help = [].map((v) => v + ' <رابط الفيديو من يوتيوب>');
+handler.help = [].map((v) => v + ' <query>');
 handler.tags = [];
-handler.command = ['mp3', 'اغنية'];
+handler.command = ['mp3', 'songs', 'ytmp3doc','اغنيه']
+
 handler.exp = 0;
 handler.diamond = false;
 
 export default handler;
-
+    
