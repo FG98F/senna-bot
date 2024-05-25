@@ -1,5 +1,5 @@
 //import db from '../lib/database.js'
-let reg = 10
+let reg = 0
 let maxap = 20000
 let cooldown = 30000
 let handler = async (m, { conn, args, usedPrefix, command }) => {
