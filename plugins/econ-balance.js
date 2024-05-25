@@ -1,33 +1,24 @@
-import { createWallet, depositToWallet, withdrawFromWallet, getWalletBalance } from './bankFunctions'
-let handler = async (m, { conn }) => {
-    let user = m.sender;
-    if (!walletExists(user)) {
-        createWallet(user);
-        conn.reply(m.chat, 'تم إنشاء محفظتك بنجاح!', m);
-    }
-    else if (m.text.toLowerCase() == 'رصيدي') {
-        let balance = getWalletBalance(user);
-        conn.reply(m.chat, `رصيدك في المحفظة: ${balance} دولار`, m);
-    }
-    else if (m.text.toLowerCase().startsWith('ايداع')) {
-        let amount = parseFloat(m.text.split(' ')[1]);
-        depositToWallet(user, amount);
-        conn.reply(m.chat, `تم إيداع ${amount} دولار في محفظتك بنجاح!`, m);
-    }
-    else if (m.text.toLowerCase().startsWith('سحب')) {
-        let amount = parseFloat(m.text.split(' ')[1]);
-        if (amount > getWalletBalance(user)) {
-            conn.reply(m.chat, 'لا يوجد رصيد كافي في المحفظة!', m);
-        } else {
-          withdrawFromWallet(user, amount);
-            conn.reply(m.chat, `تم سحب ${amount} دولار من محفظتك بنجاح!`, m);
-        }
-    }
-}
+let handler = async (m, {conn, usedPrefix}) => {
+	
+    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    let user = global.db.data.users[who]
+    if (!(who in global.db.data.users)) throw `✳️ 
+المستخدم مفقود من قاعدة البيانات الخاصة بي`
+    conn.reply(m.chat, `
+┌───⊷ *محفظه* ⊶
+▢ *📌الاسم* : _@${who.split('@')[0]}_
+▢ *💎عدد* : _${user.diamond}_
+▢ *⬆️XP* : _المجموع ${user.exp}_
+└──────────────
 
+*NOTA :* 
+يمكنك شراء 💎 الماس باستخدام الطلبات
+❏ *${usedPrefix}buy <cantidad>*
+❏ *${usedPrefix}buyall*`, m, { mentions: [who] })
+}
 handler.help = ['محفظه']
 handler.tags = ['econ']
-handler.command = /^(محفظه|ايداع|سحب)$/i
+handler.command = ['bal', 'diamantes', 'diamond', 'الماس','محفظه','محفظة'] 
 
 export default handler
-
+      
