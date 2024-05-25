@@ -25,7 +25,9 @@ let handler = async (m, { conn }) => {
     }
 }
 
-handler.help = ['رصيدي', 'ايداع [المبلغ]', 'سحب [المبلغ]']
-handler.tags = ['بنك']
-handler.command = /^(رصيدي|ايداع|سحب)$/i
+handler.help = ['محفظه']
+handler.tags = ['econ']
+handler.command = /^(محفظه|ايداع|سحب)$/i
+
 export default handler
+
