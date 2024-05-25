@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, command}) => {
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let pp = './Assets/quran.jpg'
+let pp = './src/quran.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `
@@ -136,6 +136,6 @@ m.react(done)
 }
 handler.help = ['allmenu']
 handler.tags = ['main']
-handler.command = ['surahmenu', 'quranmenu', 'number'] 
+handler.command = ['سورة', 'quranmenu', 'number'] 
 
 export default handler
