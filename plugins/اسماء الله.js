@@ -16,7 +16,7 @@ conn.qurannData = conn.qurannData ? conn.qurannData : {};
 
   const surahNumber = parseInt(m.text.split(' ')[1]);
   if (isNaN(surahNumber) || surahNumber < 1 || surahNumber > 114) {
-    m.reply("❌ رقم السورة غير صحيح. يرجى تقديم رقم سورة صالح بين 1 و 114.\n مثال : \n .ayati 114");
+    m.reply("❌ رقم السورة غير صحيح. يرجى تقديم رقم سورة صالح بين 1 و 114.\n مثال : \n .اياتي 114");
     return;
   }
 
