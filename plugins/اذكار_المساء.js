@@ -101,7 +101,9 @@ __________🌺_________
 ً'`])} 
  `.trim() 
  conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }}) 
- } 
+ }
+ handler.help = ['اذكار المساء']
+ handler.tags = ['islam']
  handler.customPrefix = /اذكار المساء|أذكار المساء/i 
  handler.command = new RegExp 
   
