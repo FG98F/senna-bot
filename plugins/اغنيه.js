@@ -28,7 +28,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
       contextInfo: {
         externalAdReply: {
           showAdAttribution: false,
-          mediaType: 1,
+          mediaType: ,
           mediaUrl: url,
           title: title,
           body: wm,
