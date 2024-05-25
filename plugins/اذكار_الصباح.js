@@ -53,6 +53,8 @@ let handler  = async (m, { conn }) => {
  `.trim() 
  conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }}) 
  } 
+ handler.help = ['اذكار الصباح']
+ handler.tags = ['islam']
  handler.customPrefix = /اذكار الصباح|أذكار الصباح/i 
  handler.command = new RegExp 
   
