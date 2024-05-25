@@ -1,7 +1,8 @@
 let handler = async (m, { conn, text}) => {
-m.reply(`*❆❯━━━❲hanry❳━━━━━❮❆*\n➢ *"${pickRandom(global.piropo)}"*\n*❆❯━━━❲hanry️❳━━━━━❮❆*`)
+m.reply(`*❆❯━━━❲𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕❳━━━━━❮❆*\n➢ *"${pickRandom(global.piropo)}"*\n*❆❯━━━❲𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕❳━━━━━❮❆*`)
 }
-handler.tags = ['احاديث']
+handler.help = ['حديث']
+handler.tags = ['islam']
 handler.command = ['حديث','احاديث']
  export default handler
     
