@@ -32,11 +32,13 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
           mediaType: 1, // matbdl walo
           showAdAttribution: true,
           renderLargerThumbnail: true
+          m.react(rwait)
         }
       }
     }, { quoted: m });
 
     await conn.sendMessage(m.chat, { document: { url: data.dllink }, mimetype: 'application/vnd.android.package-archive', fileName: data.name + '.apk', caption: null }, { quoted: m });
+          m.react(done)
   } catch (error) {
     console.error(error);
     return conn.reply(m.chat, '*حدث خطأ أثناء معالجة الطلب*', m);
