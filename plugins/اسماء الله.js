@@ -30,7 +30,7 @@ conn.qurannData = conn.qurannData ? conn.qurannData : {};
     `*${v.number.inSurah}.* ${v.text.arab}`
   )).join('\n');
 
-  const instructions = "قم بالرد على هذه الرسالة برقم الآية المطلوب لاستقبال الصوت. \n 
+  const instructions = "قم بالرد على هذه الرسالة برقم الآية المطلوب لاستقبال الصوت. \n "
 
   let { key } = await m.reply(`📖 قائمة الآيات في السورة ${surahNumber}:\n${formattedList}\n\n${instructions}`);
   // Store the Quran data in conn.qurannData variable for later use
