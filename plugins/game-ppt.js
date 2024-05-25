@@ -52,9 +52,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         throw reseqv
     }
 }
-handler.help = ['ppt']
+handler.help = ['حجر']
 handler.tags = ['game']
-handler.command = ['ppt'] 
+handler.command = ['حجر'] 
 handler.register = false
 
 export default handler
