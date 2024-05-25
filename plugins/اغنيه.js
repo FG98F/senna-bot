@@ -23,12 +23,12 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
       audio: {
         url: `${tmpDir}/${title}.mp3`
       },
-      mimetype: 'audio/mp3',
+      mimetype: 'audio/mp4',
       fileName: title,
       contextInfo: {
         externalAdReply: {
           showAdAttribution: true,
-          mediaType: 2,
+          mediaType: 1,
           mediaUrl: url,
           title: title,
           body: wm,
