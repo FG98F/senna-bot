@@ -12,9 +12,9 @@ let stiker = await sticker(false, res.url, global.packname, global.author)
 conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
 }}
 
-handler.help = ['مكس <emoji+emoji>']
+handler.help = ['مكس']
 handler.tags = ['sticker']
 handler.command = ['مكس'] 
-handler.diamond = true
+handler.diamond = false
 
 export default handler
