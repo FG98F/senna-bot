@@ -15,7 +15,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
     }
 
     let response = `💌 *اسم التطبيق:* ${data.name}\n📦 *الحزمة:* ${data.package}\n🕒 *آخر تحديث:* ${data.lastup}\n📥 *الحجم:* ${data.size}\n\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍɪʀᴢᴀ ʙᴏᴛ\n`;
-
+     m.react(rwait)
     if (data.size.includes('GB') || parseFloat(data.size.replace(' MB', '')) > 999) {
       return conn.reply(m.chat, '🚩 *الملف ثقيل جدًا*', m);
     }
