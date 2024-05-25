@@ -9,7 +9,9 @@ let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
 let link = await (isTele ? uploadImage : uploadFile)(media)
 m.reply(`*رابط ملفك:* ${link}`)
 }
+
 handler.help = ['تليجراف <صورة , فيديو>']
 handler.tags = ['sticker']
 handler.command = /^(تليجراف|رفع-تليجراف)$/i
+
 export default handler
