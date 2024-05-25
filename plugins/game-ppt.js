@@ -1,5 +1,5 @@
 
-let poin = 200
+let poin = 0
 let cooldown = 15000
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     
