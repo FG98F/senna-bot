@@ -32,7 +32,7 @@ conn.qurannData = conn.qurannData ? conn.qurannData : {};
 
   const instructions = "قم بالرد على هذه الرسالة برقم الآية المطلوب لاستقبال الصوت. \n يمكنك زيارة أنستغرام صاحب البوت لمعرفة المزيد عن هذه الميزة \n instagram.com/noureddine_ouafy";
 
-  let { key } = await m.reply(`📖 List of Ayahs in Surah ${surahNumber}:\n${formattedList}\n\n${instructions}`);
+  let { key } = await m.reply(`📖 قائمة الآيات في السورة ${surahNumber}:\n${formattedList}\n\n${instructions}`);
   // Store the Quran data in conn.qurannData variable for later use
   conn.qurannData[m.chat] = { list: Object.values(ayahs), key };
 };
