@@ -1,63 +1,47 @@
+import axios from 'axios';
+import fetch from 'node-fetch';
+import cheerio from 'cheerio';
+import {mediafiredl} from '@bochilteam/scraper';
 
-import fetch from 'node-fetch'
-import { mediafiredl } from '@bochilteam/scraper'
-import fg from 'api-dylux'
-let free = 150 // limite de descarga
-let prem = 500
-let handler = async (m, { conn, args, text, usedPrefix, command, isOwner, isPrems }) => {
-	  
-   if (!args[0]) throw `✳️ ${mssg.noLink('Mediafire')}`
-    if (!args[0].match(/mediafire/gi)) throw `❎ ${mssg.noLink('Mediafire')}`
-    m.react(rwait)
-
-    let limit = isPrems || isOwner ? prem : free
-	  let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-    let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url: u }))).buffer()
-    try {
-    let res = await mediafiredl(args[0])
-    let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
-    let isLimit = limit * 1024 < filesize
-    let caption = `
-   ≡ *MEDIAFIRE DL*
-
-*📌${mssg.name}:* ${filename}
-*⚖️${mssg.size}:* ${filesizeH}
-*🔼${mssg.aploud}:* ${aploud}
-${isLimit ? `\n▢ ${mssg.limitdl} *+${free} MB* ${mssg.limitdlTe} *${prem} MB*` : ''} 
-`.trim()
-    await conn.sendFile(m.chat, ss, 'ssweb.png', caption, m)
-    if(!isLimit) await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: ext, asDocument: true })
-    m.react(done)
-
-  } catch { 
-  
+const handler = async (m, {conn, args, usedPrefix, command}) => {
+  if (!args[0]) throw `_*< التحميلات - MEDIAFIRE />*_\n\n*[ ℹ️ ] أدخل رابط ميديا ​​فاير.*\n\n*[ 💡 ] مثال:* _${usedPrefix + command} https://www.mediafire.com/file/r0lrc9ir5j3e2fs/DOOM_v13_UNCLONE_`;
   try {
-	let res = await fg.mediafireDl(args[0])
-    let { url, url2, filename, ext, upload_date, filesize, filesizeB } = res
-   
-	   let isLimit = limit * 1024 < filesizeB
-    let caption = `
-   ≡ *MEDIAFIRE DL 2*
-
-*📌${mssg.name}:* ${filename}
-*⚖️${mssg.size}:* ${filesize}
-*🔼${mssg.aploud}:* ${upload_date}
-${isLimit ? `\n▢ ${mssg.limitdl} *+${free} MB* ${mssg.limitdlTe} *${prem} MB*` : ''} 
-`.trim()
-await conn.sendFile(m.chat, ss, 'ssweb.png', caption, m)
-if(!isLimit) await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: ext, asDocument: true })
-    m.react(done)
+    const resEX = await mediafiredl(args[0]);
+    const captionES = `_*< التحميلات - MEDIAFIRE />*_\n
+▢ *إسم:* ${resEX.filename}
+▢ *مقاس:* ${resEX.filesizeH}
+▢ *امتداد:* ${resEX.ext}\n\n
+*[ ℹ️ ] يتم الآن إرسال الملف.  انتظر...*`.trim();
+    m.reply(captionES);
+    await conn.sendFile(m.chat, resEX.url, resEX.filename, '', m, null, {mimetype: resEX.ext, asDocument: true});
   } catch {
-    m.reply(mssg.error)
+    try {
+      const res = await mediafireDl(args[0]);
+      const {name, size, date, mime, link} = res;
+      const caption = `_*< التحميلات - MEDIAFIRE />*_\n
+▢ *إسم:* ${name}
+▢ *مقاس:* ${size}
+▢ *امتداد:* ${mime}\n\n
+*[ ℹ️ ] يتم الآن إرسال الملف.  انتظر...*`.trim();
+      await m.reply(caption);
+      await conn.sendFile(m.chat, link, name, '', m, null, {mimetype: mime, asDocument: true});
+    } catch {
+      await m.reply('_*< التحميلات - MEDIAFIRE />*_\n\n*[ ℹ️ ] حدث خطأ.  الرجاء معاودة المحاولة في وقت لاحق.*');
+    }
   }
+};
+handler.command = /^(mediafire|mediafiredl|dlmediafire|ميديا فاير|فاير)$/i;
+export default handler;
 
-  }
-
+async function mediafireDl(url) {
+  const res = await axios.get(`https://www-mediafire-com.translate.goog/${url.replace('https://www.mediafire.com/', '')}?_x_tr_sl=en&_x_tr_tl=fr&_x_tr_hl=en&_x_tr_pto=wapp`);
+  const $ = cheerio.load(res.data);
+  const link = $('#downloadButton').attr('href');
+  const name = $('body > main > div.content > div.center > div > div.dl-btn-cont > div.dl-btn-labelWrap > div.promoDownloadName.notranslate > div').attr('title').replaceAll(' ', '').replaceAll('\n', '');
+  const date = $('body > main > div.content > div.center > div > div.dl-info > ul > li:nth-child(2) > span').text();
+  const size = $('#downloadButton').text().replace('Download', '').replace('(', '').replace(')', '').replace('\n', '').replace('\n', '').replace('                         ', '').replaceAll(' ', '');
+  let mime = '';
+  const rese = await axios.head(link);
+  mime = rese.headers['content-type'];
+  return {name, size, date, mime, link};
 }
-handler.help = ['mediafire <url>']
-handler.tags = ['dl']
-handler.command = ['mediafire', 'mfire'] 
-handler.diamond = true
-handler.premium = false
-
-export default handler
