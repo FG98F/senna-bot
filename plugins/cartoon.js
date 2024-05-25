@@ -105,13 +105,13 @@ function randomId() {
 let handler = async (m, { conn, usedPrefix, command }) => {
 	conn.cartoon = conn.cartoon ? conn.cartoon : {};
 	if (m.sender in conn.cartoon)
-		throw "لا تزال هناك عملية لم تكتمل يا صديقي. الرجاء الانتظار حتى تنتهي >//<";
+		throw "*❃❨ هناك عملية لم تنتهي بعد انتظر قليلا ❩ ❃*";
 	let q = m.quoted ? m.quoted : m;
 	let mime = (q.msg || q).mimetype || q.mediaType || "";
-	if (!mime) throw `أين هي الصورة التي تريد تحويلها لكرتون?`;
+	if (!mime) throw `*❃ ❨ اعمل رد علي الرسالة الي تريد تحولها ❩ ❃*`;
 	if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`;
 	else conn.cartoon[m.sender] = true;
-	m.reply("جاري تحويل الصورة لكرتون ...");
+	m.reply("*❃❨ هناك عملية لم تنتهي بعد انتظر قليلا ❩ ❃*");
 	let img = await q.download?.();
 	try {
 		Cartoon(img).then(async (response) => {
@@ -120,7 +120,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 					m.chat,
 					response.download.full,
 					"",
-					"تمت العملية بنجاح♥  >//<",
+					"*❐┇تمت العملية ✅❯*",
 					m
 				);
 				let name = await conn.getName(m.sender),
@@ -136,7 +136,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				conn.sendMessage(m.chat, await sticker.toMessage(), { quoted: m });
 			} else {
 				m.reply(
-					"معذرة صديقي الصورة لا تكشف عن وجه رجاء ارسل صورة يكون فيها الوجه مكشوفا وظاهرا."
+					"*❃ ❨ الصورة غير واضحة ارسل صورة يكون الوجه واضح ❩ ❃*"
 				);
 			}
 		});
@@ -146,9 +146,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 		conn.cartoon[m.sender] ? delete conn.cartoon[m.sender] : false;
 	}
 };
-handler.help = ["cartoon"];
+handler.help = ["لكرتون"];
 handler.tags = ["ai"];
-handler.command = ["cartoon"];
+handler.command = ["لكرتون"];
 
 handler.premium = false
 
