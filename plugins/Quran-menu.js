@@ -6,44 +6,44 @@ let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `
       ❀° ┄──•••───╮
-         ♥️𝐐𝐔𝐑𝐀𝐍 𝐊𝐀𝐑𝐄𝐄𝐌♥
+         ♥️القرآن الكريم♥
       ╰───•••──┄ °❀
       
     💫 𝘈𝘭𝘭 𝘴𝘶𝘳𝘢𝘩 𝘢𝘯𝘥 𝘵𝘩𝘦𝘪𝘳 𝘯𝘶𝘮𝘣𝘦𝘳𝘴 𝘭𝘪𝘴𝘵
 𝘧𝘰𝘳 𝘨𝘦𝘵𝘵𝘪𝘯𝘨 𝘴𝘶𝘳𝘢𝘩 𝘵𝘺𝘱𝘦 .𝘴𝘶𝘳𝘢𝘩 36 💫
 
 
-1. Al-Fatiha  (The Opening)
-2. Al-Baqarah  (The Cow)
-3. Aali Imran  (The Family of Imran)
-4. An-Nisa'  (The Women)
-5. Al-Ma'idah  (The Table Spread)
-6. Al-An'am  (The Cattle)
-7. Al-A'raf  (The Heights)
-8. Al-Anfal  (The Spoils of War)
-9. At-Tawbah  (The Repentance)
-10. Yunus  (Jonah)
-11. Hud  (Hud)
-12. Yusuf  (Joseph)
-13. Ar-Rad  (The Thunder)
-14. Ibrahim  (Abraham)
-15. Al-Hijr  (The Rocky Tract)
-16. An-Nahl  (The Bee)
-17. Al-Isra'  (The Night Journey)
-18. Al-Kahf  (The Cave)
-19. Maryam  (Mary)
-20. Ta-Ha  (Ta-Ha)
-21. Al-Anbiya'  (The Prophets)
-22. Al-Hajj  (The Pilgrimage)
-23. Al-Mu'minun  (The Believers)
-24. An-Nur  (The Light)
-25. Al-Furqan  (The Criterion)
-26. Ash-Shu'ara'  (The Poets)
-27. An-Naml  (The Ant)
-28. Al-Qasas  (The Stories)
-29. Al-Ankabut  (The Spider)
-30. Ar-Rum  (The Romans)
-31. Luqman  (Luqman)
+1. سورة الفاتحة
+2. سورة البقرة
+3. سورة آل عمران
+4. سورة النساء
+5. سورة المائدة
+6. سورة الأنعام
+7. سورة الأعراف
+8. سورة الأنفال
+9. سورة التوبة
+10. سورة يونس
+11. سورة هود
+12. سورة يوسف
+13. سورة الرعد
+14. سورة إبراهيم
+15. سورة الحِجر
+16. سورة النحل
+17. سورة الإسراء
+18. سورة الكهف
+19. سورة مريم
+20. سورة طه
+21. سورة الأنبياء
+22. سورة الحج
+23. سورة المؤمنون
+24. سورة النور
+25. سورة الفرقان
+26. سورة الشورى
+27. سورة النمل
+28. سورة القصص
+29. سورة العنكبوت
+30. سورة الروم
+31. سورة لقمان
 32. As-Sajda  (The Prostration)
 33. Al-Ahzab  (The Combined Forces)
 34. Saba'  (Sheba)
