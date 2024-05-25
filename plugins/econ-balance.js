@@ -1,21 +1,32 @@
-
-let handler = async (m, {conn, usedPrefix}) => {
-	
-    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    let user = global.db.data.users[who]
-    if (!(who in global.db.data.users)) throw `✳️ ${mssg.userDb}`
-    conn.reply(m.chat, `
- ≡ *${mssg.name}:* @${who.split('@')[0]}
-
- 💰 *${mssg.purse.toUpperCase()}*
-┌───⊷
-▢ *💎${mssg.dmd}:* _${user.diamond.toLocaleString()}_
-▢ *🪙${mssg.money}:* _${user.coin.toLocaleString()}_
-└──────────────
-`, m, { mentions: [who] })
+// قناة المطور
+https://whatsapp.com/channel/0029VaUTbPnBKfhygQtsJh35
+import { createWallet, depositToWallet, withdrawFromWallet, getWalletBalance } from './bankFunctions'
+let handler = async (m, { conn }) => {
+    let user = m.sender;
+    if (!walletExists(user)) {
+        createWallet(user);
+        conn.reply(m.chat, 'تم إنشاء محفظتك بنجاح!', m);
+    }
+    else if (m.text.toLowerCase() == 'رصيدي') {
+        let balance = getWalletBalance(user);
+        conn.reply(m.chat, `رصيدك في المحفظة: ${balance} دولار`, m);
+    }
+    else if (m.text.toLowerCase().startsWith('ايداع')) {
+        let amount = parseFloat(m.text.split(' ')[1]);
+        depositToWallet(user, amount);
+        conn.reply(m.chat, `تم إيداع ${amount} دولار في محفظتك بنجاح!`, m);
+    }
+    else if (m.text.toLowerCase().startsWith('سحب')) {
+        let amount = parseFloat(m.text.split(' ')[1]);
+        if (amount > getWalletBalance(user)) {
+            conn.reply(m.chat, 'لا يوجد رصيد كافي في المحفظة!', m);
+        } else {
+          withdrawFromWallet(user, amount);
+            conn.reply(m.chat, `تم سحب ${amount} دولار من محفظتك بنجاح!`, m);
+        }
+    }
 }
-handler.help = ['محفظة']
-handler.tags = ['econ']
-handler.command = ['bal', 'diamantes', 'diamond', 'balance','محفظه','محفظة'] 
-
+handler.help = ['رصيدي', 'ايداع [المبلغ]', 'سحب [المبلغ]']
+handler.tags = ['بنك']
+handler.command = /^(رصيدي|ايداع|سحب)$/i
 export default handler
