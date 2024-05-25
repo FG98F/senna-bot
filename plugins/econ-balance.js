@@ -1,5 +1,3 @@
-// قناة المطور
-https://whatsapp.com/channel/0029VaUTbPnBKfhygQtsJh35
 import { createWallet, depositToWallet, withdrawFromWallet, getWalletBalance } from './bankFunctions'
 let handler = async (m, { conn }) => {
     let user = m.sender;
@@ -26,6 +24,7 @@ let handler = async (m, { conn }) => {
         }
     }
 }
+
 handler.help = ['رصيدي', 'ايداع [المبلغ]', 'سحب [المبلغ]']
 handler.tags = ['بنك']
 handler.command = /^(رصيدي|ايداع|سحب)$/i
