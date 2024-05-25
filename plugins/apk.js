@@ -32,7 +32,6 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
           mediaType: 1, // matbdl walo
           showAdAttribution: true,
           renderLargerThumbnail: true
-          m.react(rwait)
         }
       }
     }, { quoted: m });
