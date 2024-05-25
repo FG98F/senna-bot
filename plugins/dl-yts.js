@@ -14,8 +14,8 @@ let teks = tes.map(v => `
 `.trim()).join('\n________________________\n\n')
 	conn.sendFile(m.chat, tes[0].image, 'yts.jpeg', teks, m)
 }
-handler.help = ['ytsearch'] 
+handler.help = ['بحث'] 
 handler.tags = ['dl']
-handler.command = ['ytsearch', 'yts'] 
+handler.command = ['ytsearch', 'yts','بحث','يوتيوب'] 
 
 export default handler
