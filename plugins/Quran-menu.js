@@ -132,7 +132,7 @@ let lkr = `
   ♥️ القرآن الكريم♥
 ╰───•••──┄ °❀`
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
-m.react(🕋)
+m.react(done)
 }
 handler.help = ['قرآن']
 handler.tags = ['islam']
