@@ -56,7 +56,7 @@ handler.help = ['play', 'play2'].map((v) => v + ' < busqueda >');
 handler.tags = ['downloader'];
 handler.command = /^(play3|play4)$/i;
 
-handler.register = true
+handler.register = false
 
 
 export default handler;
