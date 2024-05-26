@@ -74,8 +74,8 @@ if (m.isBaileys || !(m.chat in conn.qurannData)) return;
   }
 };
 
-handler.help = ["قرآن"];
-handler.tags = ["islam"];
-handler.command = /^قرآن$/i;
+handler.help = [];
+handler.tags = [];
+handler.command = /^سورة$/i;
 
 export default handler;
