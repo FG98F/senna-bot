@@ -139,10 +139,6 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let pp = './src/fg_logo.jpg'
 
-    conn.sendButton2(m.chat, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp [
-      ['⏍ معلومات البوت', `${_p}botinfo`],
-      ['⌬ الدعم', `${_p}support`]
-    ], m, rpl)
     let handler = async (m, { conn, args, usedPrefix, command }) => {
     conn.relayMessage(m.chat, {
       viewOnceMessage: {
