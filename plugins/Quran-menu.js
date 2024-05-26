@@ -5,7 +5,7 @@ let pp = './src/quran.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `
-  ❀° ───•••──┄┄──•••───╮
+  ❀° ───•••──┄┄──•••───╭
     *♥️القـــــــــرآن الكـــريــــــم♥*
   ╯───•••──┄┄──•••─── °❀
       
