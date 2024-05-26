@@ -36,9 +36,9 @@ conn.qurannData = conn.qurannData ? conn.qurannData : {};
     `*${v.number.inSurah}.* ${v.text.arab}`
   )).join('\n');
 
-  const instructions = "*❀° ───•••──┄┄──•••───╭  *♥️القـــــــــرآن الكـــريــــــم♥* ╯───•••──┄┄──•••─── °❀*";
+  const instructions = "❀° ───•••──┄┄──•••───╭  *♥️القـــــــــرآن الكـــريــــــم♥* ╯───•••──┄┄──•••─── °❀";
 
-  let { key } = await m.reply(`*✧༺✦✮✦༻∞ القرآن الكريم ∞༺✦✮✦༻✧*\n${formattedList}\n\n${instructions}`);
+  let { key } = await m.reply(`❀° ───•••──┄┄──•••───╭  *♥️القـــــــــرآن الكـــريــــــم♥* ╯───•••──┄┄──•••─── °❀\n${formattedList}\n\n${instructions}`);
   // Store the Quran data in conn.qurannData variable for later use
   conn.qurannData[m.chat] = { list: Object.values(ayahs), key };
 };
