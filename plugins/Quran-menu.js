@@ -132,10 +132,10 @@ let lkr = `
   ♥️ القرآن الكريم♥
 ╰───•••──┄ °❀`
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
-m.react(done)
+m.react(🕋)
 }
-handler.help = ['allmenu']
-handler.tags = ['main']
-handler.command = ['سورة', 'quranmenu', 'number'] 
+handler.help = ['قرآن']
+handler.tags = ['islam']
+handler.command = ['قرآن', 'quranmenu'] 
 
 export default handler
