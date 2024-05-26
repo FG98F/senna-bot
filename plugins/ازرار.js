@@ -138,7 +138,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
     let pp = './src/fg_logo.jpg'
-
+    
+    conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m, null, rcanal)
     let handler = async (m, { conn, args, usedPrefix, command }) => {
     conn.relayMessage(m.chat, {
       viewOnceMessage: {
