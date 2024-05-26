@@ -22,7 +22,7 @@ conn.qurannData = conn.qurannData ? conn.qurannData : {};
 
   const surahNumber = parseInt(m.text.split(' ')[1]);
   if (isNaN(surahNumber) || surahNumber < 1 || surahNumber > 114) {
-    m.reply("〔❗〕اكتب رقم السورة اللتي تريدها.\n مثال : \n.قرآن 1");
+    m.reply("〔❗〕اكتب رقم السورة اللتي تريدها.\n مثال : \n.سورة 1");
     return;
   }
 
@@ -36,7 +36,9 @@ conn.qurannData = conn.qurannData ? conn.qurannData : {};
     `*${v.number.inSurah}.* ${v.text.arab}`
   )).join('\n');
 
-  const instructions = "*✧༺✦✮✦༻∞ القرآن الكريم ∞༺✦✮✦༻✧*";
+  const instructions = "*❀° ───•••──┄┄──•••───╭
+    *♥️القـــــــــرآن الكـــريــــــم♥*
+  ╯───•••──┄┄──•••─── °❀*";
 
   let { key } = await m.reply(`*✧༺✦✮✦༻∞ القرآن الكريم ∞༺✦✮✦༻✧*\n${formattedList}\n\n${instructions}`);
   // Store the Quran data in conn.qurannData variable for later use
@@ -55,7 +57,7 @@ if (m.isBaileys || !(m.chat in conn.qurannData)) return;
   const index = parseInt(input);
 
   if (isNaN(index) || index < 1 || index > list.length) {
-    m.reply("〔❗〕اكتب رقم السورة اللتي تريدها.\nمثال :\n.قرآن 1");
+    m.reply("〔❗〕اكتب رقم السورة اللتي تريدها.\nمثال :\n.سورة 1");
   } else {
   const selectedObj = list[index - 1];
 
