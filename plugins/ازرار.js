@@ -139,7 +139,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let pp = './src/fg_logo.jpg'
     
-    let handler = async (m, { conn, args, usedPrefix, command }) => {
+   coon.sendfile ( let handler = async (m, { conn, args, usedPrefix, command }) => {
     conn.relayMessage(m.chat, {
       viewOnceMessage: {
         message: {
@@ -222,7 +222,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       }
     }, {})
     }
-  
+  )
     m.react('📚') 
     
   } catch (e) {
