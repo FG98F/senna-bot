@@ -38,98 +38,98 @@ let lkr = `
 23. سورة المؤمنون
 24. سورة النور
 25. سورة الفرقان
-26. سورة الشورى
+26. سورة الشعراء
 27. سورة النمل
 28. سورة القصص
 29. سورة العنكبوت
 30. سورة الروم
 31. سورة لقمان
-32. As-Sajda  (The Prostration)
-33. Al-Ahzab  (The Combined Forces)
-34. Saba'  (Sheba)
-35. Fatir  (The Originator)
-36. Ya-Sin  (Ya-Sin)
-37. As-Saffat  (Those who set the Ranks)
-38. Sad  (The Letter Sad)
-39. Az-Zumar  (The Troops)
-40. Ghafir  (The Forgiver)
-41. Fussilat  (Explained in Detail)
-42. Ash-Shura  (Consultation)
-43. Az-Zukhruf  (The Gold Adornments)
-44. Ad-Dukhan  (The Smoke)
-45. Al-Jathiyah  (The Crouching)
-46. Al-Ahqaf  (The Wind-Curved Sandhills)
-47. Muhammad  (Muhammad)
-48. Al-Fath  (The Victory)
-49. Al-Hujurat  (The Rooms)
-50. Qaf  (The Letter Qaf)
-51. Adh-Dhariyat  (The Winnowing Winds)
-52. At-Tur  (The Mount)
-53. An-Najm  (The Star)
-54. Al-Qamar  (The Moon)
-55. Ar-Rahman  (The Beneficent)
-56. Al-Waqi'a  (The Inevitable)
-57. Al-Hadid  (The Iron)
-58. Al-Mujadila  (The Pleading Woman)
-59. Al-Hashr  (The Exile)
-60. Al-Mumtahanah  (She that is to be examined)
-61. As-Saff  (The Ranks)
-62. Al-Jumu'ah  (Friday)
-63. Al-Munafiqun  (The Hypocrites)
-64. At-Taghabun  (Mutual Disillusion)
-65. At-Talaq  (The Divorce)
-66. At-Tahrim  (The Prohibition)
-67. Al-Mulk  (The Sovereignty)
-68. Al-Qalam  (The Pen)
-69. Al-Haqqah  (The Reality)
-70. Al-Ma'arij  (The Ascending Stairways)
-71. Nuh  (Noah)
-72. Al-Jinn  (The Jinn)
-73. Al-Muzzammil  (The Enshrouded One)
-74. Al-Muddathir  (The Cloaked One)
-75. Al-Qiyamah  (The Resurrection)
-76. Al-Insan  (Man)
-77. Al-Mursalat  (The Emissaries)
-78. An-Naba'  (The Tidings)
-79. An-Nazi'at  (Those who drag forth)
-80. Abasa  (He frowned)
-81. At-Takwir  (The Overthrowing)
-82. Al-Infitar  (The Cleaving)
-83. Al-Mutaffifin  (Defrauding)
-84. Al-Inshiqaq  (The Splitting Open)
-85. Al-Buruj  (The Mansions of the Stars)
-86. At-Tariq  (The Morning Star)
-87. Al-Ala  (The Most High)
-88. Al-Ghashiyah  (The Overwhelming)
-89. Al-Fajr  (The Dawn)
-90. Al-Balad  (The City)
-91. Ash-Shams  (The Sun)
-92. Al-Lail  (The Night)
-93. Ad-Duha  (The Morning Hours)
-94. As-Sharh  (The Relief)
-95. At-Tin  (The Fig)
-96. Al-Alaq  (The Clot)
-97. Al-Qadr  (The Power)
-98. Al-Bayyinah  (The Clear Proof)
-99. Az-Zalzalah  (The Earthquake)
-100. Al-Adiyat  (The Chargers)
-101. Al-Qari'ah  (The Calamity)
-102. At-Takathur  (The Abundance of Wealth)
-103. Al-Asr  (The Time)
-104. Al-Humazah  (The Scandal-Monger)
-105. Al-Fil  (The Elephant)
-106. Quraysh  (Quraysh)
-107. Al-Ma'un  (Acts of Kindness)
-108. Al-Kawthar  (The Abundance)
-109. Al-Kafirun  (The Disbelievers)
-110. An-Nasr  (The Help)
-111. Al-Lahab  (The Flame)
-112. Al-Ikhlas  (The Sincerity)
-113. Al-Falaq  (The Daybreak)
-114. An-Nas  (Mankind)
+32. سورة السجدة
+33. سورة الأحزاب
+34. سورة سبأ
+35. سورة فاطر
+36. سورة ياسين
+37. سورة الصافات
+38. سورة ص
+39. سورة الزمر
+40. سورة غافر
+41. سورة فصلت
+42. سورة الشورى
+43. سورة الزخرف
+44. سورة الدخان
+45. سورة الجاثية
+46. سورة الأحقاف
+47. سورة محمد
+48. سورة الفتح
+49. سورة الحجرات
+50. سورة ق
+51. سورة الذاريات
+52. سورة الطور
+53. سورة النجم
+54. سورة القمر
+55. سورة الرحمن
+56. سورة الواقعة
+57. سورة الحديد
+58. سورة المجادلة
+59. سورة الحشر
+60. سورة الممتحنة
+61. سورة الصف
+62. سورة الجمعة
+63. سورة المنافقون
+64. سورة التغابن
+65. سورة الطلاق
+66. سورة التحريم
+67. سورة الملك
+68. سورة القلم
+69. سورة الحاقة
+70. سورة المعارج
+71. سورة نوح
+72. سورة الجن
+73. سورة المزمل
+74. سورة المدثر
+75. سورة القيامة
+76. سورة الإنسان
+77. سورة المرسلات
+78. سورة النبأ
+79. سورة النازعات
+80. سورة عبس
+81. سورة التكوير
+82. سورة الإنفطار
+83. سورة المطففين
+84. سورة الإنشقاق
+85. سورة البروج
+86. سورة الطارق
+87. سورة الأعلى
+88. سورة الغاشية
+89. سورة الفجر
+90. سورة البلد
+91. سورة الشمس
+92. سورة الليل
+93. سورة الضحى
+94. سورة الشرح
+95. سورة التين
+96. سورة العلق
+97. سورة القدر
+98. سورة البينة
+99. سورة الزلزلة
+100. سورة العاديات
+101. سورة القارعة
+102. سورة التكاثر
+103. سورة العصر
+104. سورة الهمزة
+105. سورة الفيل
+106. سورة قريش
+107. سورة الماعون
+108. سورة الكوثر
+109. سورة الكافرون
+110. سورة النصر
+111. سورة المسد
+112. سورة الإخلاص
+113. سورة الفلق
+114. سورة الناس
 
 ❀° ┄──•••───╮
-  ♥️ 𝐐𝐔𝐑𝐀𝐍 𝐊𝐀𝐑𝐄𝐄𝐌♥
+  ♥️ القرآن الكريم♥
 ╰───•••──┄ °❀`
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
 m.react(done)
