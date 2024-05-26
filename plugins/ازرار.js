@@ -139,7 +139,6 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let pp = './src/fg_logo.jpg'
     
-    conn.sendFile(m.chat, pp, 'menu.jpg', handler, text.trim(), m, null, rcanal)
     let handler = async (m, { conn, args, usedPrefix, command }) => {
     conn.relayMessage(m.chat, {
       viewOnceMessage: {
