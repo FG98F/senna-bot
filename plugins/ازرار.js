@@ -139,11 +139,90 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let pp = './src/fg_logo.jpg'
 
-      conn.sendButton2(m.chat, rcanal, text.trim(), `▢ 𝑴𝒊𝒓𝒛𝒂 ┃ ᴮᴼᵀ\n${mssg.ig}`, pp [
-      ['⏍ معلومات البوت', `${_p}botinfo`],
-      ['⌬ الدعم', `${_p}support`]
-    ], m, rpl)
-    conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m, null, rcanal)
+    let handler = async (m, { conn, args, usedPrefix, command }) => {
+    conn.relayMessage(m.chat, {
+      viewOnceMessage: {
+        message: {
+          interactiveMessage: {
+            header: {
+              title: '*🎗️ قـائـمـة الـاوامــر🎗️*'
+            },
+            body: {
+              text: '🧿 افتح القائمة بواسطة الزر\n🍒 لا تلعب كثير في القائمة'
+            },
+            nativeFlowMessage: {
+              buttons: [
+                {
+                  name: 'single_select',
+                  buttonParamsJson: JSON.stringify({
+                    title: 'دوس عليا',
+                    sections: [
+                      {
+                        title: 'List',
+                        highlight_label: 'ON',
+                        rows: [
+                          {
+                            header: '☘️ قـسـم الـمطور',
+                            title: '.اوامر_المطور',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـجروب',
+                            title: '.اوامر_الجروب',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـتحميل',
+                            title: '.اوامر_التحميل',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـترفيه',
+                            title: '.اوامر_الترفيه',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـتحميل',
+                            title: '.اوامر_التحميل',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـدين',
+                            title: '.اوامر_الدين',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ كل الاوامر',
+                            title: '.كل_الاوامر',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: ' ☘️قـسـم الـصوتيات',
+                            title: '.اوامر_الصوتيات',
+                            description: '',
+                            id: 'te'
+                          }
+                        ]
+                      }
+                    ]
+                  }),
+                  messageParamsJson: ''
+                }
+              ]
+            }
+          }
+        }
+      }
+    }, {})
+
+}
   
     m.react('📚') 
     
@@ -154,7 +233,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 }
 //handler.help = ['help']
 //handler.tags = ['main']
-handler.command = [] 
+handler.command = ['لست'] 
 handler.register = false
 
 export default handler
