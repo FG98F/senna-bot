@@ -225,7 +225,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
         }
       }
     }, {})
-
+    }
 }
   
     m.react('📚') 
