@@ -14,21 +14,57 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 {
                   name: 'single_select',
                   buttonParamsJson: JSON.stringify({
-                    title: 'دوس عليا 💔',
+                    title: 'دوس عليا',
                     sections: [
                       {
                         title: 'List',
                         highlight_label: 'ON',
                         rows: [
                           {
-                            header: '☘️ قـسـم الـنـظـام',
-                            title: '.النظام_كود',
+                            header: '☘️ قـسـم الـمطور',
+                            title: '.اوامر_المطور',
                             description: '',
                             id: 'te'
                           },
                           {
-                            header: '👑 قـسـم الـمـطـور',
-                            title: '.المطور_كود',
+                            header: '☘️ قـسـم الـجروب',
+                            title: '.اوامر_الجروب',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـتحميل',
+                            title: '.اوامر_التحميل',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـترفيه',
+                            title: '.اوامر_الترفيه',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـتحميل',
+                            title: '.اوامر_التحميل',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ قـسـم الـدين',
+                            title: '.اوامر_الدين',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: '☘️ كل الاوامر',
+                            title: '.كل_الاوامر',
+                            description: '',
+                            id: 'te'
+                          },
+                          {
+                            header: ' ☘️قـسـم الـصوتيات',
+                            title: '.اوامر_الصوتيات',
                             description: '',
                             id: 'te'
                           }
@@ -47,8 +83,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
 }
 
-handler.help = [ ]
+handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['القائمة']
+handler.command = ['القائمة', 'القائمه']
 
 export default handler
