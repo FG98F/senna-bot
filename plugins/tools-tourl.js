@@ -9,13 +9,14 @@ let handler = async (m) => {
   let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
   let link = await (isTele ? uploadImage : uploadFile)(media)
   m.reply(`*❆❯━━━❲𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕❳━━━━━❮❆*
-  ▢ *الحجم :* ${media.length} Byte(s) 
+ 
+▢ *الحجم :* ${media.length} Byte(s) 
 
 ▢ *الرابط :* ${link}
   `)
 }
 handler.help = ['تليجراف']
-handler.tags = ['tools']
+handler.tags = ['sticker']
 handler.command = ['upload', 'تليجراف']
 
 export default handler
