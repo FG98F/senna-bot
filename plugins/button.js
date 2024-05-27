@@ -80,7 +80,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         }
       }
     }, {})
- await conn.sendList(m.chat,    ≡ *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*🔎 , `\n 📀 النتيجة:\n *${text}*`, `اضغط هنا`, ytres[0].image, listSections, m);
 }
 
 handler.help = ['info']
