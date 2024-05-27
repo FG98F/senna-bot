@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    conn.relayMessage(m.chat, {
+    conn.relayMessage(m.chat, image, {
         viewOnceMessage: {
             message: {
                 interactiveMessage: {
