@@ -40,7 +40,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 }),
                 messageParamsJson: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕",
                 mediaMessage: {
-                  upload: photo
+                  upload: "photo"
                 }
               }
             ]
