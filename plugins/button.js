@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    conn.relayMessage(m.chat, image, {
+    conn.relayMessage(m.chat, image, 'fg_logo.jpg', {
         viewOnceMessage: {
             message: {
                 interactiveMessage: {
@@ -71,7 +71,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                                             ]
                                         }
                                     ],
-                                    image: "https://i.ibb.co/1zdz2j3/logo.jpgs" // اضف رابط الصورة هنا
+                                    image: "./src/fg_logo.jpg" // اضف رابط الصورة هنا
                                 }),
                                 messageParamsJson: ""
                             }
