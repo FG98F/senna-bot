@@ -2,6 +2,7 @@ import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
 import fetch from 'node-fetch';
 const handler = async (m, {conn, args}) => {
   if (!args[0]) throw '🌺 اكتب الرابط';
+  m.react(rwait)
   await m.reply(`جاري التحميل`);
   try {
     const q = '128kbps';
