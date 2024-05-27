@@ -1,4 +1,5 @@
-
+import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
+import fetch from 'node-fetch';
 let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
   if (!args || !args[0]) throw `✳️ Ejemplo :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`
   if (!args[0].match(/youtu/gi)) throw `❎ Verifica que el link de YouTube`
