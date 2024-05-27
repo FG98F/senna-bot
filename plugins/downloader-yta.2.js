@@ -11,7 +11,7 @@ const handler = async (m, {conn, args}) => {
     const ttl = await yt.title;
     const size = await yt.audio[q].fileSizeH;
     const cap = `  *◉—⌈ ♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪ ⌋—◉*\n❏ *العنوان:* ${ttl}\n❏ *الحجم:* ${size}\n`.trim();
-    await conn.sendMessage(m.chat, {doc: {url: dl_url}, caption: cap, mimetype: 'audio/mpeg', fileName: `${ttl}.mp3`}, {quoted: m});
+    await conn.sendMessage(m.chat, {document: {url: dl_url}, caption: cap, mimetype: 'audio/mpeg', fileName: `${ttl}.mp3`}, {quoted: m});
     m.react(done)
   } catch {
     try {
