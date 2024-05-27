@@ -76,7 +76,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                   messageParamsJson: ''
                 }
               ]
-            }
+            },
+            image: 'https://i.ibb.co/1zdz2j3/logo.jpgs' // اضف رابط الصورة هنا أيضًا
           }
         }
       }
