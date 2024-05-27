@@ -1,7 +1,7 @@
 import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
 import fetch from 'node-fetch';
 const handler = async (m, {conn, args}) => {
-  if (!args[0]) throw '🌺 𝐄𝐧𝐯𝐢𝐞 𝐔𝐧 𝐋𝐢𝐧𝐤';
+  if (!args[0]) throw '🌺 اكتب الرابط';
   await m.reply(`جاري التحميل`);
   try {
     const q = '128kbps';
@@ -11,7 +11,7 @@ const handler = async (m, {conn, args}) => {
     const ttl = await yt.title;
     const size = await yt.audio[q].fileSizeH;
     const cap = `  *◉—⌈ ♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪ ⌋—◉*\n❏ *العنوان:* ${ttl}\n❏ *الحجم:* ${size}\n`.trim();
-    await conn.sendMessage(m.chat, {document: {url: dl_url}, caption: cap, mimetype: 'audio/mp4', fileName: `${ttl}.mp3`}, {quoted: m});
+    await conn.sendMessage(m.chat, {document: {url: dl_url}, caption: cap, mimetype: 'audio/mpg', fileName: `${ttl}.mp3`}, {quoted: m});
     m.react(done)
   } catch {
     try {
@@ -21,7 +21,7 @@ const handler = async (m, {conn, args}) => {
       const n2 = lolh.result.link;
       const n3 = lolh.result.size;
       const cap2 = `  *◉—⌈ ♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪ ⌋—◉*\n❏ *العنوان:* ${n}\n❏ *الحجم:* ${n3}\n✰`.trim();
-      await conn.sendMessage(m.chat, {document: {url: n2}, caption: cap2, mimetype: 'audio/mp4', fileName: `${n}.mp3`}, {quoted: m});
+      await conn.sendMessage(m.chat, {document: {url: n2}, caption: cap2, mimetype: 'audio/mpg', fileName: `${n}.mp3`}, {quoted: m});
     } catch {
       await conn.reply(m.chat, '*⚠️ Ocurrió un error*', m);
     }
