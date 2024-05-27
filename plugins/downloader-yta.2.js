@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 const handler = async (m, {conn, args}) => {
   if (!args[0]) throw '🌺 اكتب الرابط';
   m.react(rwait)
-  await m.reply(`جاري التحميل`);
+  await m.reply();
   try {
     const q = '128kbps';
     const v = args[0];
