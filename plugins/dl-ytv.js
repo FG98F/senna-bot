@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
  try {
 		const yt = await fg.ytv(args[0], q)
 		let { title, dl_url, quality, size, sizeB } = yt
-        let isLimit = limit * 1024 < sizeB 
+        let isLimit = limit * 5024 < sizeB 
 
      await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️${mssg.size}*: ${size}\n▢ *🎞️${mssg.quality}*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ تم التحميل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
      
@@ -30,7 +30,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	let yt = await fg.ytmp4(args[0], q)
     let { title, size, sizeB, dl_url, quality } = yt
   
-  let isLimit = limit * 1024 < sizeB 
+  let isLimit = limit * 5024 < sizeB 
  
   await conn.loadingMsg(m.chat, '📥 جاري التحميل', ` ${isLimit ? `≡  *𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄*\n\n▢ *⚖️الحجم*: ${size}\n▢ *🎞️الدقة*: ${quality}\n\n▢ _${mssg.limitdl}_ *+${limit} MB*` : '✅ تم التحميل' }`, ["▬▭▭▭▭▭", "▬▬▭▭▭▭", "▬▬▬▭▭▭", "▬▬▬▬▭▭", "▬▬▬▬▬▭", "▬▬▬▬▬▬"], m)
 	  
