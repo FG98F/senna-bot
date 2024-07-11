@@ -1,0 +1,93 @@
+{
+  "name": "formdata-node",
+  "version": "5.0.1",
+  "type": "module",
+  "description": "Spec-compliant FormData implementation for Node.js",
+  "repository": "octet-stream/form-data",
+  "sideEffects": false,
+  "keywords": [
+    "form-data",
+    "node",
+    "form",
+    "upload",
+    "files-upload",
+    "ponyfill"
+  ],
+  "author": "Nick K. <io@octetstream.me>",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "module": "./lib/browser.js",
+  "browser": "./lib/browser.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "node": {
+        "types": "./@type/index.d.ts",
+        "import": "./lib/index.js"
+      },
+      "browser": {
+        "types": "./@type/browser.d.ts",
+        "import": "./lib/browser.js"
+      },
+      "default": {
+        "types": "./@type/index.d.ts",
+        "import": "./lib/index.js"
+      }
+    },
+    "./file-from-path": {
+      "types": "./@type/fileFromPath.d.ts",
+      "import": "./lib/fileFromPath.js"
+    }
+  },
+  "types": "./@type/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "file-from-path": [
+        "@type/fileFromPath.d.ts"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">= 14.17"
+  },
+  "scripts": {
+    "lint:types": "tsc --noEmit",
+    "eslint": "eslint src/**/*.ts",
+    "staged": "lint-staged",
+    "coverage": "c8 npm test",
+    "report:html": "c8 -r=html npm test",
+    "ci": "c8 npm test && c8 report --reporter=json",
+    "build:types": "tsc --project tsconfig.d.ts.json",
+    "build": "tsc && npm run build:types",
+    "test": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" ava",
+    "cleanup": "del-cli @type lib",
+    "prepare": "npm run cleanup && npm run build",
+    "husky": "husky install"
+  },
+  "devDependencies": {
+    "@octetstream/eslint-config": "6.2.2",
+    "@types/node": "18.15.3",
+    "@types/sinon": "10.0.13",
+    "@typescript-eslint/eslint-plugin": "5.55.0",
+    "@typescript-eslint/parser": "5.55.0",
+    "ava": "5.2.0",
+    "c8": "7.13.0",
+    "cross-env": "^7.0.3",
+    "del-cli": "5.0.0",
+    "eslint": "8.36.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-import-resolver-typescript": "3.5.3",
+    "eslint-plugin-ava": "14.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.0",
+    "pinst": "3.0.0",
+    "sinon": "15.0.2",
+    "ts-node": "10.9.1",
+    "typescript": "5.0.2"
+  },
+  "dependencies": {
+    "node-domexception": "1.0.0",
+    "web-streams-polyfill": "4.0.0-beta.3"
+  }
+}
