@@ -17,12 +17,6 @@ ${bgp2}
 ▢ Grupo *NSFW* 🔞
 ${bgp3}
 
-▢ 𝐌𝐘 - 𝐌𝐚𝐲𝐥𝐮𝐱 | ᴮᴼᵀ⚡
-https://chat.whatsapp.com/CTILZXSriIE3M40anVyPT4
-
-▢ 📲💻ANDROID WORLD🎬🎮
-https://chat.whatsapp.com/Ly4I2LObSvW8VgOnJjofgA
-
 ◈ ━━━━━━━━━━━━━━━━━━━━ ◈
 ▢ Todos los Grupos
  https://instabio.cc/fg98ff
