@@ -4,11 +4,11 @@ let handler = async (m, { conn}) => {
 let name = conn.getName(m.sender)
 let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`
 
-/*conn.sendButton(m.chat, `${mssg.hi} *${name}* \n\n${mssg.bohelp} \n`, mssg.ig, null, [
+conn.sendButton(m.chat, `${mssg.hi} *${name}*\n`, mssg.ig, null, [
       ['⦙☰ Menu', '/help'],
       ['⦙☰ Menu 2', '/menu2'],
       [`⌬ ${mssg.gp}s`, '/gpdylux']
-    ], m) */
+    ], m) 
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 } 
 
